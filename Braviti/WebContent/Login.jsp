@@ -54,8 +54,7 @@
 					<div class="panel panel-default" style="background-color: #18BC9C">
 						<div class="panel-heading"
 							style="background-color: rgba(0, 0, 0, 1)">
-							<b style="color: #FFFFFF">Employee Profile System : EPS</b>
-
+							<b style="color: #FFFFFF">Shopping Predictive Analysis : SPA</b>
 						</div>
 						<div class="panel-body">
 							<div class="col-xs-3">
@@ -65,12 +64,11 @@
 									<div class="container">
 
 										<div class="row">
-											<img class="img-responsive" src="images/profile.png" alt=""
-												style="height: 80px; width: 80px; margin-left: 480px">
+
 											<div class="col-lg-4">
 
 												<div class="well"
-													style="height: 350px; width: 330px; margin-top: 15px; margin-left: 350px; border-radius: 20px;background-color: #53868b;border-color: lightblue;border-style: solid;">
+													style="height: 350px; width: 330px; margin-top: 15px; margin-left: 350px; border-radius: 20px; background-color: #53868b; border-color: lightblue; border-style: solid;">
 
 
 													<center>
@@ -92,20 +90,9 @@
 
 														</div>
 														<button type="submit"
-															class="btn btn-primary pull-center btn-sm"
-															ng-click="login()">
-															Login <span class="badge"><img
-																style="height: 10px;" src="images/login_badge.jpg" /></span>
+															class="btn btn-primary pull-center btn-md"
+															ng-click="login()">Login</button>
 
-														</button>
-														<button type="submit" data-dismiss="modal"
-															class="btn btn-danger pull-center btn-sm"
-															ng-click="forgotPassword()">Forgot Password</button>
-														<br> <br>
-														<div class="pull-center">
-															<h7>Don't have an account? </h7>
-															<a ng-click="register()"><b style="color:#f0fff0">Register</b></a>
-														</div>
 													</center>
 
 												</div>
@@ -125,47 +112,7 @@
 						</div>
 
 						<div class="panel-footer">
-							<div class="container">
-								<div id="share-buttons">
-
-
-
-									<!-- Facebook -->
-									<a
-										href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com"
-										target="_blank"> <img
-										src="https://simplesharebuttons.com/images/somacro/facebook.png"
-										alt="Facebook" />
-									</a>
-
-									<!-- Google+ -->
-									<a
-										href="https://plus.google.com/share?url=https://simplesharebuttons.com"
-										target="_blank"> <img
-										src="https://simplesharebuttons.com/images/somacro/google.png"
-										alt="Google" />
-									</a>
-
-									<!-- LinkedIn -->
-									<a
-										href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com"
-										target="_blank"> <img
-										src="https://simplesharebuttons.com/images/somacro/linkedin.png"
-										alt="LinkedIn" />
-									</a>
-
-									<!-- Twitter -->
-									<a
-										href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-										target="_blank"> <img
-										src="https://simplesharebuttons.com/images/somacro/twitter.png"
-										alt="Twitter" />
-									</a>
-
-								</div>
-
-
-							</div>
+							<div class="container"></div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
