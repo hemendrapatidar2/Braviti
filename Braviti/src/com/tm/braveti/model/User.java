@@ -65,4 +65,10 @@ public class User {
 		this.incomegrp = incomegrp;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", fname=" + fname + ", lname=" + lname + ", gender=" + gender + ", dob=" + dob
+				+ ", cclimit=" + cclimit + ", incomegrp=" + incomegrp + "]";
+	}
+
 }

@@ -7,7 +7,7 @@ public class PredictiveData {
 	private String offerdesc;
 	
 	public String getOutletName() {
-		return outletname;
+		return outletName;
 	}
 
 	public void setOutletName(String outletName) {

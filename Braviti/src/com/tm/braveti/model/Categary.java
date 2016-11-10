@@ -20,4 +20,9 @@ public class Categary {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Categary [id=" + id + ", name=" + name + "]";
+	}
+
 }

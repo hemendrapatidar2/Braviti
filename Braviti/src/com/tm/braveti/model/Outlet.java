@@ -56,4 +56,10 @@ public class Outlet {
 		this.offerdesc = offerdesc;
 	}
 
+	@Override
+	public String toString() {
+		return "Outlet [id=" + id + ", name=" + name + ", location=" + location + ", categary=" + categary + ", price="
+				+ price + ", offerdesc=" + offerdesc + "]";
+	}
+
 }

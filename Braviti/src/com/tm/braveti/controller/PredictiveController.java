@@ -1,49 +1,31 @@
 package com.tm.braveti.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response;
 
-import com.tm.braveti.model.Categary;
-import com.tm.braveti.model.Outlet;
-import com.tm.braveti.model.TransactionHistory;
-import com.tm.braveti.model.User;
-
+import com.tm.braveti.service.LoadStaticData;
+@Path("/useroffers")
 public class PredictiveController {
-	private List<User> users =new ArrayList<User>();
-	private List<Outlet> outlets =new ArrayList<Outlet>();
-	private List<TransactionHistory> transactionHistories =new ArrayList<TransactionHistory>();
-	private List<Categary> categaries =new ArrayList<Categary>();
-	
+
+	private LoadStaticData staticData = new LoadStaticData();
+
 	/**
 	 * Return the User predictive offers
 	 * 
 	 */
-	public void getUserOffer(){
-		System.out.println("inside getUserOffer Method");
+	@GET
+	public Response  getUserOffer(@QueryParam("id") String userId,@QueryParam("location") String location) {
+		System.out.println("inside getUserOffer Method "+userId +"Location " +location);
+		return Response.status(200).entity(staticData.getOutlets()).build();
 	}
-	
+
 	/*
 	 * Apply Predictive analysis formula
-	 * */
-	@GET
-	@Path("/useroffers/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	private void predictiveEngine(@PathParam("id") int userId){
+	 */
+	private void predictiveEngine() {
 		System.out.println("inside predictiveEngine Method");
 
-		List dataList = new ArrayList();
-		dataList.add(new PredictiveData("Radhika","Electronics", "2999", "upto 20% off"));
-		dataList.add(new PredictiveData("Dmart","clothing", "3000", "Buy one Get one"));
-		dataList.add(new PredictiveData("Central Mall","footware", "2000", "Flat 500 off"));
-
-		return dataList;
-	}
-	
-	/**
-	 *Load static data from CSV and initialize user tx histories,outlets models 
-	 */
-	
-	 private void loadStaticData(){
-		 System.out.println("inside loadStaticData Method");
 	}
 }
