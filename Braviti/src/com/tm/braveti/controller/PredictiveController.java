@@ -16,7 +16,7 @@ public class PredictiveController {
 	 * 
 	 */
 	@GET
-	public Response  getUserOffer(@QueryParam("id") String userId,@QueryParam("location") String location) {
+	public Response  getUserOffer(@QueryParam("userName") String userId,@QueryParam("location") String location) {
 		System.out.println("inside getUserOffer Method "+userId +"Location " +location);
 		return Response.status(200).entity(staticData.getOutlets()).build();
 	}

@@ -1,4 +1,4 @@
-var myApp = angular.module("LoginApp", ['ui.bootstrap','toaster','ngCookies'])
+var myApp = angular.module("LoginApp", ['ui.bootstrap','toaster'])
 
 myApp
     .controller(
@@ -9,8 +9,7 @@ myApp
             '$uibModal',
             '$log',
             '$compile',
-            '$cookies',
-            function($scope, $http, $window, $uibModal, $log,$compile,$cookies) {
+            function($scope, $http, $window, $uibModal, $log,$compile) {
                 console.log('in logon ctl ');
                 var $ctrl = this;
                 $scope.errMsg = [];
@@ -26,15 +25,7 @@ myApp
                         return;
 
                     }
-                    if(angular.equals('admin',$scope.userId)&&angular.equals('admin',$scope.password)){
-                    	  $cookies.put('userName', $scope.userId);
-                    	
-                    	  $window.location.href = './Central.jsp#/';
-                    }else{
-                    	 $scope.errMsg.push("Invalid User Id OR Password");
-                         $ctrl.open("validationModal");
-                    }
-                   /* $http({
+                    $http({
                             method: "POST",
                             url: "rest/user/authenticate",
                             params: {
@@ -59,7 +50,7 @@ myApp
                                     $scope.errMsg.push("Invalid User Id OR Password");
                                     $ctrl.open("validationModal");
                                 }
-                            });*/
+                            });
                 }
 
                 $ctrl.animationsEnabled = true;
