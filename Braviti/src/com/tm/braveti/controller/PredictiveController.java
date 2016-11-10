@@ -19,19 +19,31 @@ public class PredictiveController {
 	 * 
 	 */
 	public void getUserOffer(){
-		
+		System.out.println("inside getUserOffer Method");
 	}
+	
 	/*
 	 * Apply Predictive analysis formula
 	 * */
-	
-	private void predictiveEngine(){
-		
+	@GET
+	@Path("/useroffers/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	private void predictiveEngine(@PathParam("id") int userId){
+		System.out.println("inside predictiveEngine Method");
+
+		List dataList = new ArrayList();
+		dataList.add(new PredictiveData("Radhika","Electronics", "2999", "upto 20% off"));
+		dataList.add(new PredictiveData("Dmart","clothing", "3000", "Buy one Get one"));
+		dataList.add(new PredictiveData("Central Mall","footware", "2000", "Flat 500 off"));
+
+		return dataList;
 	}
+	
 	/**
 	 *Load static data from CSV and initialize user tx histories,outlets models 
 	 */
+	
 	 private void loadStaticData(){
-		
+		 System.out.println("inside loadStaticData Method");
 	}
 }
