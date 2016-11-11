@@ -80,7 +80,7 @@ public class LoadStaticData {
 			if (sheet.getSheetName().equalsIgnoreCase("user")) {
 				User user;
 				for (List rowData : data) {
-					if (null != rowData.get(0)) {
+					if (rowData.size() > 0 && null != rowData.get(0)){ 
 						user = new User();
 						user.setId(rowData.get(0).toString());
 						user.setFname(rowData.get(1).toString());
@@ -97,7 +97,7 @@ public class LoadStaticData {
 				TransactionHistory transactionHistory;
 				for (List rowData : data) {
 					transactionHistory = new TransactionHistory();
-					if (null != rowData.get(0)) {
+					if (rowData.size() > 0 && null != rowData.get(0)) {
 						transactionHistory.setId(rowData.get(0).toString());
 						transactionHistory.setUserid(rowData.get(1).toString());
 						transactionHistory.setDate(rowData.get(2).toString());
@@ -116,7 +116,7 @@ public class LoadStaticData {
 			if (sheet.getSheetName().equalsIgnoreCase("Outlet")) {
 				Outlet outlet;
 				for (List rowData : data) {
-					if (null != rowData.get(0)) {
+					if (rowData.size() > 0 && null != rowData.get(0)) {
 						outlet = new Outlet();
 						outlet.setId(rowData.get(0).toString());
 						outlet.setName(rowData.get(1).toString());
@@ -132,7 +132,7 @@ public class LoadStaticData {
 			if (sheet.getSheetName().equalsIgnoreCase("catagary")) {
 				Category categary;
 				for (List rowData : data) {
-					if (null != rowData.get(0)) {
+					if (rowData.size() > 0 && null != rowData.get(0)) {
 						categary = new Category();
 						categary.setId(rowData.get(0).toString());
 						categary.setName(rowData.get(1).toString());
