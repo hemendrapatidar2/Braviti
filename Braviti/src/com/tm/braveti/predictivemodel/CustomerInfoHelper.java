@@ -15,7 +15,7 @@ public class CustomerInfoHelper {
 	public static User getUser(String username, LoadStaticData staticData){
 		List<User> users = staticData.getUsers();
 		for (User user : users) {
-			if (user.getFname().equals(username)){
+			if (user.getFname().equalsIgnoreCase(username)){
 				return user;
 			}
 		}

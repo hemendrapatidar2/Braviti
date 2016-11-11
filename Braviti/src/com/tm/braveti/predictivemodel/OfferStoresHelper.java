@@ -20,7 +20,7 @@ public class OfferStoresHelper {
 		List<Outlet> outletsPerLocation=new ArrayList<>();
 		List<Outlet> outlets = staticData.getOutlets();
 		for (Outlet outlet : outlets) {
-			if(outlet.getLocation().equals(location)){
+			if(outlet.getLocation().equalsIgnoreCase(location)){
 				outletsPerLocation.add(outlet);
 			}
 		}
@@ -33,7 +33,7 @@ public class OfferStoresHelper {
 	private void applyFilters(FilterCriteria filterName,List<Outlet> offers){
 		
 		for (Outlet outlet : offers) {
-			if(outlet.getCategary().equals(filterName.getCategoryName())&& outlet.getPrice().equals(filterName.getPriceSegement())){
+			if(outlet.getCategary().equalsIgnoreCase(filterName.getCategoryName())&& outlet.getPrice().equalsIgnoreCase(filterName.getPriceSegement())){
 				
 				if(finalOfferSuggestion.isEmpty()){
 					 createNewOfferDTO(outlet.getName());
@@ -95,9 +95,9 @@ public class OfferStoresHelper {
 	public  List<OfferDTO> getOfferSuggestion(List<FilterCriteria> filters, LoadStaticData staticData,String location){
 		List<Outlet> outletsPerLocation = getOfferOutletsForLocation(staticData,location);
 		for (FilterCriteria filterCriteria : filters) {
-			if(filterCriteria.getCategoryName().equals(PredictiveEngineConstants.LOCATION)){
+			if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.LOCATION)){
 				
-			}else if(filterCriteria.getCategoryName().equals(PredictiveEngineConstants.BIRTHDAY)){
+			}else if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.BIRTHDAY)){
 				
 				applyFilters(filterCriteria, outletsPerLocation);
 			}

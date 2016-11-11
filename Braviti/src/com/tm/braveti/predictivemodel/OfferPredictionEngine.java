@@ -97,7 +97,7 @@ public class OfferPredictionEngine {
 	private List<TransactionHistory> getTransactionHistoryForUser(List<TransactionHistory> transactionHistories, String id) {
 		List<TransactionHistory>transactionHistoryList=new ArrayList<TransactionHistory>();
 		for (TransactionHistory transactionHistory : transactionHistories) {
-			if(transactionHistory.getUserid().equals(id)){
+			if(transactionHistory.getUserid().equalsIgnoreCase(id)){
 				transactionHistoryList.add(transactionHistory);
 			}
 		}
