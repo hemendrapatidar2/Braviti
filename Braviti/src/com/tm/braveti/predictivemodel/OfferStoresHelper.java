@@ -96,7 +96,7 @@ public class OfferStoresHelper {
 		List<Outlet> outletsPerLocation = getOfferOutletsForLocation(staticData,location);
 		for (FilterCriteria filterCriteria : filters) {
 			if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.LOCATION)){
-				
+				convertToOfferDTO(outletsPerLocation);
 			}else if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.BIRTHDAY)){
 				
 				applyFilters(filterCriteria, outletsPerLocation);
@@ -107,6 +107,25 @@ public class OfferStoresHelper {
 		}
 		return finalOfferSuggestion;
 		
+	}
+
+	private void convertToOfferDTO(List<Outlet> outletsPerLocation) {
+		// TODO Auto-generated method stub
+		
+		for (Outlet outlet : outletsPerLocation) {
+			if(finalOfferSuggestion.isEmpty()){
+				 createNewOfferDTO(outlet.getName());
+				
+			}
+			if(checkIfStoreAdded(outlet.getName())){
+				
+				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+			}
+			else{
+				createNewOfferDTO(outlet.getName());
+				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+			}
+		}
 	}
 
 }
