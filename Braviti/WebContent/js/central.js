@@ -16,8 +16,9 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 			
 			console.log(titleTag);
 			
-		
-			$scope.html.push($sce.trustAsHtml('<a href="http://www.w3schools.com" data-toggle="tooltip" data-html="true" data-placement="top" title='+titleTag+'> <img class="flag2" src="images/flag.png"></a>'));
+			var stylesheet="position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
+			
+			$scope.html.push($sce.trustAsHtml('<a  href="http://www.w3schools.com" data-toggle="tooltip" data-html="true" data-placement="top" title='+titleTag+'> <img class="flag2" src="images/flag.png"></a>'));
 			$scope.html.push($sce.trustAsHtml('<a href="http://www.w3schools.com" data-toggle="tooltip" title="Hooray!"> <img class="flag1" src="images/flag.png"></a>'));
 			$scope.html.push($sce.trustAsHtml('<a href="http://www.w3schools.com" data-toggle="tooltip" title="Hooray!"> <img class="flag3" src="images/flag.png"></a>'));
 					
@@ -26,6 +27,29 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 			$scope.selectedImage="images/map.png";
 			$scope.changeLocation  =function(){
 				console.log('in change location '+$scope.location);
+				
+				$scope.outlets = ['RelianceMart','Central','DMart','Dunkin']
+				
+				
+				$http({
+                    method: "GET",
+                    url: "data/useroffers",
+                    params: {
+                    	 location: $scope.location,
+                         userName: $scope.userName
+                       
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(
+                    function(reponse) {
+                            $scope.data =reponse.data;
+                            console
+                            .log($scope.data)
+                    });
+				
 				
 				switch ($scope.location) {
 	            case 'ShivajiNagar':
@@ -46,6 +70,10 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 	            default:
 
 	        }
+			}
+			
+			$scope.logout = function(){
+				 $window.location.href = './Login.jsp#/';
 			}
 
 		} ]);

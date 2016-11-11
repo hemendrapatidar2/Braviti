@@ -14,34 +14,38 @@
 <script src="js/central.js"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
-	
-	<script src="lib/angular-sanitize.min.js"></script>
+
+<script src="lib/angular-sanitize.min.js"></script>
 <link rel="stylesheet" href="css/central.css">
 
 <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
 </script>
 
 </head>
 <body ng-controller="centralCtl" style="background-color: #495C70">
 
 	<div class="form-group">
-		<h3 style="color: red">Welcome: {{userName}}</h3>
+		<h3 style="color: red">
+			Welcome: {{userName}} <a href="#" ng-click="logout()">Log Out</a>
+		</h3>
+
 		<div class="container">
 			<div class="col-xs-3">
 				<div class="well"
-					style="height: 500px; width: 500px; margin-top: 15px; margin-left: -100px; border-radius: 20px; background-color: #53868b; border-color: lightblue; border-style: solid;">
+					style="height: 500px; width: 500px; margin-top: 30px; margin-left: -100px; border-radius: 20px; background-color: #53868b; border-color: lightblue; border-style: solid;">
 
 					<img class="img-responsive" src="{{selectedImage}}" alt=""
-						style="height: 450px; width: 500px;">
-						
+						style="height: 450px; width: 500px; position: relative;">
+
 					<div ng-bind-html="html"></div>
 				</div>
 
 			</div>
 			<div class="col-xs-2"></div>
+
 			<div class="col-xs-3">
 				<div class="form-group">
 
@@ -51,16 +55,42 @@ $(document).ready(function(){
 							ng-change="changeLocation()" ng-options="x for x in locations">
 						</select>
 					</p>
-					<div class="containerdiv">
-						<!-- <img class=flag1 src="images/Aundh.JPG"> <img class=flag2
-							src="images/login.png"> -->
-						<div></div>
+				</div>
+
+				<div class="form-group">
+					<label style="color: white">Outlets</label>
+
+					<div class="well"
+						style="height: 450px; width: 700px; background-color: #DCDCDC; border-color: black; border-style: solid;">
+						<table class="table">
+
+							<tr>
+								<th>Outlet Name</th>
+								<th>Category </th>
+								<th>Offer Discription</th>
+							</tr>
+							<tr ng-repeat="item in data">
+								<td>{{item.storeName}}</td>
+								
+								<td colspan="2">
+									<table>
+										<tr ng-repeat="offer in item.offerMap">
+											<td width="200px">{{offer.categoryName}}</td>
+											<td width="150px">{{offer.offerDescription}}</td>
+										</tr>
+
+									</table>
+									</td>
+									
+									
+							</tr>
+						</table>
+
 					</div>
+
 				</div>
 			</div>
-			
-			<div class="container">
-  
-</div>
+
+			<div class="container"></div>
 </body>
 </html>

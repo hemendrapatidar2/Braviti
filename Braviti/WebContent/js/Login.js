@@ -26,14 +26,14 @@ myApp
                         return;
 
                     }
-                    if(angular.equals('admin',$scope.userId)&&angular.equals('admin',$scope.password)){
+                   /* if(angular.equals('Raj',$scope.userId)&&angular.equals('Raj',$scope.password)){
                     	  $cookies.put('userName', $scope.userId);
                     	
                     	  $window.location.href = './Central.jsp#/';
                     }else{
                     	 $scope.errMsg.push("Invalid User Id OR Password");
                          $ctrl.open("validationModal");
-                    }
+                    }*/
                    /* $http({
                             method: "POST",
                             url: "rest/user/authenticate",
