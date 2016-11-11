@@ -26,6 +26,8 @@ myApp
                         return;
 
                     }
+                    $cookies.put('userName', $scope.userId);
+                    $window.location.href = './Central.jsp#/';
                    /* if(angular.equals('Raj',$scope.userId)&&angular.equals('Raj',$scope.password)){
                     	  $cookies.put('userName', $scope.userId);
                     	

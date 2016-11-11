@@ -29,7 +29,7 @@
 
 	<div class="form-group">
 		<h3 style="color: red">
-			Welcome: {{userName}} <a href="#" ng-click="logout()">Log Out</a>
+			Welcome: {{userName}} <a href="#" ng-click="logout()"><b style="color:white">LogOut</b></a>
 		</h3>
 
 		<div class="container">
@@ -40,10 +40,14 @@
 					<img class="img-responsive" src="{{selectedImage}}" alt=""
 						style="height: 450px; width: 500px; position: relative;">
 
-					<div ng-bind-html="html"></div>
-				</div>
-
+					<div id="ballouns"></div>
+					
+					</div>
+				
+				
 			</div>
+
+			
 			<div class="col-xs-2"></div>
 
 			<div class="col-xs-3">
@@ -61,7 +65,7 @@
 					<label style="color: white">Outlets</label>
 
 					<div class="well"
-						style="height: 450px; width: 700px; background-color: #DCDCDC; border-color: black; border-style: solid;">
+						style="width: 700px; background-color: #DCDCDC; border-color: black; border-style: solid;">
 						<table class="table">
 
 							<tr>
@@ -90,7 +94,9 @@
 
 				</div>
 			</div>
-
-			<div class="container"></div>
+			
+			</div>
+</div>
+			
 </body>
 </html>

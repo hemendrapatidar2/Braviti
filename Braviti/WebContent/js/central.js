@@ -9,18 +9,12 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 			
 			$scope.html = [];
 			
-			var b= "hemendra";
-			$scope.a ='asdasd\nasdasdasdasd\n'+b;
-			
 			var titleTag = 'hppHemendra';
 			
 			console.log(titleTag);
 			
 			var stylesheet="position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
 			
-			$scope.html.push($sce.trustAsHtml('<a  href="http://www.w3schools.com" data-toggle="tooltip" data-html="true" data-placement="top" title='+titleTag+'> <img class="flag2" src="images/flag.png"></a>'));
-			$scope.html.push($sce.trustAsHtml('<a href="http://www.w3schools.com" data-toggle="tooltip" title="Hooray!"> <img class="flag1" src="images/flag.png"></a>'));
-			$scope.html.push($sce.trustAsHtml('<a href="http://www.w3schools.com" data-toggle="tooltip" title="Hooray!"> <img class="flag3" src="images/flag.png"></a>'));
 					
 			 
 			$scope.locations = ['ShivajiNagar','Kothrud','Pimpri','Wakad','Nigdi',]
@@ -46,14 +40,24 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
                 .then(
                     function(reponse) {
                             $scope.data =reponse.data;
+                            var res = $scope.data;
                             console
                             .log($scope.data)
+                            document.getElementById("ballouns").innerHTML="";
+                            var differ=Math.random()*100; 
+                            var top=100,left=80;
+                            
+                            for(var index=0;index <$scope.data.length;index++){
+                            	document.getElementById("ballouns").innerHTML = document.getElementById("ballouns").innerHTML+'<a  href="#" data-toggle="tooltip" data-html="true" data-placement="top" title='+res[index].storeName+'> <img style="position: absolute;top: '+top+'px;left: '+left+'px;z-index: 2;height:50px;width:50px;" src="images/flag.png"></a>';
+                            	top=top+Math.random()*100;
+                            	left = left +Math.random()*100;
+                            }
+                            
                     });
 				
-				
 				switch ($scope.location) {
-	            case 'ShivajiNagar':
-	            	$scope.selectedImage="images/Shivajinagar.JPG";
+				case 'ShivajiNagar':
+					$scope.selectedImage="images/Shivajinagar.JPG";
 	                break;
 	            case 'Kothrud':
 	            	$scope.selectedImage="images/Kothrud.JPG";
