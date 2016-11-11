@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tm.braveti.exception.UserNotFoundException;
+import com.tm.braveti.model.OfferDTO;
 import com.tm.braveti.model.Outlet;
 import com.tm.braveti.model.TransactionHistory;
 import com.tm.braveti.model.User;
@@ -29,7 +30,7 @@ public class OfferPredictionEngine {
 	 * @return
 	 * @throws UserNotFoundException
 	 */
-	public List<Outlet> showOfferPredictions() throws UserNotFoundException {
+	public List<OfferDTO> showOfferPredictions() throws UserNotFoundException {
 		User user = CustomerInfoHelper.getUser(this.userName,staticData);
 		if(user==null){
 			throw new UserNotFoundException("this user does not exist");
@@ -59,7 +60,7 @@ public class OfferPredictionEngine {
 		}
 		OfferStoresHelper offerStoreHelper=new OfferStoresHelper();
 		
-		List<Outlet> offerSuggestion = offerStoreHelper.getOfferSuggestion(filtersForSuggestions,this.staticData,location);
+		List<OfferDTO> offerSuggestion = offerStoreHelper.getOfferSuggestion(filtersForSuggestions,this.staticData,location);
 		return offerSuggestion;
 	
 	}
@@ -120,11 +121,11 @@ public class OfferPredictionEngine {
 			/*transactions older than two months wont be used to make suggestions*/
 			
 //			checkDatevalidity();
-			if(processedCategory.contains(categoryName)){
+			if(processedCategory.contains(categoryName.toLowerCase())){
 				continue;
 			}
 			else{
-				processedCategory.add(categoryName);
+				processedCategory.add(categoryName.toLowerCase());
 			}
 			String amount = transactionHistory.getAmount();
 			String priceSegement=classifyPriceSegement(categoryName,Double.parseDouble(amount));

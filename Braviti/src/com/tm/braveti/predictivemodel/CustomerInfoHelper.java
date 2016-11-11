@@ -31,11 +31,11 @@ public class CustomerInfoHelper {
 		    Date userDateOfBirth = df.parse(userDob);
 		    Calendar cal=Calendar.getInstance();
 		    cal.setTime(userDateOfBirth);
-		    int month = cal.get(Calendar.MONTH);
+		    int month = cal.get(Calendar.MONTH)+1;
 	        int day = cal.get(Calendar.DAY_OF_MONTH);
 	        
 		    Calendar cal2=Calendar.getInstance();
-		    int currentMonth = cal2.get(Calendar.MONTH);
+		    int currentMonth = cal2.get(Calendar.MONTH)+1;
 	        int CurrentDay = cal2.get(Calendar.DAY_OF_MONTH);
 	        
 		    if(currentMonth==month&&(day-CurrentDay)<=7)

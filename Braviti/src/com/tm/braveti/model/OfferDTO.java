@@ -1,24 +1,29 @@
 package com.tm.braveti.model;
 
-import java.util.Map;
+import java.util.List;
 
 public class OfferDTO {
 	
-	private String storeName;
-	private Map<String,String> offerMap;
-	
-	public String getStoreName() {
-		return storeName;
-	}
-	public void setStoreName(String storeName) {
-		this.storeName = storeName;
-	}
-	public Map<String, String> getOfferMap() {
-		return offerMap;
-	}
-	public void setOfferMap(Map<String, String> offerMap) {
-		this.offerMap = offerMap;
-	}
+    private String storeName;
+    private List<OfferCategory> offerMap;
+
+    public String getStoreName() {
+           return storeName;
+    }
+
+    public void setStoreName(String storeName) {
+           this.storeName = storeName;
+    }
+
+    public List<OfferCategory> getOfferMap() {
+           return offerMap;
+    }
+
+    public void setOfferMap(List<OfferCategory> offerMap) {
+           this.offerMap = offerMap;
+    }
+
+
 	
 
 }
