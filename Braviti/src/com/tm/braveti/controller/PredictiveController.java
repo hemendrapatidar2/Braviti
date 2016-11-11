@@ -46,7 +46,7 @@ public class PredictiveController {
 				System.out.println("category for this store : "+ string + " offer :: "+ offerDTO.getOfferMap().get(string));
 			}
 		}
-		return Response.status(200).entity(staticData.getOutlets()).build();
+		return Response.status(200).entity(offerListDTO).build();
 	}
 
 	/**
