@@ -14,7 +14,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-import com.tm.braveti.model.Categary;
+import com.tm.braveti.model.Category;
 import com.tm.braveti.model.Outlet;
 import com.tm.braveti.model.TransactionHistory;
 import com.tm.braveti.model.User;
@@ -23,9 +23,9 @@ public class LoadStaticData {
 	private Map<String, List> staticData = new HashMap<>();
 
 	public LoadStaticData() {
-		try{
-		loadStaticData();
-		}catch(Exception ex){
+		try {
+			loadStaticData();
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
@@ -43,16 +43,23 @@ public class LoadStaticData {
 		return staticData.get("TRANSACTIONHISTORY");
 	}
 
-	public List<Categary> getCategories() {
+	public List<Category> getCategories() {
 		return staticData.get("CATEGORY");
 	}
 
 	private void loadStaticData() throws IOException {
-		/*InputStream ExcelFileToRead = new FileInputStream(
-				"Braviti.xls");*/
-		InputStream ExcelFileToRead = this.getClass().getClassLoader().getResourceAsStream("com\\tm\\braveti\\resources\\Braviti.xls");
-		/*InputStream ExcelFileToRead = new FileInputStream(
-				"E:\\hackethon\\Braviti\\Braviti\\WebContent\\WEB-INF\\resources\\Braviti.xls");*/
+		/*
+		 * InputStream ExcelFileToRead = new FileInputStream( "Braviti.xls");
+		 */
+		InputStream ExcelFileToRead = this
+				.getClass()
+				.getClassLoader()
+				.getResourceAsStream("com\\tm\\braveti\\resources\\Braviti.xls");
+		/*
+		 * InputStream ExcelFileToRead = new FileInputStream(
+		 * "E:\\hackethon\\Braviti\\Braviti\\WebContent\\WEB-INF\\resources\\Braviti.xls"
+		 * );
+		 */
 		HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
 		List<HSSFSheet> sheets = new ArrayList<>();
 		sheets.add(wb.getSheetAt(0));
@@ -67,59 +74,70 @@ public class LoadStaticData {
 		List<User> users = new ArrayList<>();
 		List<Outlet> outlets = new ArrayList<>();
 		List<TransactionHistory> transactionHistorious = new ArrayList<>();
-		List<Categary> categaries = new ArrayList<>();
+		List<Category> categaries = new ArrayList<>();
 		for (HSSFSheet sheet : sheets) {
 			List<List> data = readData(sheet);
 			if (sheet.getSheetName().equalsIgnoreCase("user")) {
 				User user;
 				for (List rowData : data) {
-					user = new User();
-					user.setId(rowData.get(0).toString());
-					user.setFname(rowData.get(1).toString());
-					user.setLname(rowData.get(2).toString());
-					user.setGender(rowData.get(3).toString());
-					user.setDob(rowData.get(4).toString());
-					user.setCclimit(rowData.get(5).toString());
-					user.setIncomegrp(rowData.get(6).toString());
-					users.add(user);
+					if (null != rowData.get(0)) {
+						user = new User();
+						user.setId(rowData.get(0).toString());
+						user.setFname(rowData.get(1).toString());
+						user.setLname(rowData.get(2).toString());
+						user.setGender(rowData.get(3).toString());
+						user.setDob(rowData.get(4).toString());
+						user.setCclimit(rowData.get(5).toString());
+						user.setIncomegrp(rowData.get(6).toString());
+						users.add(user);
+					}
 				}
 			}
 			if (sheet.getSheetName().equalsIgnoreCase("transhistory")) {
 				TransactionHistory transactionHistory;
 				for (List rowData : data) {
 					transactionHistory = new TransactionHistory();
-					transactionHistory.setId(rowData.get(0).toString());
-					transactionHistory.setUserid(rowData.get(1).toString());
-					transactionHistory.setDate(rowData.get(2).toString());
-					transactionHistory.setAmount(rowData.get(3).toString());
-					transactionHistory.setOutletid(rowData.get(4).toString());
-					transactionHistory.setDescription(rowData.get(5).toString());
-					transactionHistory.setCategoryid(rowData.get(6).toString());
-					transactionHistorious.add(transactionHistory);
+					if (null != rowData.get(0)) {
+						transactionHistory.setId(rowData.get(0).toString());
+						transactionHistory.setUserid(rowData.get(1).toString());
+						transactionHistory.setDate(rowData.get(2).toString());
+						transactionHistory.setAmount(rowData.get(3).toString());
+						transactionHistory.setOutletid(rowData.get(4)
+								.toString());
+						transactionHistory.setDescription(rowData.get(5)
+								.toString());
+						transactionHistory.setCategoryid(rowData.get(6)
+								.toString());
+						transactionHistorious.add(transactionHistory);
+					}
 				}
 
 			}
 			if (sheet.getSheetName().equalsIgnoreCase("Outlet")) {
 				Outlet outlet;
 				for (List rowData : data) {
-					outlet = new Outlet();
-					outlet.setId(rowData.get(0).toString());
-					outlet.setName(rowData.get(1).toString());
-					outlet.setLocation(rowData.get(2).toString());
-					outlet.setCategary(rowData.get(3).toString());
-					outlet.setPrice(rowData.get(4).toString());
-					outlet.setOfferdesc(rowData.get(5).toString());
-					outlets.add(outlet);
+					if (null != rowData.get(0)) {
+						outlet = new Outlet();
+						outlet.setId(rowData.get(0).toString());
+						outlet.setName(rowData.get(1).toString());
+						outlet.setLocation(rowData.get(2).toString());
+						outlet.setCategary(rowData.get(3).toString());
+						outlet.setPrice(rowData.get(4).toString());
+						outlet.setOfferdesc(rowData.get(5).toString());
+						outlets.add(outlet);
+					}
 				}
 
 			}
 			if (sheet.getSheetName().equalsIgnoreCase("catagary")) {
-				Categary categary;
+				Category categary;
 				for (List rowData : data) {
-					categary = new Categary();
-					categary.setId(rowData.get(0).toString());
-					categary.setName(rowData.get(1).toString());
-					categaries.add(categary);
+					if (null != rowData.get(0)) {
+						categary = new Category();
+						categary.setId(rowData.get(0).toString());
+						categary.setName(rowData.get(1).toString());
+						categaries.add(categary);
+					}
 				}
 
 			}
@@ -162,8 +180,9 @@ public class LoadStaticData {
 		LoadStaticData staticData = new LoadStaticData();
 		List<User> data = staticData.getUsers();
 		List<Outlet> outlets = staticData.getOutlets();
-		List<TransactionHistory> transactionHistories = staticData.getTransactionHistories();
-		List<Categary> categaries = staticData.getCategories();
+		List<TransactionHistory> transactionHistories = staticData
+				.getTransactionHistories();
+		List<Category> categaries = staticData.getCategories();
 		for (User user : data) {
 			System.out.println(user.toString());
 		}
@@ -173,7 +192,7 @@ public class LoadStaticData {
 		for (TransactionHistory transactionHistory : transactionHistories) {
 			System.out.println(transactionHistory.toString());
 		}
-		for (Categary user : categaries) {
+		for (Category user : categaries) {
 			System.out.println(user.toString());
 		}
 
