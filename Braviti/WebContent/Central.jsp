@@ -14,10 +14,16 @@
 <script src="js/central.js"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
-<style type="text/css"> 
-.imgA1 { position:absolute; top: 25px; left: 25px; z-index: 1; } 
-.imgB1 { position:absolute; top: 25px; left: 25px; z-index: 3; } 
-</style>
+	
+	<script src="lib/angular-sanitize.min.js"></script>
+<link rel="stylesheet" href="css/central.css">
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
 </head>
 <body ng-controller="centralCtl" style="background-color: #495C70">
 
@@ -30,8 +36,9 @@
 
 					<img class="img-responsive" src="{{selectedImage}}" alt=""
 						style="height: 450px; width: 500px;">
+						
+					<div ng-bind-html="html"></div>
 				</div>
-
 
 			</div>
 			<div class="col-xs-2"></div>
@@ -44,14 +51,16 @@
 							ng-change="changeLocation()" ng-options="x for x in locations">
 						</select>
 					</p>
-					
 					<div class="containerdiv">
-   <img class=imgA1 src="imageA.jpg">
-<img class=imgB1 src="http://full.path.to/imageB.jpg"> 
-<div>
+						<!-- <img class=flag1 src="images/Aundh.JPG"> <img class=flag2
+							src="images/login.png"> -->
+						<div></div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+			
+			<div class="container">
+  
+</div>
 </body>
 </html>
