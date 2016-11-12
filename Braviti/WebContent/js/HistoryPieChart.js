@@ -80,8 +80,8 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 			            colorByPoint: true,
 			            data: 			            	
 			            	[{name:'Electronics',y:73.82245},
-			                   {name:'clothing',y:21.893171},
-			                   {name:'footware',y:4.2843776}]
+			                   {name:'Clothing',y:21.893171},
+			                   {name:'Footware',y:4.2843776}]
 			        }]
 			    });
 			});
