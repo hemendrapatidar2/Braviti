@@ -209,6 +209,7 @@ public class OfferPredictionEngine {
 		return "";
 	}
 
+	
 	public List<PieChartDTO> getPieChartData() {
 		User user = CustomerInfoHelper.getUser(this.userName, staticData);
 		float totalAmt = 0;
@@ -216,14 +217,31 @@ public class OfferPredictionEngine {
 		PieChartDTO pieChartDTO = new PieChartDTO();
 		List<PieChartDTO> pieChartList = new ArrayList<PieChartDTO>();
 		if (!transactionHistoriesForUser.isEmpty()) {
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.ELECTRONICS, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.CLOTHING, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.FOOTWEAR, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.HOME_AND_KITCHEN, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.SPORTS_AND_FITNESS, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.STATIONARY, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.TOYS_AND_GAMES, transactionHistoriesForUser));
-			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.GIFTS, transactionHistoriesForUser));
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.ELECTRONICS, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.CLOTHING, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.FOOTWEAR, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.HOME_AND_KITCHEN, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.SPORTS_AND_FITNESS, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.STATIONARY, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.TOYS_AND_GAMES, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+			pieChartDTO = getTotalAmtPerCategory(PredictiveEngineConstants.GIFTS, transactionHistoriesForUser);
+			if(pieChartDTO != null){ pieChartList.add(pieChartDTO);}
+		
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.ELECTRONICS, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.CLOTHING, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.FOOTWEAR, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.HOME_AND_KITCHEN, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.SPORTS_AND_FITNESS, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.STATIONARY, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.TOYS_AND_GAMES, transactionHistoriesForUser));
+//			pieChartList.add(getTotalAmtPerCategory(PredictiveEngineConstants.GIFTS, transactionHistoriesForUser));
 			
 			for (PieChartDTO pieData : pieChartList) {
 				totalAmt = totalAmt + pieData.getTotalAmtPerCategory();			
@@ -240,14 +258,17 @@ public class OfferPredictionEngine {
 
 	private PieChartDTO getTotalAmtPerCategory(String category, List<TransactionHistory> transactionHistoriesForUser) {
 		float totalAmtPerCategory = 0;
-		PieChartDTO pieObj = new PieChartDTO();
+		PieChartDTO pieObj = null;
 		for (TransactionHistory transHistory : transactionHistoriesForUser) {
 			if (transHistory.getDescription().equalsIgnoreCase(category)) {
 				totalAmtPerCategory += Float.parseFloat(transHistory.getAmount());
 			}
 		}
-		pieObj.setCategory(category);
-		pieObj.setTotalAmtPerCategory(totalAmtPerCategory);
+		if(totalAmtPerCategory > 0){
+			pieObj = new PieChartDTO();
+			pieObj.setCategory(category);
+			pieObj.setTotalAmtPerCategory(totalAmtPerCategory);
+		}		
 		return pieObj;
 	}
 
