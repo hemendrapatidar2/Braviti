@@ -58,7 +58,7 @@ public class PredictiveController {
 	@Path("/pieChartData")
 	public Response getPieChartTransData(@QueryParam("userName") String userName,
 			@QueryParam("location") String location) {
-		System.out.println("inside getUserOffer Method " + userName
+		System.out.println("inside getPieChartTransData Method " + userName
 				+ "Location " + location);
 		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(
 				userName, location, this.staticData);
