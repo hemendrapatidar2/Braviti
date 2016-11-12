@@ -55,6 +55,7 @@ public class PredictiveController {
 	 * 
 	 */
 	@GET
+	@Path("/pieChartData")
 	public Response getPieChartTransData(@QueryParam("userName") String userName,
 			@QueryParam("location") String location) {
 		System.out.println("inside getUserOffer Method " + userName
