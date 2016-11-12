@@ -11,6 +11,7 @@ import javax.ws.rs.core.Response;
 import com.tm.braveti.exception.UserNotFoundException;
 import com.tm.braveti.model.OfferCategory;
 import com.tm.braveti.model.OfferDTO;
+import com.tm.braveti.model.PieChartDTO;
 import com.tm.braveti.predictivemodel.OfferPredictionEngine;
 import com.tm.braveti.service.LoadStaticData;
 
@@ -48,9 +49,30 @@ public class PredictiveController {
 
 		return Response.status(200).entity(offerListDTO).build();
 	}
-
+	
+	/**
+	 * Return the User predictive offers
+	 * 
+	 */
+	@GET
+	public Response getPieChartTransData(@QueryParam("userName") String userName,
+			@QueryParam("location") String location) {
+		System.out.println("inside getUserOffer Method " + userName
+				+ "Location " + location);
+		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(
+				userName, location, this.staticData);
+		List<PieChartDTO> pieChartDataList = offerPredictionEngine.getPieChartData();
+		for (PieChartDTO pieChartDTO : pieChartDataList) {
+			System.out.println("Catagory :: "+pieChartDTO.getCategory());
+			System.out.println("TotalAmtPerCategory :: "+pieChartDTO.getTotalAmtPerCategory());
+			System.out.println("PercentAmt :: "+pieChartDTO.getPercentAmt());
+		}
+		return Response.status(200).entity(pieChartDataList).build();
+	}
+	
 	public static void main(String[] args) {
 		PredictiveController p = new PredictiveController();
-		p.getUserOffer("Raj", "ShivajiNagar");
+		//p.getUserOffer("Raj", "ShivajiNagar");
+		p.getPieChartTransData("Raj", "Kothrud");
 	}
 }
