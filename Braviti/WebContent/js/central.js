@@ -45,12 +45,25 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
                             .log($scope.data)
                             document.getElementById("ballouns").innerHTML="";
                             var differ=Math.random()*100; 
-                            var top=100,left=80;
+                            var top=160,left=70;
                             
                             for(var index=0;index <$scope.data.length;index++){
                             	document.getElementById("ballouns").innerHTML = document.getElementById("ballouns").innerHTML+'<a  href="#" data-toggle="tooltip" data-html="true" data-placement="top" title='+res[index].storeName+'> <img style="position: absolute;top: '+top+'px;left: '+left+'px;z-index: 2;height:50px;width:50px;" src="images/flag.png"></a>';
-                            	top=top+Math.random()*100;
-                            	left = left +Math.random()*100;
+                            	/*top=top+Math.random()*100;
+                            	left = left +Math.random()*100;*/
+                            	top=top+$scope.getRandomArbitrary(0.4,0.6)*100;
+                            	left = left +$scope.getRandomArbitrary(0.2,0.4)*100;
+                            	
+                            	if(top>300){
+                            		console.log("greater then 300");
+                            		top=200+index*10;
+                            	}
+                            	if(left>300){
+                            		console.log("greater then 300");
+                            		left=150+index*10;
+                            	}
+
+                            
                             }
                             
                     });
@@ -74,6 +87,11 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 	            default:
 
 	        }
+			}
+			
+		$scope.getRandomArbitrary = function(min, max) {
+			console.log("inside random function");
+			    return Math.random() * (max - min) + min;
 			}
 			
 			$scope.logout = function(){
