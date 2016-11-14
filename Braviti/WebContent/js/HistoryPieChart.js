@@ -9,10 +9,11 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 			console.log($cookies.get('userName'));
 			$scope.userName = $cookies.get('userName');
 			$scope.location = "Nigdi";
-			$scope.html = [];
+			$scope.html = []; 
 			
 			var titleTag = 'Pie Chart';
 			var arr = [];
+			var arr2 = [];
 			console.log(titleTag);
 			
 			var stylesheet="position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
@@ -33,58 +34,60 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
             .then(
                 function(reponse) {
                 	     $scope.data =reponse.data;
+                	     console.log("+++++++++++++++++++++++++++++");
                 	     console.log($scope.data);
+                	     var item;
                 	     
-                	    /* for (var i = 0; i<$scope.data.length; i++) {
-                	    	 if(i!=$scope.data.length-1)
-                             var item = "{name:'" + $scope.data[i].category + "',y:" + $scope.data[i].percentAmt + "} ,";
-                	    	 else{
-                	    		 var item = " {name:'" + $scope.data[i].category + "',y:" + $scope.data[i].percentAmt + "}";
-                	    	 }
+                	     for (var i = 0; i<$scope.data.length; i++) {
+                	    	 
+                	    	 var item = {"name":$scope.data[i].category,"y":$scope.data[i].percentAmt};
                              console.log(item);
-                             arr.push(item);
-                         }*/
+                             arr.push(item);                            
+                         }
                 	     
-                	     
+                	     console.log("--------------------------------------");
+                         console.log(arr);
+                         
+                 		$(function () {
+            				
+            				console.log("*************************");
+            				console.log(arr);
+            			    Highcharts.chart('container2', {
+            			        chart: {
+            			            plotBackgroundColor: null,
+            			            plotBorderWidth: null,
+            			            plotShadow: false,
+            			            type: 'pie'
+            			        },
+            			        title: {
+            			            text: 'Transaction History for '+$scope.userName
+            			        },
+            			        tooltip: {
+            			            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            			        },
+            			        plotOptions: {
+            			            pie: {
+            			                allowPointSelect: true,
+            			                cursor: 'pointer',
+            			                dataLabels: {
+            			                    enabled: true,
+            			                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            			                    style: {
+            			                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            			                    }
+            			                }
+            			            }
+            			        },
+            			        series: [{
+            			            name: 'Brands',
+            			            colorByPoint: true,
+            			            data: arr
+            			        }]
+            			    });
+            			});
                 });
 			
-			$(function () {
-			    Highcharts.chart('container2', {
-			        chart: {
-			            plotBackgroundColor: null,
-			            plotBorderWidth: null,
-			            plotShadow: false,
-			            type: 'pie'
-			        },
-			        title: {
-			            text: 'Transaction History for Raj'
-			        },
-			        tooltip: {
-			            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-			        },
-			        plotOptions: {
-			            pie: {
-			                allowPointSelect: true,
-			                cursor: 'pointer',
-			                dataLabels: {
-			                    enabled: true,
-			                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-			                    style: {
-			                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-			                    }
-			                }
-			            }
-			        },
-			        series: [{
-			            name: 'Brands',
-			            colorByPoint: true,
-			            data: 			            	
-			            	[{name:'Electronics',y:73.82245},
-			                   {name:'Clothing',y:21.893171},
-			                   {name:'Footware',y:4.2843776}]
-			        }]
-			    });
-			});
+	
 			
 					
 			 
