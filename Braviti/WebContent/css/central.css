@@ -18,3 +18,30 @@
 	width:50px;
 }
 
+.style1,.style2, td, th {
+    border: 1px solid #b6b6b6;
+    text-align: left;
+}
+
+.style1 {
+	border: 1px solid transparent;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+	font-family: Georgia, Serif;
+    text-align: left;
+    padding: 8px;
+}
+
+.tr1:nth-child(even){background-color: #f2f2f2}
+
+.tr2:nth-child(even){background-color: #f2f2f2} 
+
+th {
+    background-color: #408080;
+    color: white;
+}
+
+

@@ -118,12 +118,15 @@ public class OfferStoresHelper {
 				
 			}
 			if(checkIfStoreAdded(outlet.getName())){
-				
+				if(!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))){
 				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+				}
 			}
 			else{
 				createNewOfferDTO(outlet.getName());
+				if(!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))){
 				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+				}
 			}
 		}
 	}
