@@ -56,7 +56,7 @@
 					<div class="panel panel-default" style="background-color: #18BC9C">
 						<div class="panel-heading"
 							style="background-color: rgba(0, 0, 0, 1)">
-							<b style="color: #FFFFFF">Shopping Predictive Analysis : SPA</b>
+							<b style="color: #FFFFFF">Braviti</b>
 						</div>
 						<div class="panel-body">
 							<div class="col-xs-3">
