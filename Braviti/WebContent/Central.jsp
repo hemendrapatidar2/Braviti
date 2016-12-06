@@ -7,6 +7,8 @@
 <title>Braviti</title>
 
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="lib/angular.treeview.css">
+
 <script src="lib/jquery.min.js"></script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -15,6 +17,8 @@
 <script src="lib/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.js"></script>
+<script type="text/javascript" src="lib/angular.treeview.js"></script>
+
 <script src="js/central.js"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
@@ -37,6 +41,7 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#offers">Offers</a></li>
+					<li class="active"><a href="#preferences">Preferences</a></li>
 					<li><a href="#piechart">Piechart</a></li>
 					<li><a href="#user">User</a></li>
 					<li><a href="#" ng-click="logout()">LogOut</a></li>

@@ -1,4 +1,4 @@
-var myApp = angular.module("centralApp", ['ngCookies','ngSanitize','ngRoute'])
+var myApp = angular.module("centralApp", ['ngCookies','ngSanitize','ngRoute','angularTreeview'])
 
 myApp.config(function($routeProvider) {
 	$routeProvider.when("/", {
@@ -13,7 +13,12 @@ myApp.config(function($routeProvider) {
 	}).when("/user", {
 		templateUrl : "User.jsp",
 		controller : "userCtl"
+	}).when("/preferences", {
+		templateUrl : "Preferences.jsp",
+		controller : "preferenceCtl"
 	})
+	
+	
 	
 });
 
@@ -23,10 +28,78 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log','$cookies'
 	console.log("inside central controller");
 	$scope.logout = function(){
 		 $window.location.href = './Login.jsp#/';
+		 
 	}
 	
 	
 } ]);
+
+myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies',
+		function($scope, $http, $cookies) {
+			console.log("inside preferenceCtl controller");
+			    $scope.setData = function (data,i) {
+			    	 console.log("inside setData");
+			    	 console.log(data+" "+i);
+			       
+			        
+			    };
+
+				$http({
+                    method: "GET",
+                    url: "data/useroffers",
+                    params: {
+                    	 location:'ShivajiNagar',
+                         userName: 'Raj'
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(
+                    function(reponse) {
+                            $scope.res =reponse.data;
+                            buildJson($scope.res);
+                    });
+			    function initTree(tree) {
+			        function processNode(node) {
+			          angular.forEach(node.children, function(child) {
+			            if(processNode(child) === true) {
+			              node.chk = true;   
+			            }
+			          });
+			                 
+			          return node.chk;
+			        }
+			        angular.forEach(tree, processNode);
+			      };
+			      initTree($scope.tree);
+			      
+			      function buildJson(list){
+			    	  var stores,cat;
+			    	  var child1=[],child=[]
+			    	  for(var i=0;i<list.length;i++){
+			    		 console.log(list[i].storeName);
+			    		 
+			    		 child1.push({"text": list[i].storeName})
+			    		 stores={ "text": "stores",
+			   		              "children": child1
+			    		    }
+			    		 for(var j=0;j<list[i].offerMap.length;j++){
+			    			 console.log(list[i].offerMap[j].categoryName);
+			    			 child.push({'text':list[i].offerMap[j].categoryName})
+			    		 }
+			    		 cat={ "text": "category",
+			   		              "children": child
+			    		   }
+			    	  }
+			    	  var arr = [];
+			    		 arr.push(cat);
+			    		 arr.push(stores)
+			    		 $scope.tree = arr;
+			      }
+			     
+		} ]);
+
 
 
 myApp.controller('offerCtl', [ '$scope', '$http', '$window', '$log','$cookies','$sce',
