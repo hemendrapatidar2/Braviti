@@ -11,121 +11,117 @@ import com.tm.braveti.model.Outlet;
 import com.tm.braveti.service.LoadStaticData;
 
 public class OfferStoresHelper {
-	
-	
-	private List<OfferDTO> finalOfferSuggestion=new ArrayList<OfferDTO>();
-	
-	private List<Outlet> getOfferOutletsForLocation(LoadStaticData staticData,String location ){
-		
-		List<Outlet> outletsPerLocation=new ArrayList<>();
+
+	private List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
+
+	private List<Outlet> getOfferOutletsForLocation(LoadStaticData staticData, String location) {
+
+		List<Outlet> outletsPerLocation = new ArrayList<>();
 		List<Outlet> outlets = staticData.getOutlets();
 		for (Outlet outlet : outlets) {
-			if(outlet.getLocation().equalsIgnoreCase(location)){
+			if (outlet.getLocation().equalsIgnoreCase(location)) {
 				outletsPerLocation.add(outlet);
 			}
 		}
-		
+
 		return outletsPerLocation;
-		
-		
+
 	}
-	
-	private void applyFilters(FilterCriteria filterName,List<Outlet> offers){
-		
+
+	private void applyFilters(FilterCriteria filterName, List<Outlet> offers) {
+
 		for (Outlet outlet : offers) {
-			if(outlet.getCategary().equalsIgnoreCase(filterName.getCategoryName())&& outlet.getPrice().equalsIgnoreCase(filterName.getPriceSegement())){
-				
-				if(finalOfferSuggestion.isEmpty()){
-					 createNewOfferDTO(outlet.getName());
-					
+			if (outlet.getCategary().equalsIgnoreCase(filterName.getCategoryName())
+					&& outlet.getPrice().equalsIgnoreCase(filterName.getPriceSegement())) {
+
+				if (finalOfferSuggestion.isEmpty()) {
+					createNewOfferDTO(outlet);
+
 				}
-				if(checkIfStoreAdded(outlet.getName())){
-					
-					addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
-				}
-				else{
-					createNewOfferDTO(outlet.getName());
-					addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+				if (checkIfStoreAdded(outlet.getName())) {
+
+					addToFinalOfferDTOList(outlet);
+				} else {
+					createNewOfferDTO(outlet);
+					addToFinalOfferDTOList(outlet);
 				}
 			}
 		}
 	}
-	
+
 	private boolean checkIfStoreAdded(String storeName) {
-		if(finalOfferSuggestion.isEmpty())
+		if (finalOfferSuggestion.isEmpty())
 			return false;
-		
+
 		for (OfferDTO offerDTO : finalOfferSuggestion) {
-			if(offerDTO.getStoreName().equalsIgnoreCase(storeName)){
+			if (offerDTO.getStoreName().equalsIgnoreCase(storeName)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private void addToFinalOfferDTOList(String outletName, String categary, String offerdesc) {
-	
+	private void addToFinalOfferDTOList(Outlet outlet) {
+
 		for (OfferDTO offerDTO : finalOfferSuggestion) {
-			
-			if(offerDTO.getStoreName().equalsIgnoreCase(outletName)){
-				addNewCategory(offerDTO.getOfferMap(),categary,offerdesc);
+
+			if (offerDTO.getStoreName().equalsIgnoreCase(outlet.getName())) {
+				addNewCategory(offerDTO.getOfferMap(), outlet.getCategary(), outlet.getOfferdesc());
 			}
 		}
-		
+
 	}
-	
-	private void createNewOfferDTO(String name) {
-		OfferDTO offerDTO=new OfferDTO();
-		List<OfferCategory> offerMap=new ArrayList<OfferCategory>();
-		offerDTO.setStoreName(name);
+
+	private void createNewOfferDTO(Outlet outlet) {
+		OfferDTO offerDTO = new OfferDTO();
+		List<OfferCategory> offerMap = new ArrayList<OfferCategory>();
+		offerDTO.setStoreName(outlet.getName());
+		offerDTO.setLangitude(outlet.getLangitude());
+		offerDTO.setLatitude(outlet.getLatitude());
 		offerDTO.setOfferMap(offerMap);
 		finalOfferSuggestion.add(offerDTO);
 	}
 
-	private void addNewCategory(List<OfferCategory> offerMap,String categary, String offerdesc) {
-        OfferCategory offerCategory =new OfferCategory();
-        offerCategory.setCategoryName(categary);
-        offerCategory.setOfferDescription(offerdesc);
+	private void addNewCategory(List<OfferCategory> offerMap, String categary, String offerdesc) {
+		OfferCategory offerCategory = new OfferCategory();
+		offerCategory.setCategoryName(categary);
+		offerCategory.setOfferDescription(offerdesc);
 		offerMap.add(offerCategory);
-		
+
 	}
-		
 
-
-	public  List<OfferDTO> getOfferSuggestion(List<FilterCriteria> filters, LoadStaticData staticData,String location){
-		List<Outlet> outletsPerLocation = getOfferOutletsForLocation(staticData,location);
+	public List<OfferDTO> getOfferSuggestion(List<FilterCriteria> filters, LoadStaticData staticData, String location) {
+		List<Outlet> outletsPerLocation = getOfferOutletsForLocation(staticData, location);
 		for (FilterCriteria filterCriteria : filters) {
-			if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.LOCATION)){
+			if (filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.LOCATION)) {
 				convertToOfferDTO(outletsPerLocation);
-			}else if(filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.BIRTHDAY)){
-				
+			} else if (filterCriteria.getCategoryName().equalsIgnoreCase(PredictiveEngineConstants.BIRTHDAY)) {
+
 				applyFilters(filterCriteria, outletsPerLocation);
-			}
-			else{
+			} else {
 				applyFilters(filterCriteria, outletsPerLocation);
 			}
 		}
 		return finalOfferSuggestion;
-		
+
 	}
 
 	private void convertToOfferDTO(List<Outlet> outletsPerLocation) {
 		// TODO Auto-generated method stub
-		
+
 		for (Outlet outlet : outletsPerLocation) {
-			if(finalOfferSuggestion.isEmpty()){
-				 createNewOfferDTO(outlet.getName());
-				
+			if (finalOfferSuggestion.isEmpty()) {
+				createNewOfferDTO(outlet);
+
 			}
-			if(checkIfStoreAdded(outlet.getName())){
-				if(!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))){
-				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+			if (checkIfStoreAdded(outlet.getName())) {
+				if (!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))) {
+					addToFinalOfferDTOList(outlet);
 				}
-			}
-			else{
-				createNewOfferDTO(outlet.getName());
-				if(!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))){
-				addToFinalOfferDTOList( outlet.getName(),outlet.getCategary(),outlet.getOfferdesc());
+			} else {
+				createNewOfferDTO(outlet);
+				if (!(outlet.getCategary().equalsIgnoreCase(PredictiveEngineConstants.GIFTS))) {
+					addToFinalOfferDTOList(outlet);
 				}
 			}
 		}

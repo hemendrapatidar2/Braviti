@@ -4,18 +4,61 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 100px;
+        left: 25%;
+        z-index: 2;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
 </head>
+
 <body>
+	<script>
+		function initMap() {
+			var shivajinagar = {
+				lat : 18.5308,
+				lng : 73.8475
+			};
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center : shivajinagar
+			});
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6L6lXxPAsw_vCiKUkhXB-9vTG93rDEYU&callback=initMap">
+		
+	</script>
+
 	<div class="container">
 		<div class="col-xs-3">
-			<div class="well"
+			<div class="well" 
 				style="height: 500px; width: 500px; margin-top: 30px; margin-left: -100px; border-radius: 20px; background-color: #53868b; border-color: lightblue; border-style: solid;">
 
-				<img class="img-responsive" src="{{selectedImage}}" alt=""
-					style="height: 450px; width: 500px; position: relative;">
-
-				<div id="ballouns"></div>
-
+				<!-- <img class="img-responsive" src="{{selectedImage}}" alt=""
+					style="height: 450px; width: 500px; position: relative;"> -->
+			<div id="map"></div>	
+				
 			</div>
 
 

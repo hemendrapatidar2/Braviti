@@ -7,6 +7,8 @@ public class Outlet {
 	private String categary;
 	private String price;
 	private String offerdesc;
+	private Double latitude;
+	private Double langitude;
 
 	public String getId() {
 		return id;
@@ -56,10 +58,26 @@ public class Outlet {
 		this.offerdesc = offerdesc;
 	}
 
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLangitude() {
+		return langitude;
+	}
+
+	public void setLangitude(Double langitude) {
+		this.langitude = langitude;
+	}
+
 	@Override
 	public String toString() {
 		return "Outlet [id=" + id + ", name=" + name + ", location=" + location + ", categary=" + categary + ", price="
-				+ price + ", offerdesc=" + offerdesc + "]";
+				+ price + ", offerdesc=" + offerdesc + ", latitude=" + latitude + ", langitude=" + langitude + "]";
 	}
 
 }

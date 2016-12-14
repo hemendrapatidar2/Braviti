@@ -1,6 +1,5 @@
 package com.tm.braveti.service;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -51,9 +50,7 @@ public class LoadStaticData {
 		/*
 		 * InputStream ExcelFileToRead = new FileInputStream( "Braviti.xls");
 		 */
-		InputStream ExcelFileToRead = this
-				.getClass()
-				.getClassLoader()
+		InputStream ExcelFileToRead = this.getClass().getClassLoader()
 				.getResourceAsStream("com\\tm\\braveti\\resources\\Braviti.xls");
 		/*
 		 * InputStream ExcelFileToRead = new FileInputStream(
@@ -80,7 +77,7 @@ public class LoadStaticData {
 			if (sheet.getSheetName().equalsIgnoreCase("user")) {
 				User user;
 				for (List rowData : data) {
-					if (rowData.size() > 0 && null != rowData.get(0)){ 
+					if (rowData.size() > 0 && null != rowData.get(0)) {
 						user = new User();
 						user.setId(rowData.get(0).toString());
 						user.setFname(rowData.get(1).toString());
@@ -102,12 +99,9 @@ public class LoadStaticData {
 						transactionHistory.setUserid(rowData.get(1).toString());
 						transactionHistory.setDate(rowData.get(2).toString());
 						transactionHistory.setAmount(rowData.get(3).toString());
-						transactionHistory.setOutletid(rowData.get(4)
-								.toString());
-						transactionHistory.setDescription(rowData.get(5)
-								.toString());
-						transactionHistory.setCategoryid(rowData.get(6)
-								.toString());
+						transactionHistory.setOutletid(rowData.get(4).toString());
+						transactionHistory.setDescription(rowData.get(5).toString());
+						transactionHistory.setCategoryid(rowData.get(6).toString());
 						transactionHistorious.add(transactionHistory);
 					}
 				}
@@ -124,10 +118,11 @@ public class LoadStaticData {
 						outlet.setCategary(rowData.get(3).toString());
 						outlet.setPrice(rowData.get(4).toString());
 						outlet.setOfferdesc(rowData.get(5).toString());
+						outlet.setLatitude(Double.parseDouble(rowData.get(6).toString()));
+						outlet.setLangitude(Double.parseDouble(rowData.get(7).toString()));
 						outlets.add(outlet);
 					}
 				}
-
 			}
 			if (sheet.getSheetName().equalsIgnoreCase("catagary")) {
 				Category categary;
@@ -180,8 +175,7 @@ public class LoadStaticData {
 		LoadStaticData staticData = new LoadStaticData();
 		List<User> data = staticData.getUsers();
 		List<Outlet> outlets = staticData.getOutlets();
-		List<TransactionHistory> transactionHistories = staticData
-				.getTransactionHistories();
+		List<TransactionHistory> transactionHistories = staticData.getTransactionHistories();
 		List<Category> categaries = staticData.getCategories();
 		for (User user : data) {
 			System.out.println(user.toString());
