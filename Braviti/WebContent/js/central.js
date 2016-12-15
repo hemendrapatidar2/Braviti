@@ -151,7 +151,10 @@ myApp
 													$scope.data = reponse.data;
 													var res = $scope.data;
 													console.log($scope.data)
-													var firstArea =  {lat : res[0].latitude,lng : res[0].langitude};
+													var firstArea = {
+														lat : res[0].latitude,
+														lng : res[0].langitude
+													};
 													var map = new google.maps.Map(
 															document
 																	.getElementById('map'),
@@ -159,48 +162,63 @@ myApp
 																zoom : 12,
 																center : firstArea
 															});
-													
-													var markers = [];
-													
+
 													for (var index = 0; index < $scope.data.length; index++) {
 														var contentString = '<div id="content">';
-														for(var offerIndex = 0; offerIndex < $scope.data[index].offerMap.length; offerIndex++ ){
-															 contentString = contentString + 
-												            '<h4>'+$scope.data[index].offerMap[offerIndex].categoryName+'</h4>'+
-												            '<div id="bodyContent">'+
-												            '<p>'+$scope.data[index].offerMap[offerIndex].offerDescription + ',</p></div>' ;
-												            
+														for (var offerIndex = 0; offerIndex < $scope.data[index].offerMap.length; offerIndex++) {
+															contentString = contentString
+																	+ '<h4>'
+																	+ $scope.data[index].offerMap[offerIndex].categoryName
+																	+ '</h4>'
+																	+ '<div id="bodyContent">'
+																	+ '<p>'
+																	+ $scope.data[index].offerMap[offerIndex].offerDescription
+																	+ ',</p></div>';
+
 														}
-														 contentString = contentString + '</div>';
-																											
-														 var markerObj = getMarker(res[index],contentString,map);
-														 markers.push(markerObj);
-														 
-														 markerObj.addListener('click', function() {
-															 var infowindow = new google.maps.InfoWindow({
-														          content: this.description
-														        });
-																
-																infowindow.open(map, this);
-													        });
-														map.center = {lat : res[index].latitude,lng : res[index].langitude};
+														contentString = contentString
+																+ '</div>';
+														var infowindow=null;
+														var markerObj = getMarker(
+																res[index],
+																contentString,
+																map);
+														markerObj
+																.addListener(
+																		'click',
+																		function() {
+																			if(null != infowindow){
+																				infowindow.close();
+																			}
+																			infowindow = new google.maps.InfoWindow(
+																					{
+																						content : this.description
+																					});
+
+																			infowindow
+																					.open(
+																							map,
+																							this);
+																		});
+														map.center = {
+															lat : res[index].latitude,
+															lng : res[index].langitude
+														};
 													}
-													
 
 												});
 
 							}
-							function getMarker(data,contentString,map){
-								var marker =  new google.maps.Marker(
-										{
-											position : {
-												lat : data.latitude,
-												lng : data.langitude
-											},
-											title : data.storeName,
-											description : contentString,
-											map : map
-										});
+							function getMarker(data, contentString, map) {
+								var marker = new google.maps.Marker({
+									position : {
+										lat : data.latitude,
+										lng : data.langitude
+									},
+									title : data.storeName,
+									description : contentString,
+									map : map
+								});
 								return marker;
 							}
 							$scope.getRandomArbitrary = function(min, max) {

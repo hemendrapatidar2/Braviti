@@ -6,31 +6,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <style>
-      /* Always set the map height explicitly to define the size of the div
+/* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #floating-panel {
-        position: absolute;
-        top: 100px;
-        left: 25%;
-        z-index: 2;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-    </style>
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#floating-panel {
+	position: absolute;
+	top: 100px;
+	left: 25%;
+	z-index: 2;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: 'Roboto', 'sans-serif';
+	line-height: 30px;
+	padding-left: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -52,13 +53,13 @@
 
 	<div class="container">
 		<div class="col-xs-3">
-			<div class="well" 
-				style="height: 500px; width: 500px; margin-top: 30px; margin-left: -100px; border-radius: 20px; background-color: #53868b; border-color: lightblue; border-style: solid;">
+			<div
+				style="height: 550px; width: 550px; margin-top: 30px; margin-left: -100px; border-radius: 10px;">
 
 				<!-- <img class="img-responsive" src="{{selectedImage}}" alt=""
 					style="height: 450px; width: 500px; position: relative;"> -->
-			<div id="map"></div>	
-				
+				<div id="map"></div>
+
 			</div>
 
 
