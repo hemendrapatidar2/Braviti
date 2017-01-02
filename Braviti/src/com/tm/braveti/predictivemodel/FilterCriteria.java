@@ -1,6 +1,8 @@
 package com.tm.braveti.predictivemodel;
 
-public class FilterCriteria {
+import java.io.Serializable;
+
+public class FilterCriteria implements Serializable{
 
 	private String categoryName;
 	private String priceSegement;

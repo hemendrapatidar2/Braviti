@@ -1,6 +1,8 @@
 package com.tm.braveti.model;
 
-public class TransactionHistory {
+import java.io.Serializable;
+
+public class TransactionHistory implements Serializable  {
 	private String id;
 	private String userid;
 	private String date;
@@ -8,6 +10,26 @@ public class TransactionHistory {
 	private String outletid;
 	private String description;
 	private String categoryid;
+
+	
+	
+	public TransactionHistory(String id, String userid, String date, String amount, String outletid, String description,
+			String categoryid) {
+		super();
+		this.id = id;
+		this.userid = userid;
+		this.date = date;
+		this.amount = amount;
+		this.outletid = outletid;
+		this.description = description;
+		this.categoryid = categoryid;
+	}
+
+	
+	public TransactionHistory() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public String getId() {
 		return id;

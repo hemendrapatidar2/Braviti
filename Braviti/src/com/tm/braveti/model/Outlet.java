@@ -1,6 +1,8 @@
 package com.tm.braveti.model;
 
-public class Outlet {
+import java.io.Serializable;
+
+public class Outlet implements Serializable{
 	private String id;
 	private String name;
 	private String location;
@@ -9,6 +11,23 @@ public class Outlet {
 	private String offerdesc;
 	private Double latitude;
 	private Double langitude;
+
+	public Outlet() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Outlet(String id, String name, String location, String categary, String price, String offerdesc,
+			Double latitude, Double langitude) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.location = location;
+		this.categary = categary;
+		this.price = price;
+		this.offerdesc = offerdesc;
+		this.latitude = latitude;
+		this.langitude = langitude;
+	}
 
 	public String getId() {
 		return id;

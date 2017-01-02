@@ -1,6 +1,10 @@
 package com.tm.braveti.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+	
+
 	private String id;
 	private String fname;
 	private String lname;
@@ -9,6 +13,19 @@ public class User {
 	private String cclimit;
 	private String incomegrp;
 
+	public User(String id, String fname, String lname, String gender, String dob, String cclimit, String incomegrp) {
+		super();
+		this.id = id;
+		this.fname = fname;
+		this.lname = lname;
+		this.gender = gender;
+		this.dob = dob;
+		this.cclimit = cclimit;
+		this.incomegrp = incomegrp;
+	}
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getId() {
 		return id;
 	}

@@ -12,7 +12,7 @@ import com.tm.braveti.service.LoadStaticData;
 
 public class OfferStoresHelper {
 
-	private List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
+	private static List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
 
 	private List<Outlet> getOfferOutletsForLocation(LoadStaticData staticData, String location) {
 
@@ -49,7 +49,7 @@ public class OfferStoresHelper {
 		}
 	}
 
-	private boolean checkIfStoreAdded(String storeName) {
+	public static boolean checkIfStoreAdded(String storeName) {
 		if (finalOfferSuggestion.isEmpty())
 			return false;
 
@@ -61,7 +61,7 @@ public class OfferStoresHelper {
 		return false;
 	}
 
-	private void addToFinalOfferDTOList(Outlet outlet) {
+	public static void addToFinalOfferDTOList(Outlet outlet) {
 
 		for (OfferDTO offerDTO : finalOfferSuggestion) {
 
@@ -72,7 +72,7 @@ public class OfferStoresHelper {
 
 	}
 
-	private void createNewOfferDTO(Outlet outlet) {
+	public static void createNewOfferDTO(Outlet outlet) {
 		OfferDTO offerDTO = new OfferDTO();
 		List<OfferCategory> offerMap = new ArrayList<OfferCategory>();
 		offerDTO.setStoreName(outlet.getName());
@@ -82,7 +82,7 @@ public class OfferStoresHelper {
 		finalOfferSuggestion.add(offerDTO);
 	}
 
-	private void addNewCategory(List<OfferCategory> offerMap, String categary, String offerdesc) {
+	private static void addNewCategory(List<OfferCategory> offerMap, String categary, String offerdesc) {
 		OfferCategory offerCategory = new OfferCategory();
 		offerCategory.setCategoryName(categary);
 		offerCategory.setOfferDescription(offerdesc);

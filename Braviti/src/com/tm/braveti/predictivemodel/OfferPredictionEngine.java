@@ -164,7 +164,7 @@ public class OfferPredictionEngine {
 	 * @param amount
 	 * @return
 	 */
-	private String classifyPriceSegement(String categoryName, double amount) {
+	public static String classifyPriceSegementForName(String categoryName, double amount) {
 		String segement = null;
 
 		switch (categoryName) {
@@ -197,8 +197,50 @@ public class OfferPredictionEngine {
 		}
 		return segement;
 	}
+	/**
+	 * classify the customer buying segment base on his buying history. this
+	 * method is given preference over the other method that decides based on
+	 * income of consumer
+	 * 
+	 * @param categoryId
+	 * @param amount
+	 * @return
+	 */
+	public static String classifyPriceSegement(String categoryId, double amount) {
+		String segement = null;
 
-	private String defineSegement(double amount, double lowerLimt, double middleLimit) {
+		switch (categoryId) {
+		case PredictiveEngineConstants.ELECTRONICS:
+			segement = defineSegement(amount, 15000, 35000);
+			break;
+		case PredictiveEngineConstants.CLOTHING:
+			segement = defineSegement(amount, 1000, 3000);
+			break;
+		case PredictiveEngineConstants.FOOTWEAR:
+			segement = defineSegement(amount, 1000, 3000);
+			break;
+		case PredictiveEngineConstants.GIFTS:
+			segement = defineSegement(amount, 1000, 5000);
+			break;
+		case PredictiveEngineConstants.STATIONARY:
+			segement = defineSegement(amount, 100, 500);
+			break;
+		case PredictiveEngineConstants.HOME_AND_KITCHEN:
+			segement = defineSegement(amount, 10000, 30000);
+			break;
+		case PredictiveEngineConstants.TOYS_AND_GAMES:
+			segement = defineSegement(amount, 500, 2000);
+			break;
+		case PredictiveEngineConstants.SPORTS_AND_FITNESS:
+			segement = defineSegement(amount, 1000, 4000);
+			break;
+		default:
+
+		}
+		return segement;
+	}
+
+	public static String defineSegement(double amount, double lowerLimt, double middleLimit) {
 		if (amount < lowerLimt) {
 			return "low";
 		} else if (amount > lowerLimt && amount < middleLimit) {
