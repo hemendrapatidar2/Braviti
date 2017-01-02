@@ -135,7 +135,7 @@ myApp
 
 								$http({
 									method : "GET",
-									url : "data/useroffers",
+									url : "controller.jsp",
 									params : {
 										location : $scope.location,
 										userName : $scope.userName
