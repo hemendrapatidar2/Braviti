@@ -1,6 +1,5 @@
 package com.tm.braveti.predictivemodel;
 
-import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,11 +49,16 @@ public class SparkRecommender implements Serializable {
 				
 		// Step 1 : Initialize the Java Rdd object to csv file
 		
-		URL fileLocation = SparkRecommender.class.getProtectionDomain().getCodeSource().getLocation();
-		String txhPath = fileLocation+"\\com\\tm\\braveti\\resources\\txHistory.csv";
-		String outletPath = fileLocation+"\\com\\tm\\braveti\\resources\\outlet.csv";
-		String usersPath = fileLocation+"\\com\\tm\\braveti\\resources\\users.csv";
-		
+//		URL fileLocation = SparkRecommender.class.getProtectionDomain().getCodeSource().getLocation();
+//		String txhPath = fileLocation+"\\com\\tm\\braveti\\resources\\txHistory.csv";
+//		String outletPath = fileLocation+"\\com\\tm\\braveti\\resources\\outlet.csv";
+//		String usersPath = fileLocation+"\\com\\tm\\braveti\\resources\\users.csv";
+//		
+		URL fileLocation = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
+		System.out.println("fileLocation: "+fileLocation);
+		String txhPath = fileLocation+"\\txHistory.csv";
+		String outletPath = fileLocation+"\\outlet.csv";
+		String usersPath = fileLocation+"\\users.csv";
 //		InputStream ExcelFileToRead = this.getClass().getClassLoader()
 //				.getResourceAsStream("com\\tm\\braveti\\resources\\Braviti.xls");
 		
