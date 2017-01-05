@@ -99,7 +99,7 @@ html, body {
 
 							<td colspan="2">
 								<table class="style2">
-									<tr ng-repeat="offer in item.offerMap" class="tr2">
+									<tr ng-repeat="offer in item.offerList" class="tr2">
 										<td width="173px">{{offer.categoryName}}</td>
 										<td width="150px">{{offer.offerDescription}}</td>
 									</tr>

@@ -1,10 +1,13 @@
 package com.tm.braveti.predictivemodel;
 
+import java.io.File;
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
@@ -13,6 +16,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 
+import com.tm.braveti.exception.UserNotFoundException;
 import com.tm.braveti.model.OfferCategory;
 import com.tm.braveti.model.OfferDTO;
 import com.tm.braveti.model.Outlet;
@@ -21,85 +25,127 @@ import com.tm.braveti.model.User;
 
 
 public class SparkRecommender implements Serializable {
-	/**
-	 * 
-	 */
+	
+//	private static final String BRAVITI_RESOURCES = "com"+File.separator+"tm"+File.separator+"braveti"+File.separator+"resources";
+	private static final String BRAVITI_RESOURCES = "com/tm/braveti/resources";
 	private static final long serialVersionUID = -8760307916460712075L;
+	private static List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
+	private String userId;
+	private JavaRDD<User> userData;
+	private JavaRDD<TransactionHistory> transactionData;
+	private JavaRDD<Outlet> outletData;
+	private List<FilterCriteria> filterCriteriaList = new ArrayList<>();
+	
+	public List<OfferDTO> recommendOffers(final String userName,final String location, final UserPreferences userPreferences) throws UserNotFoundException {
 
-	final static List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
-	String userId;
+		 SparkConf conf;
+		 JavaSparkContext jsc;
+		//configuring the logger
+		configLogger();
 
-	public List<OfferDTO> recommendationEngine(final String userName, final String location) {
-		Logger logger = Logger.getLogger(SparkRecommender.class);
-		PatternLayout layout = new PatternLayout();
-		String conversionPattern = "%-7p %d [%t] %c %x - %m%n";
-		layout.setConversionPattern(conversionPattern);
-
-		FileAppender fileAppender = new FileAppender();
-		fileAppender.setFile("applog3.txt");
-		fileAppender.setLayout(layout);
-		fileAppender.activateOptions();
-
-		Logger rootLogger = Logger.getRootLogger();
-		rootLogger.addAppender(fileAppender);
-
-		SparkConf conf = new SparkConf().setMaster("local").setAppName("Java Collaborative Filtering Example");
+		//Initializing spark context
+		conf = new SparkConf().setMaster("local").setAppName("Java Collaborative Filtering Example");
 		conf.set("spark.driver.allowMultipleContexts", "true");
-		JavaSparkContext jsc = new JavaSparkContext(conf);
-				
-		// Step 1 : Initialize the Java Rdd object to csv file
+		jsc = new JavaSparkContext(conf);
+
+		//Loading data from csv files in spark RDD objects
+		try {
+			loadDataInRDD(jsc);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-//		URL fileLocation = SparkRecommender.class.getProtectionDomain().getCodeSource().getLocation();
-//		String txhPath = fileLocation+"\\com\\tm\\braveti\\resources\\txHistory.csv";
-//		String outletPath = fileLocation+"\\com\\tm\\braveti\\resources\\outlet.csv";
-//		String usersPath = fileLocation+"\\com\\tm\\braveti\\resources\\users.csv";
-//		
-		URL fileLocation = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
-		System.out.println("fileLocation: "+fileLocation);
-		String txhPath = fileLocation+"\\txHistory.csv";
-		String outletPath = fileLocation+"\\outlet.csv";
-		String usersPath = fileLocation+"\\users.csv";
-//		InputStream ExcelFileToRead = this.getClass().getClassLoader()
-//				.getResourceAsStream("com\\tm\\braveti\\resources\\Braviti.xls");
+		//Applying filters on data loaded in RDD objects
+		userId=getLoggedInUser(userName);
+		if(!StringUtils.isNoneBlank(userId)){
+			throw new UserNotFoundException("user not found");
+		}
 		
-		JavaRDD<String> transactionData = jsc.textFile(txhPath);
-		JavaRDD<String> outletRdd = jsc.textFile(outletPath);
-		JavaRDD<String> userDataFile = jsc.textFile(usersPath);		
 		
-		JavaRDD<User> userData = userDataFile.map(new Function<String, User>() {
-			public User call(String s) {
-				String[] data = s.split(",");
-				return new User(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
-			}
-		});
 		
-		JavaRDD<User> userRecords = userData.filter(new Function<User, Boolean>() {
-			public Boolean call(User user) {
-				if (user.getFname().trim().equalsIgnoreCase(userName)) {
+		// Step 3 : Filter User Specific Data in Java Rdd Object
+	List<TransactionHistory> userSpecificRecords =  getTransactionHistoryForUser(userId);
+		
+		for (TransactionHistory txr : userSpecificRecords) {
+			FilterCriteria filterCriteria = new FilterCriteria();
+			filterCriteria.setCategoryName(txr.getCategoryid());
+			String categoryId = txr.getCategoryid();
+			String amount = txr.getAmount();
+			String priceSegement = OfferPredictionEngine.classifyPriceSegement(categoryId, Double.parseDouble(amount));
+			filterCriteria.setPriceSegement(priceSegement);
+			filterCriteriaList.add(filterCriteria);
+			
+		}
+		
+		/*empty the list ,if not*/
+		if (!finalOfferSuggestion.isEmpty()) {
+			finalOfferSuggestion.clear();
+			
+		}
+		System.out.println("outlet data is :: " + outletData.count());
+		// Step 3 : Filter User Specific Data in Java Rdd Object
+		JavaRDD<Outlet> recommendedOffers = outletData.filter(new Function<Outlet, Boolean>() {
+			public Boolean call(Outlet outlet) {
+				if (outlet.getLocation().equalsIgnoreCase(location)) {
+					
+					for (FilterCriteria filterCriteria : filterCriteriaList) {
+						if (outlet.getCategary().equalsIgnoreCase(filterCriteria.getCategoryName())
+								&& outlet.getPrice().equalsIgnoreCase(filterCriteria.getPriceSegement())) {
+							System.out.println("adding offer now...");
+							if (finalOfferSuggestion.isEmpty()) {
+								createNewOfferDTO(outlet);
+								
+							}
+							if (checkIfStoreAdded(outlet.getName())) {
+								
+								addToFinalOfferDTOList(outlet);
+							} else {
+								createNewOfferDTO(outlet);
+								addToFinalOfferDTOList(outlet);
+							}
+						}
+						
+					}
 					return true;
 				}
 				return false;
+				
 			}
 		});
-		System.out.println("user record "+ userRecords.count());
-		for(User user:userRecords.collect()){
-			userId=user.getId();
-			System.out.println("user id ::"+ userId);
-		}
-		// Step : Load the transaction history data in Java Rdd object
-		JavaRDD<TransactionHistory> txData = transactionData.map(new Function<String, TransactionHistory>() {
-			public TransactionHistory call(String s) {
-				String[] data = s.split(",");
-				return new TransactionHistory(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+		System.out.println("Userid = " + userId + " Records = " + recommendedOffers.count());
+		/*for (OfferDTO offerDTO : finalOfferSuggestion) {
+			System.out.println("outlet Name:: " + offerDTO.getStoreName());
+			for (OfferCategory offerCategory : offerDTO.getOfferMap()) {
+				System.out.println("category for this store : "
+						+ offerCategory.getCategoryName() + " offer :: "
+						+ offerCategory.getOfferDescription());
 			}
-		});
-
+		}*/
 		
-		final List<String> processedCategory = new ArrayList<>();
-		final List<FilterCriteria> filterCriteriaList = new ArrayList<>();
+		if(userPreferences!=null && userPreferences.getPreferenceMap()!=null){
+			
+			List<OfferDTO> applyPreferences = applyPreferences(jsc,finalOfferSuggestion,userPreferences.getPreferenceMap());
+			for (OfferDTO offerDTO : applyPreferences) {
+				System.out.println("outlet Name:: " + offerDTO.getStoreName());
+				for (OfferCategory offerCategory : offerDTO.getOfferList()) {
+					System.out.println("category for this store : "
+							+ offerCategory.getCategoryName() + " offer :: "
+							+ offerCategory.getOfferDescription());
+				}
+			}
+			return applyPreferences;
+		}
+		else{
+			return finalOfferSuggestion;
+		}
+	}
 
-		// Step 3 : Filter User Specific Data in Java Rdd Object
-		JavaRDD<TransactionHistory> userSpecificRecords = txData.filter(new Function<TransactionHistory, Boolean>() {
+
+
+	public List<TransactionHistory> getTransactionHistoryForUser(final String userId) {
+		final List<String> processedCategory = new ArrayList<>();
+		JavaRDD<TransactionHistory> userSpecificRecords = transactionData.filter(new Function<TransactionHistory, Boolean>() {
 			public Boolean call(TransactionHistory th) {
 				if (th.getUserid().trim().equalsIgnoreCase(userId)) {
 					String categoryId = th.getCategoryid();
@@ -111,110 +157,135 @@ public class SparkRecommender implements Serializable {
 				return false;
 			}
 		});
-		System.out.println("Total Records = " + txData.count());
-		System.out.println("Userid = " + userId + " Records = " + userSpecificRecords.count());
+		return  userSpecificRecords.collect();
+	}
+	
+
+
+	private List<OfferDTO> applyPreferences(JavaSparkContext jsc,List<OfferDTO> recommendedList, HashMap<String, List<String>> preferenceMap) {
 		
-		for (TransactionHistory txr : userSpecificRecords.collect()) {
-			FilterCriteria filterCriteria = new FilterCriteria();
-			filterCriteria.setCategoryName(txr.getCategoryid());
-			String categoryId = txr.getCategoryid();
-			String amount = txr.getAmount();
-			String priceSegement = OfferPredictionEngine.classifyPriceSegement(categoryId, Double.parseDouble(amount));
-			filterCriteria.setPriceSegement(priceSegement);
-			filterCriteriaList.add(filterCriteria);
-
+		List<OfferDTO> recommendedListClone=new ArrayList<>();
+		for (OfferDTO offerDTO : recommendedList) {
+			List<OfferCategory> offerList = offerDTO.getOfferList();
+			List<OfferCategory> offerListClone = new ArrayList<>(offerList);
+			
+			for (OfferCategory offerCategory : offerList) {
+			if(preferenceMap.get(PredictiveEngineConstants.PREFERENCE_KEY_CATEGORY).contains(offerCategory.getCategoryId())
+					&&preferenceMap.get(PredictiveEngineConstants.PREFERENCE_KEY_PRICE_RANGE).contains(offerCategory.getPriceRange())){
+				
+			}else{
+				offerListClone.remove(offerCategory);
+			}
+			}
+			if(!offerListClone.isEmpty()){
+			offerDTO.setOfferList(offerListClone);
+			recommendedListClone.add(offerDTO);
+			}
 		}
+		
+		return recommendedListClone;
+	}
 
+
+	/**
+	 * @param userName
+	 * @return
+	 */
+	public String getLoggedInUser(final String userName) {
+		JavaRDD<User> userRecords = userData.filter(new Function<User, Boolean>() {
+			public Boolean call(User user) {
+				if (user.getFname().trim().equalsIgnoreCase(userName)) {
+					return true;
+				}
+				return false;
+			}
+		});
+		for(User user:userRecords.collect()){
+			return user.getId();
+		}
+		return "";
+	}
+	
+	/**
+	 * @param jsc
+	 * @throws URISyntaxException 
+	 */
+	private void loadDataInRDD(JavaSparkContext jsc) throws URISyntaxException {
+		 String fileLocation = this.getClass().getClassLoader().getResource(BRAVITI_RESOURCES).toString();
+		 String txhPath = fileLocation+File.separator+"txHistory.csv";
+		 String outletPath = fileLocation+File.separator+"outlet.csv";
+		 String usersPath = fileLocation+File.separator+"users.csv";
+		// Step : Load the users data in Java Rdd object
+		userData = jsc.textFile(usersPath).map(new Function<String, User>() {
+			public User call(String s) {
+				String[] data = s.split(",");
+				return new User(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+			}
+		});		
+		
+		// Step : Load the transaction data in Java Rdd object
+		 transactionData = jsc.textFile(txhPath).map(new Function<String, TransactionHistory>() {
+			public TransactionHistory call(String s) {
+				String[] data = s.split(",");
+				return new TransactionHistory(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+			}
+		});
 		// Step : Load the outlet data in Java Rdd object
-		JavaRDD<Outlet> outletData = outletRdd.map(new Function<String, Outlet>() {
+		outletData = jsc.textFile(outletPath).map(new Function<String, Outlet>() {
 			public Outlet call(String s) {
 				String[] data = s.split(",");
 				return new Outlet(data[0], data[1], data[2], data[3], data[4], data[5], Double.valueOf(data[6]),
 						Double.valueOf(data[7]));
 			}
 		});
-		System.out.println("outlet data is :: " + outletData.count());
-		// Step 3 : Filter User Specific Data in Java Rdd Object
-			JavaRDD<Outlet> recommendedOffers = outletData.filter(new Function<Outlet, Boolean>() {
-				public Boolean call(Outlet outlet) {
-					if (outlet.getLocation().equalsIgnoreCase(location)) {
-
-						for (FilterCriteria filterCriteria : filterCriteriaList) {
-							if (outlet.getCategary().equalsIgnoreCase(filterCriteria.getCategoryName())
-									&& outlet.getPrice().equalsIgnoreCase(filterCriteria.getPriceSegement())) {
-								System.out.println("adding offer now...");
-								if (finalOfferSuggestion.isEmpty()) {
-									createNewOfferDTO(outlet);
-
-								}
-								if (checkIfStoreAdded(outlet.getName())) {
-
-									addToFinalOfferDTOList(outlet);
-								} else {
-									createNewOfferDTO(outlet);
-									addToFinalOfferDTOList(outlet);
-								}
-							}
-
-						}
-						return true;
-					}
-					return false;
-
-				}
-			});
+	}
+	/**
+	 * 
+	 */
+	private void configLogger() {
+		PatternLayout layout = new PatternLayout();
+		String conversionPattern = "%-7p %d [%t] %c %x - %m%n";
+		layout.setConversionPattern(conversionPattern);
 		
-
+		FileAppender fileAppender = new FileAppender();
+		fileAppender.setFile("applog3.txt");
+		fileAppender.setLayout(layout);
+		fileAppender.activateOptions();
 		
-		System.out.println("Userid = " + userId + " Records = " + recommendedOffers.count());
-		System.out.println("offer size :" + finalOfferSuggestion.size());
-		
-		for (OfferDTO offerDTO : finalOfferSuggestion) {
-			System.out.println("outlet Name:: " + offerDTO.getStoreName());
-			for (OfferCategory offerCategory : offerDTO.getOfferMap()) {
-				System.out.println("category for this store : "
-						+ offerCategory.getCategoryName() + " offer :: "
-						+ offerCategory.getOfferDescription());
-			}
-		}
-		return finalOfferSuggestion;
+		Logger rootLogger = Logger.getRootLogger();
+		rootLogger.addAppender(fileAppender);
 	}
 
-	public static void main(String[] args) {
-		SparkRecommender test = new SparkRecommender();
-		test.recommendationEngine("Raj", "Kothrud");
-	}
-
-	public static void createNewOfferDTO(Outlet outlet) {
+	public void createNewOfferDTO(Outlet outlet) {
 		OfferDTO offerDTO = new OfferDTO();
-		List<OfferCategory> offerMap = new ArrayList<OfferCategory>();
+		List<OfferCategory> offerList = new ArrayList<OfferCategory>();
 		offerDTO.setStoreName(outlet.getName());
 		offerDTO.setLangitude(outlet.getLangitude());
 		offerDTO.setLatitude(outlet.getLatitude());
-		offerDTO.setOfferMap(offerMap);
+		offerDTO.setOfferList(offerList);
 		finalOfferSuggestion.add(offerDTO);
 	}
 
-	private static void addNewCategory(List<OfferCategory> offerMap, String categary, String offerdesc) {
+	private void addNewCategory(List<OfferCategory> offerMap, String categoryId, String offerdesc, String priceRange) {
 		OfferCategory offerCategory = new OfferCategory();
-		offerCategory.setCategoryName(CategoryCache.getCategoryNameForId(Integer.parseInt(categary)));
+		offerCategory.setCategoryId(categoryId);
+		offerCategory.setPriceRange(priceRange);
+		offerCategory.setCategoryName(CategoryCache.getCategoryNameForId(Integer.parseInt(categoryId)));
 		offerCategory.setOfferDescription(offerdesc);
 		offerMap.add(offerCategory);
 
 	}
 
-	public static void addToFinalOfferDTOList(Outlet outlet) {
-
+	public  void addToFinalOfferDTOList(Outlet outlet) {
 		for (OfferDTO offerDTO : finalOfferSuggestion) {
-
 			if (offerDTO.getStoreName().equalsIgnoreCase(outlet.getName())) {
-				addNewCategory(offerDTO.getOfferMap(), outlet.getCategary(), outlet.getOfferdesc());
+				addNewCategory(offerDTO.getOfferList(), outlet.getCategary(), outlet.getOfferdesc(),outlet.getPrice());
 			}
 		}
 
 	}
 
-	public static boolean checkIfStoreAdded(String storeName) {
+	public  boolean checkIfStoreAdded(String storeName) {
 		if (finalOfferSuggestion.isEmpty())
 			return false;
 
@@ -225,5 +296,34 @@ public class SparkRecommender implements Serializable {
 		}
 		return false;
 	}
+	
+	
+	
+	public static void main(String[] args) {
+		SparkRecommender test = new SparkRecommender();
+		try {
+			UserPreferences preferences=new UserPreferences();
+			preferences.setUserID("Raj");
+			HashMap<String, List<String>> preferenceMap=new HashMap<>();
+			List<String> categoryList=new ArrayList<>();
+			categoryList.add("1");
+			categoryList.add("2");
+//			categoryList.add("3");
+			List<String> priceRange=new ArrayList<>();
+			priceRange.add("low");
+			priceRange.add("mid");
+			
+			preferenceMap.put(PredictiveEngineConstants.PREFERENCE_KEY_CATEGORY, categoryList);
+			preferenceMap.put(PredictiveEngineConstants.PREFERENCE_KEY_PRICE_RANGE, priceRange);
+			
+			preferences.setPreferenceMap(preferenceMap);
+			
+			test.recommendOffers("Raj", "ShivajiNagar", preferences);
+		} catch (UserNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 }

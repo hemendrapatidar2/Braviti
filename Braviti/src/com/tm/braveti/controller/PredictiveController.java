@@ -10,6 +10,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.tm.braveti.exception.UserNotFoundException;
 import com.tm.braveti.model.OfferCategory;
 import com.tm.braveti.model.OfferDTO;
 import com.tm.braveti.model.PieChartDTO;
@@ -23,13 +24,14 @@ public class PredictiveController {
 
 	/**
 	 * Return the User predictive offers
+	 * @throws UserNotFoundException 
 	 * 
 	 */
 	@GET
 //	@Produces(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_XML)
 	public Response getUserOffer(@QueryParam("userName") String userName,
-			@QueryParam("location") String location) {
+			@QueryParam("location") String location) throws UserNotFoundException {
 		System.out.println("inside getUserOffer Method " + userName
 				+ "Location " + location);
 //		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(
@@ -44,16 +46,18 @@ public class PredictiveController {
 		
 
 		SparkRecommender recommender=new SparkRecommender();
-		offerListDTO=recommender.recommendationEngine(userName, location);
+		offerListDTO=recommender.recommendOffers(location, location,null);
 		for (OfferDTO offerDTO : offerListDTO) {
 		System.out.println("outlet Name:: " + offerDTO.getStoreName());
-		for (OfferCategory offerCategory : offerDTO.getOfferMap()) {
+		for (OfferCategory offerCategory : offerDTO.getOfferList()) {
 			System.out.println("category for this store : "
 					+ offerCategory.getCategoryName() + " offer :: "
 					+ offerCategory.getOfferDescription());
 		}
 	}
-		return Response.status(200).entity(offerListDTO).build();
+			
+			return Response.status(200).entity(offerListDTO).build();
+			
 	}
 	
 	/**
@@ -66,8 +70,7 @@ public class PredictiveController {
 			@QueryParam("location") String location) {
 		System.out.println("inside getPieChartTransData Method " + userName
 				+ " Location " + location);
-		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(
-				userName, location, null);
+		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(userName);
 		List<PieChartDTO> pieChartDataList = offerPredictionEngine.getPieChartData();
 		for (PieChartDTO pieChartDTO : pieChartDataList) {
 			System.out.println("Catagory :: "+pieChartDTO.getCategory());

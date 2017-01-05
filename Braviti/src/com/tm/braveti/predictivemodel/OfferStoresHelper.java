@@ -66,7 +66,7 @@ public class OfferStoresHelper {
 		for (OfferDTO offerDTO : finalOfferSuggestion) {
 
 			if (offerDTO.getStoreName().equalsIgnoreCase(outlet.getName())) {
-				addNewCategory(offerDTO.getOfferMap(), outlet.getCategary(), outlet.getOfferdesc());
+				addNewCategory(offerDTO.getOfferList(), outlet.getCategary(), outlet.getOfferdesc());
 			}
 		}
 
@@ -74,11 +74,11 @@ public class OfferStoresHelper {
 
 	public static void createNewOfferDTO(Outlet outlet) {
 		OfferDTO offerDTO = new OfferDTO();
-		List<OfferCategory> offerMap = new ArrayList<OfferCategory>();
+		List<OfferCategory> offerList = new ArrayList<OfferCategory>();
 		offerDTO.setStoreName(outlet.getName());
 		offerDTO.setLangitude(outlet.getLangitude());
 		offerDTO.setLatitude(outlet.getLatitude());
-		offerDTO.setOfferMap(offerMap);
+		offerDTO.setOfferList(offerList);
 		finalOfferSuggestion.add(offerDTO);
 	}
 

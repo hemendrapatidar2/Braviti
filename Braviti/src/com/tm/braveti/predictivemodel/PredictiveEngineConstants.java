@@ -11,7 +11,10 @@ public class PredictiveEngineConstants {
 	public static final String TOYS_AND_GAMES = "7";
 	public static final String GIFTS = "8";
 	public static final String LOCATION = "location";
-	public static final String HIGH = "HIGH";
-	public static final String LOW = "LOW";
-	public static final String MID = "MID";
+	public static final String PREFERENCE_KEY_CATEGORY="category";
+	public static final String PREFERENCE_KEY_PRICE_RANGE="priceRange";
+	public static final String HIGH = "high";
+	public static final String MID = "mid";
+	public static final String LOW = "low";
+	
 }

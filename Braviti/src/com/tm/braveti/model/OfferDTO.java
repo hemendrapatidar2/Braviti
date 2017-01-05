@@ -1,11 +1,16 @@
 package com.tm.braveti.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OfferDTO {
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "OfferDTO")
+public class OfferDTO implements Serializable{
+
+	private static final long serialVersionUID = 2897173067718842394L;
 	private String storeName;
-	private List<OfferCategory> offerMap;
+	private List<OfferCategory> offerList;
 	private Double latitude;
 	private Double langitude;
 
@@ -17,12 +22,12 @@ public class OfferDTO {
 		this.storeName = storeName;
 	}
 
-	public List<OfferCategory> getOfferMap() {
-		return offerMap;
+	public List<OfferCategory> getOfferList() {
+		return offerList;
 	}
 
-	public void setOfferMap(List<OfferCategory> offerMap) {
-		this.offerMap = offerMap;
+	public void setOfferList(List<OfferCategory> offerMap) {
+		this.offerList = offerMap;
 	}
 
 	public Double getLatitude() {
