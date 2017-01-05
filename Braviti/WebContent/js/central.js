@@ -32,73 +32,163 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log',
 
 		} ]);
 
-myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies',
-		function($scope, $http, $cookies) {
+
+
+/////////////////////////////////////////////////////////Preference Controller///////////////////////////////////
+myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
+		function($scope, $http, $cookies, $window) {
 			console.log("inside preferenceCtl controller");
-			$scope.setData = function(data, i) {
-				console.log("inside setData");
-				console.log(data + " " + i);
+			//get the User Name Logged in
+			$scope.userName = $cookies.get('userName');
+			$scope.categoryList = [];
+			$scope.priceList = [];
+			$scope.priceSelectedOutputs = [];		
+			
+			//Service call to get the preferences
+			getPreferences();			
+			
+			//get the selected checkbox price value
+			$scope.setOutput = function(value) {						  
+			  $scope.priceSelectedOutputs.push(value);
+			 };
 
-			};
-
-			$http({
-				method : "GET",
-				url : "data/useroffers",
-				params : {
-					location : 'ShivajiNagar',
-					userName : 'Raj'
-				},
-				headers : {
-					'Content-Type' : 'application/json'
-				}
-			}).then(function(reponse) {
-				$scope.res = reponse.data;
-				buildJson($scope.res);
-			});
-			function initTree(tree) {
-				function processNode(node) {
-					angular.forEach(node.children, function(child) {
-						if (processNode(child) === true) {
-							node.chk = true;
-						}
-					});
-
-					return node.chk;
-				}
-				angular.forEach(tree, processNode);
+			 //Call the desired service to send preference data
+			$scope.applyFilter = function(){				
+					  $scope.categoryIdArray = [];
+					  $scope.priceArray = [];
+					  angular.forEach($scope.categoryList, function(category){						
+					    if (!!category.selected) $scope.categoryIdArray.push(category.id);
+					  });
+					  var categoryJsonData=angular.toJson($scope.categoryIdArray);
+					  var priceJsonData=angular.toJson($scope.priceSelectedOutputs);
+					  gotoOffers();
+					  //Service call to post preference data
+//					  sendPreferenceData(categoryJsonData,priceJsonData);
+				
 			}
-			;
-			initTree($scope.tree);
-
-			function buildJson(list) {
-				var stores, cat;
-				var child1 = [], child = []
-				for (var i = 0; i < list.length; i++) {
-					console.log(list[i].storeName);
-
-					child1.push({
-						"text" : list[i].storeName
-					})
-					stores = {
-						"text" : "stores",
-						"children" : child1
+			
+			function getPreferences(){
+				$http({
+					method : "GET",
+					url : "getPreferences.jsp",
+					headers : {
+						'Content-Type' : 'application/json'
 					}
-					for (var j = 0; j < list[i].offerMap.length; j++) {
-						console.log(list[i].offerMap[j].categoryName);
-						child.push({
-							'text' : list[i].offerMap[j].categoryName
-						})
-					}
-					cat = {
-						"text" : "category",
-						"children" : child
-					}
-				}
-				var arr = [];
-				arr.push(cat);
-				arr.push(stores)
-				$scope.tree = arr;
+				}).then(function(response){
+					console.log("Service Success:"+angular.toJson(response));
+					setData(response.data);
+					
+				});
 			}
+			
+			function setData(data){
+				 $scope.categoryList = data.categoryList;
+				 $scope.priceList = data.priceRangeList;
+					
+			 }
+			
+			function sendPreferenceData(categoryJsonData,priceJsonData) {
+				$http({
+					method : "GET",
+					url : "data/userPreferences",
+					params : {
+						userName : $scope.userName,
+						category : categoryJsonData,
+						price : priceJsonData						
+					},
+					headers : {
+						'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					}
+				}).then(function(reponse) {
+					if(status == 200) {
+						gotoOffers();
+//						loadData();
+					}
+					
+				});
+			}
+			
+			 function gotoOffers() {
+				 
+				 var url ='./Central.jsp#/offers'
+				 $window.location.href = url;
+			}
+			
+			function loadData() {
+				$http({
+					method : "GET",
+					url : "controller.jsp",
+					params : {
+						location : $scope.location,
+						userName : $scope.userName
+
+					},
+					headers : {
+						'Content-Type' : 'application/json'
+					}
+				}).then(function(reponse) {
+					
+				});
+			}
+			
+//			$http({
+//				method : "GET",
+//				url : "data/useroffers",
+//				params : {
+//					location : 'ShivajiNagar',
+//					userName : 'Raj'
+//				},
+//				headers : {
+//					'Content-Type' : 'application/json'
+//				}
+//			}).then(function(reponse) {
+//				$scope.res = reponse.data;
+//				buildJson($scope.res);
+//			});
+//			function initTree(tree) {
+//				function processNode(node) {
+//					angular.forEach(node.children, function(child) {
+//						if (processNode(child) === true) {
+//							node.chk = true;
+//						}
+//					});
+//
+//					return node.chk;
+//				}
+//				angular.forEach(tree, processNode);
+//			}
+//			;
+//			initTree($scope.tree);
+//
+//			function buildJson(list) {
+//				var stores, cat;
+//				var child1 = [], child = []
+//				for (var i = 0; i < list.length; i++) {
+//					console.log(list[i].storeName);
+//
+//					child1.push({
+//						"text" : list[i].storeName
+//					})
+//					stores = {
+//						"text" : "stores",
+//						"children" : child1
+//					}
+//					for (var j = 0; j < list[i].offerMap.length; j++) {
+//						console.log(list[i].offerMap[j].categoryName);
+//						child.push({
+//							'text' : list[i].offerMap[j].categoryName
+//						})
+//					}
+//					cat = {
+//						"text" : "category",
+//						"children" : child
+//					}
+//				}
+//				var arr = [];
+//				arr.push(cat);
+//				arr.push(stores)
+//				$scope.tree = arr;
+//			}
 
 		} ]);
 
@@ -147,7 +237,7 @@ myApp
 								})
 										.then(
 												function(reponse) {
-													debugger;
+													try {
 													$scope.data = reponse.data;
 													var res = $scope.data;
 													console.log($scope.data)
@@ -205,8 +295,11 @@ myApp
 															lng : res[index].langitude
 														};
 													}
-
+													}catch(ex){
+														alert("Error");
+													}
 												});
+												
 
 							}
 							function getMarker(data, contentString, map) {

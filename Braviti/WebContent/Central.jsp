@@ -33,15 +33,19 @@
 </script>
 
 </head>
-<body ng-controller="centralCtl" style="background-color: #495C70">
-
-	<div class="form-group">
+<body ng-controller="centralCtl" >
+<div ng-include="'partials/common/header.html'"  class="header" ></div>
+<div class="clearfix"></div>
+		<div>
+			<div ng-view></div>
+		</div>
+	<!-- <div class="form-group">
 		<div class="container">
 
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#offers">Offers</a></li>
-					<li class="active"><a href="#preferences">Preferences</a></li>
+					<li ><a href="#preferences">Preferences</a></li>
 					<li><a href="#piechart">Piechart</a></li>
 					<li><a href="#user">User</a></li>
 					<li><a href="#" ng-click="logout()">LogOut</a></li>
@@ -53,7 +57,7 @@
 		<div>
 			<div ng-view></div>
 		</div>
-	</div>
+	</div> -->
 	
 
 </body>

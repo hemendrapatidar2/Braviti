@@ -16,6 +16,7 @@
 <script src="lib/ui-bootstrap-tpls-2.1.3.js"></script>
 
 <link rel="stylesheet" href="lib/toaster.min.css">
+<link href="css/style.css" rel="stylesheet">
 <script type="text/javascript" src="lib/toaster.min.js"></script>
 
 
@@ -25,7 +26,7 @@
 
 
 
-<style type="text/css">
+<!-- <style type="text/css">
 .body {
 	background: url(images/intro-bg.jpg) no-repeat center center;
 	background-size: cover;
@@ -40,11 +41,48 @@
 	box-shadow: 0;
 	display: inline;
 }
-</style>
+</style> -->
 
 <title>Login</title>
 </head>
-<body ng-controller="LoginCtl as $ctrl" class="body">
+
+
+<body ng-controller="LoginCtl">
+<div class="container">
+	<div class = "page-header">
+		<h1  style="color: #FFFFFF"> Braviti</h1>		
+	</div>
+	
+	
+	<section class="container">
+    <div class="login">
+      <p >Sign-In</p>
+      <form id="login-form" method="post" class="form-signin" role="form" novalidate>
+        <input name="userId" id="userId" type="text" class="form-control requiredField"placeholder="UserId" ng-model="userId" 
+			tabindex="1" type="text" ng-required="true" autofocus> 
+			<input name="password" id="password" type="password" class="form-control disable requiredField" ng-model="password"
+			placeholder="Password" tabindex="2" ng-required="true"	>
+			
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Remember me on this computer
+          </label>
+        </p>
+        <button class="btn btn-block bt-login" type="submit" ng-click="login()">Log In</button>
+        <p class="remember_me">
+      </form>
+    </div>
+
+    <div class="login-help">
+      <p>Forgot your password? <a href="#">Sign Up</a>.</p>
+    </div>
+  </section>
+  </div>
+</div>
+</body>
+
+
+<!-- <body ng-controller="LoginCtl as $ctrl" class="body">
 	<form name="form" novalidate>
 
 		<toaster-container
@@ -146,6 +184,6 @@
 
 
 
-</body>
+</body> -->
 
 </html>
