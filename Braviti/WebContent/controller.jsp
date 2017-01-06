@@ -1,4 +1,3 @@
-<%@page import="com.tm.braveti.predictivemodel.UserPreferecesJson"%>
 <%@page import="org.codehaus.jackson.map.ObjectMapper"%>
 <%@page import="com.tm.braveti.model.OfferCategory"%>
 <%@page import="java.util.ArrayList"%>
