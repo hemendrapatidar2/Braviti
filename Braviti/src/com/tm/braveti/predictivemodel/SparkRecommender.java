@@ -1,6 +1,7 @@
 package com.tm.braveti.predictivemodel;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class SparkRecommender implements Serializable {
 	private JavaRDD<Outlet> outletData;
 	private List<FilterCriteria> filterCriteriaList = new ArrayList<>();
 	
-	public List<OfferDTO> recommendOffers(final String userName,final String location, final UserPreferences userPreferences) throws UserNotFoundException {
+	public List<OfferDTO> recommendOffers(final String userName,final String location) throws UserNotFoundException, IOException, NumberFormatException {
 
 		 SparkConf conf;
 		 JavaSparkContext jsc;
@@ -114,18 +115,27 @@ public class SparkRecommender implements Serializable {
 			}
 		});
 		System.out.println("Userid = " + userId + " Records = " + recommendedOffers.count());
-		/*for (OfferDTO offerDTO : finalOfferSuggestion) {
-			System.out.println("outlet Name:: " + offerDTO.getStoreName());
-			for (OfferCategory offerCategory : offerDTO.getOfferMap()) {
-				System.out.println("category for this store : "
-						+ offerCategory.getCategoryName() + " offer :: "
-						+ offerCategory.getOfferDescription());
-			}
-		}*/
-		
-		if(userPreferences!=null && userPreferences.getPreferenceMap()!=null){
+	
+		/*check if user has any specific preferences*/
+		PreferencesUtility preferenceUtil=new PreferencesUtility();
+		UserPreferecesJson userPreferences = preferenceUtil.readUserPreferences(userName);
+		System.out.println(userPreferences);
+//		UserPreferecesJson userPreferences=new UserPreferecesJson();
+//		userPreferences.setUserId("Raj");
+//		HashMap<String, List<String>> preferenceMap=new HashMap<>();
+//		List<String> categoryList=new ArrayList<>();
+//		categoryList.add("1");
+//		categoryList.add("2");
+////		categoryList.add("3");
+//		List<String> priceRange=new ArrayList<>();
+//		priceRange.add("low");
+//		priceRange.add("mid");
+//		userPreferences.setCategories(categoryList);
+//		userPreferences.setPriceRage(priceRange);
+		if(userPreferences!=null && 
+				(userPreferences.getCategories()!=null || userPreferences.getPriceRage()!=null)){
 			
-			List<OfferDTO> applyPreferences = applyPreferences(jsc,finalOfferSuggestion,userPreferences.getPreferenceMap());
+			List<OfferDTO> applyPreferences = applyPreferences(jsc,finalOfferSuggestion,userPreferences);
 			for (OfferDTO offerDTO : applyPreferences) {
 				System.out.println("outlet Name:: " + offerDTO.getStoreName());
 				for (OfferCategory offerCategory : offerDTO.getOfferList()) {
@@ -162,24 +172,33 @@ public class SparkRecommender implements Serializable {
 	
 
 
-	private List<OfferDTO> applyPreferences(JavaSparkContext jsc,List<OfferDTO> recommendedList, HashMap<String, List<String>> preferenceMap) {
+	private List<OfferDTO> applyPreferences(JavaSparkContext jsc,List<OfferDTO> recommendedList, UserPreferecesJson userPrefereces) {
 		
 		List<OfferDTO> recommendedListClone=new ArrayList<>();
+		boolean isCategoryPreference = userPrefereces.getCategories()!=null && !userPrefereces.getCategories().isEmpty();
+		boolean isPricePreference = userPrefereces.getPriceRage()!=null && !userPrefereces.getPriceRage().isEmpty();
+		
 		for (OfferDTO offerDTO : recommendedList) {
 			List<OfferCategory> offerList = offerDTO.getOfferList();
 			List<OfferCategory> offerListClone = new ArrayList<>(offerList);
 			
 			for (OfferCategory offerCategory : offerList) {
-			if(preferenceMap.get(PredictiveEngineConstants.PREFERENCE_KEY_CATEGORY).contains(offerCategory.getCategoryId())
-					&&preferenceMap.get(PredictiveEngineConstants.PREFERENCE_KEY_PRICE_RANGE).contains(offerCategory.getPriceRange())){
-				
-			}else{
-				offerListClone.remove(offerCategory);
-			}
+				if(isCategoryPreference){
+					if(!userPrefereces.getCategories().contains(offerCategory.getCategoryId())){
+
+						offerListClone.remove(offerCategory);
+					}
+
+				}
+				if(isPricePreference){
+					if(!userPrefereces.getPriceRage().contains(offerCategory.getPriceRange())){
+						offerListClone.remove(offerCategory);
+					}
+				}
 			}
 			if(!offerListClone.isEmpty()){
-			offerDTO.setOfferList(offerListClone);
-			recommendedListClone.add(offerDTO);
+				offerDTO.setOfferList(offerListClone);
+				recommendedListClone.add(offerDTO);
 			}
 		}
 		
@@ -302,8 +321,8 @@ public class SparkRecommender implements Serializable {
 	public static void main(String[] args) {
 		SparkRecommender test = new SparkRecommender();
 		try {
-			UserPreferences preferences=new UserPreferences();
-			preferences.setUserID("Raj");
+			UserPreferecesJson preferences=new UserPreferecesJson();
+			preferences.setUserId("Raj");
 			HashMap<String, List<String>> preferenceMap=new HashMap<>();
 			List<String> categoryList=new ArrayList<>();
 			categoryList.add("1");
@@ -312,13 +331,18 @@ public class SparkRecommender implements Serializable {
 			List<String> priceRange=new ArrayList<>();
 			priceRange.add("low");
 			priceRange.add("mid");
+			preferences.setCategories(categoryList);
+			preferences.setPriceRage(priceRange);
 			
-			preferenceMap.put(PredictiveEngineConstants.PREFERENCE_KEY_CATEGORY, categoryList);
-			preferenceMap.put(PredictiveEngineConstants.PREFERENCE_KEY_PRICE_RANGE, priceRange);
-			
-			preferences.setPreferenceMap(preferenceMap);
-			
-			test.recommendOffers("Raj", "ShivajiNagar", preferences);
+			try {
+				test.recommendOffers("Raj", "ShivajiNagar");
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (UserNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.tm.braveti.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,13 +26,15 @@ public class PredictiveController {
 	/**
 	 * Return the User predictive offers
 	 * @throws UserNotFoundException 
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 * 
 	 */
 	@GET
 //	@Produces(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_XML)
 	public Response getUserOffer(@QueryParam("userName") String userName,
-			@QueryParam("location") String location) throws UserNotFoundException {
+			@QueryParam("location") String location) throws UserNotFoundException, NumberFormatException, IOException {
 		System.out.println("inside getUserOffer Method " + userName
 				+ "Location " + location);
 //		OfferPredictionEngine offerPredictionEngine = new OfferPredictionEngine(
@@ -46,7 +49,7 @@ public class PredictiveController {
 		
 
 		SparkRecommender recommender=new SparkRecommender();
-		offerListDTO=recommender.recommendOffers(location, location,null);
+		offerListDTO=recommender.recommendOffers(location, location);
 		for (OfferDTO offerDTO : offerListDTO) {
 		System.out.println("outlet Name:: " + offerDTO.getStoreName());
 		for (OfferCategory offerCategory : offerDTO.getOfferList()) {

@@ -13,8 +13,7 @@ String userName = request.getParameter("userName");
 String location = request.getParameter("location");
 List<OfferDTO> offerListDTO = new ArrayList<OfferDTO>();
 SparkRecommender recommender=new SparkRecommender();
-UserPreferences userPreferences=new UserPreferences();
-offerListDTO=recommender.recommendOffers(userName, location, userPreferences);
+offerListDTO=recommender.recommendOffers(userName, location);
 for (OfferDTO offerDTO : offerListDTO) {
 System.out.println("outlet Name:: " + offerDTO.getStoreName());
 for (OfferCategory offerCategory : offerDTO.getOfferList()) {

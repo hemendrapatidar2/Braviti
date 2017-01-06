@@ -19,10 +19,10 @@ public class PreferencesUtility {
 	private static BufferedReader br = null;
 	private static FileReader fr = null;
 
-	public void readUserPreferences(String userName) throws IOException {
+	public UserPreferecesJson readUserPreferences(String userName) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		UserPreferecesJson user = mapper.readValue(new File(USERPREF_RESOURCES), UserPreferecesJson.class);
-		System.out.println("-------->" + user);
+		UserPreferecesJson userPreferences = mapper.readValue(new File(USERPREF_RESOURCES), UserPreferecesJson.class);
+		return userPreferences;
 	}
 
 	private static void writePreferences(String content) throws IOException {
