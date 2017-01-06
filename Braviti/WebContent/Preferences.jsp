@@ -12,13 +12,13 @@
     <div class="col-md-4">
   <!-- <div class="col-md-3"> -->
         <div class="panel panel-default">
-            <div class="panel-heading">Preferences</div>
+            <div class="panel-heading preferenceHeading" style="background-color:#337ab7;color:white">Preferences</div>
             <div class="panel-body">
                 <div class="panel panel-default">
                     <!-- Default panel contents 1 -->
                     <div class="panel-heading">Category</div>
                     <div class="panel-body">
-                        <ul>
+                        
 					        <div ng-repeat="value in categoryList">					         
 					            <input
 					              type="checkbox"
@@ -27,14 +27,15 @@
 					            > <!-- ng-change="setOutput(typeKey, $index, value)" --> <label>{{value.name}}
 					          </label>
 					        </div>
-					     </ul>
+					        
+					     
                     </div>                    
                 </div>
                 <div class="panel panel-default">
                     <!-- Default panel contents 2 -->
                     <div class="panel-heading">Price</div>
                     <div class="panel-body">
-                         <ul>
+                         
 					        <div ng-repeat="value in priceList">					         
 					            <input
 					              type="checkbox"
@@ -43,14 +44,14 @@
 					            > <label>{{value}}
 					          </label>
 					        </div>
-					     </ul>
+					     
                     </div>
                 </div>
 
             </div>
             <div class="panel-footer clearfix">
 				        <div class="pull-right">
-				            <button class="btn btn-default" ng-click="applyFilter()">Done</button>
+				            <button class="btn btn-default preferenceHeading" style="background-color:#337ab7" ng-click="applyFilter()">Done</button>
 				        </div>
 				    </div> 
         </div>

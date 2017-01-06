@@ -1,6 +1,8 @@
 var myApp = angular.module("centralApp", [ 'ngCookies', 'ngSanitize',
 		'ngRoute', 'angularTreeview' ])
-
+String.prototype.replaceAll = function(target, replacement) {
+  return this.split(target).join(replacement);
+};
 myApp.config(function($routeProvider) {
 	$routeProvider.when("/", {
 		templateUrl : "Offers.jsp",
@@ -25,6 +27,7 @@ myApp.controller('centralCtl', [ '$scope', '$http', '$window', '$log',
 		'$cookies', '$sce',
 		function($scope, $http, $window, $log, $cookies, $sce) {
 			console.log("inside central controller");
+			$scope.userName = $cookies.get('userName');
 			$scope.logout = function() {
 				$window.location.href = './Login.jsp#/';
 
@@ -61,9 +64,16 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 					  });
 					  var categoryJsonData=angular.toJson($scope.categoryIdArray);
 					  var priceJsonData=angular.toJson($scope.priceSelectedOutputs);
+					  categoryJsonData = categoryJsonData.replaceAll('[',"");
+					  categoryJsonData = categoryJsonData.replaceAll(']',"");
+					  categoryJsonData = categoryJsonData.replaceAll('"',"");
+					  priceJsonData = priceJsonData.replaceAll('[',"");
+					  priceJsonData = priceJsonData.replaceAll(']',"");
+					  priceJsonData = priceJsonData.replaceAll('"',"");
+					  
 					  gotoOffers();
 					  //Service call to post preference data
-//					  sendPreferenceData(categoryJsonData,priceJsonData);
+					  sendPreferenceData(categoryJsonData,priceJsonData);
 				
 			}
 			
@@ -90,19 +100,21 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 			function sendPreferenceData(categoryJsonData,priceJsonData) {
 				$http({
 					method : "GET",
-					url : "data/userPreferences",
+					url : "userPreferences.jsp",
 					params : {
-						userName : $scope.userName,
-						category : categoryJsonData,
-						price : priceJsonData						
+						userId : $scope.userName,
+						categories : categoryJsonData,
+						pricerange : priceJsonData						
 					},
 					headers : {
 						'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
 					}
-				}).then(function(reponse) {
-					if(status == 200) {
+				}).then(function(response) {
+					if(response.data.status == true) {
 						gotoOffers();
 //						loadData();
+					} else {
+						alert("Error!!");
 					}
 					
 				});
@@ -173,10 +185,10 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 //						"text" : "stores",
 //						"children" : child1
 //					}
-//					for (var j = 0; j < list[i].offerMap.length; j++) {
-//						console.log(list[i].offerMap[j].categoryName);
+//					for (var j = 0; j < list[i].offerList.length; j++) {
+//						console.log(list[i].offerList[j].categoryName);
 //						child.push({
-//							'text' : list[i].offerMap[j].categoryName
+//							'text' : list[i].offerList[j].categoryName
 //						})
 //					}
 //					cat = {
@@ -204,10 +216,11 @@ myApp
 						'$sce',
 						function($scope, $http, $window, $log, $cookies, $sce) {
 
-							$log.info("in central controller")
+							$log.info("in central controller");
+							
 							console.log($cookies.get('userName'));
 							$scope.userName = $cookies.get('userName');
-
+							$scope.selectedLocation = false;
 							$scope.html = [];
 
 							var titleTag = 'hppHemendra';
@@ -222,7 +235,7 @@ myApp
 							$scope.changeLocation = function() {
 								console.log('in change location '
 										+ $scope.location);
-
+								$scope.selectedLocation = true;
 								$http({
 									method : "GET",
 									url : "controller.jsp",
@@ -240,7 +253,8 @@ myApp
 													try {
 													$scope.data = reponse.data;
 													var res = $scope.data;
-													console.log($scope.data)
+													console.log("1:"+angular.toJson($scope.data));
+													
 													var firstArea = {
 														lat : res[0].latitude,
 														lng : res[0].langitude
@@ -255,14 +269,14 @@ myApp
 
 													for (var index = 0; index < $scope.data.length; index++) {
 														var contentString = '<div id="content">';
-														for (var offerIndex = 0; offerIndex < $scope.data[index].offerMap.length; offerIndex++) {
+														for (var offerIndex = 0; offerIndex < $scope.data[index].offerList.length; offerIndex++) {
 															contentString = contentString
 																	+ '<h4>'
-																	+ $scope.data[index].offerMap[offerIndex].categoryName
+																	+ $scope.data[index].offerList[offerIndex].categoryName
 																	+ '</h4>'
 																	+ '<div id="bodyContent">'
 																	+ '<p>'
-																	+ $scope.data[index].offerMap[offerIndex].offerDescription
+																	+ $scope.data[index].offerList[offerIndex].offerDescription
 																	+ ',</p></div>';
 
 														}
@@ -296,7 +310,8 @@ myApp
 														};
 													}
 													}catch(ex){
-														alert("Error");
+														
+														console.log("Error in Maps:"+ex);
 													}
 												});
 												

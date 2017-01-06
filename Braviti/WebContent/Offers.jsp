@@ -71,7 +71,7 @@ html, body {
 		<div class="col-xs-3">
 			<div class="form-group">
 
-				<label style="color: white">Select Preferred Location :</label>
+				<label class="labelHeading">Select Preferred Location</label>
 				<p>
 					<select class="shortenedSelect" ng-model="location"
 						ng-change="changeLocation()" ng-options="x for x in locations">
@@ -80,11 +80,11 @@ html, body {
 				</p>
 			</div>
 
-			<div class="form-group">
-				<label style="color: white">Outlets</label>
+			<div class="form-group" ng-hide="!selectedLocation">
+				<label class="labelHeading">Check the nearest Outlets</label>
 
-				<div class="well"
-					style="width: 700px; background-color: #DCDCDC; border-color: black; border-style: solid;">
+				<div class="tableContainer"
+					>
 					<table class="style1">
 
 						<tr>
