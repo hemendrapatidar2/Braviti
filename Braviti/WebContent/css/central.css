@@ -78,3 +78,8 @@ th {
   	background-color:#337ab7;
 }
 
+.page-header {
+    /* padding-bottom: 8px; */
+    margin: 33px 16px 22px;
+    border-bottom: 1px solid #eee;
+}
