@@ -3,19 +3,19 @@ package com.tm.braveti.predictivemodel;
 import java.io.Serializable;
 import java.util.List;
 
-public class UserPreferecesJson implements Serializable {
+public class UserPreferencesJson implements Serializable {
 	private String userId;
 	private List<String> categories;
 	private List<String> priceRage;
 
-	public UserPreferecesJson(String userId, List<String> categories, List<String> priceRage) {
+	public UserPreferencesJson(String userId, List<String> categories, List<String> priceRage) {
 		super();
 		this.userId = userId;
 		this.categories = categories;
 		this.priceRage = priceRage;
 	}
 
-	public UserPreferecesJson() {
+	public UserPreferencesJson() {
 	}
 
 	public String getUserId() {

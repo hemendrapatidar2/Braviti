@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -19,9 +21,9 @@ public class PreferencesUtility {
 	private static BufferedReader br = null;
 	private static FileReader fr = null;
 
-	public UserPreferecesJson readUserPreferences(String userName) throws IOException {
+	public UserPreferencesJson readUserPreferences(String userName) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		UserPreferecesJson userPreferences = mapper.readValue(new File(USERPREF_RESOURCES), UserPreferecesJson.class);
+		UserPreferencesJson userPreferences = mapper.readValue(new File(USERPREF_RESOURCES), UserPreferencesJson.class);
 		return userPreferences;
 	}
 
@@ -38,7 +40,12 @@ public class PreferencesUtility {
 
 	public static void setUserPreferences(String userId, String categaoryStr, String priceRangeStr) {
 		try {
-			UserPreferecesJson userPreferecesJson = new UserPreferecesJson(userId, Arrays.asList(categaoryStr.split(",")), Arrays.asList(priceRangeStr.split(",")));
+			List<String> categoryList = Arrays.asList(categaoryStr.split(","));
+			List<String> priceRangeList = Arrays.asList(priceRangeStr.split(","));
+			categoryList=categoryList.get(0).isEmpty() ? new ArrayList<String>() : categoryList;
+			priceRangeList=priceRangeList.get(0).isEmpty() ? new ArrayList<String>() : priceRangeList;
+			
+			UserPreferencesJson userPreferecesJson = new UserPreferencesJson(userId, categoryList, priceRangeList);
 			System.out.println(userPreferecesJson);
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonInString = mapper.writeValueAsString(userPreferecesJson);

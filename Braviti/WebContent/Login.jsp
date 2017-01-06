@@ -49,7 +49,7 @@
 
 <body ng-controller="LoginCtl">
 <div class="container">
-	<div class = "page-header">
+	<div class = "page-header" style="margin:16px">
 		<h1  style="color: #FFFFFF"> Braviti</h1>		
 	</div>
 	

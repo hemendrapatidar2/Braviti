@@ -118,7 +118,7 @@ public class SparkRecommender implements Serializable {
 	
 		/*check if user has any specific preferences*/
 		PreferencesUtility preferenceUtil=new PreferencesUtility();
-		UserPreferecesJson userPreferences = preferenceUtil.readUserPreferences(userName);
+		UserPreferencesJson userPreferences = preferenceUtil.readUserPreferences(userName);
 		System.out.println(userPreferences);
 //		UserPreferecesJson userPreferences=new UserPreferecesJson();
 //		userPreferences.setUserId("Raj");
@@ -172,7 +172,7 @@ public class SparkRecommender implements Serializable {
 	
 
 
-	private List<OfferDTO> applyPreferences(JavaSparkContext jsc,List<OfferDTO> recommendedList, UserPreferecesJson userPrefereces) {
+	private List<OfferDTO> applyPreferences(JavaSparkContext jsc,List<OfferDTO> recommendedList, UserPreferencesJson userPrefereces) {
 		
 		List<OfferDTO> recommendedListClone=new ArrayList<>();
 		boolean isCategoryPreference = userPrefereces.getCategories()!=null && !userPrefereces.getCategories().isEmpty();
@@ -321,7 +321,7 @@ public class SparkRecommender implements Serializable {
 	public static void main(String[] args) {
 		SparkRecommender test = new SparkRecommender();
 		try {
-			UserPreferecesJson preferences=new UserPreferecesJson();
+			UserPreferencesJson preferences=new UserPreferencesJson();
 			preferences.setUserId("Raj");
 			HashMap<String, List<String>> preferenceMap=new HashMap<>();
 			List<String> categoryList=new ArrayList<>();
