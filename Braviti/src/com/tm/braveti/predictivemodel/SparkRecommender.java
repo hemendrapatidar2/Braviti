@@ -1,10 +1,17 @@
 package com.tm.braveti.predictivemodel;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -315,6 +322,129 @@ public class SparkRecommender implements Serializable {
 		}
 		return false;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public UserPreferencesJson getUserPreferences(final String userName) throws Exception
+	{
+		
+		BufferedReader br = null;
+		FileReader fr = null;
+		UserPreferencesJson prefDto = null ;
+		
+		
+/*		URL fileLocation = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
+		System.out.println("fileLocation: "+fileLocation);
+		String prefPath = fileLocation+"\\userPref.csv";
+*/		File fin = new File("userPref.csv");
+		try {
+			HashMap preferenceMap;
+			fr = new FileReader(fin);
+			br = new BufferedReader(fr);
+			String sCurrentLine;
+			br = new BufferedReader(new FileReader(fin));
+			
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+				 String data[] = StringUtils.split(sCurrentLine, "|");
+				 
+				 if(userName.equalsIgnoreCase(data[0]))
+				 {
+					 prefDto=new UserPreferencesJson();
+					 preferenceMap=new HashMap<String, List<String>>();
+					 prefDto.setUserId(data[0]);
+					 prefDto.setCategories( Arrays.asList(data[1]));
+					 prefDto.setPriceRage( Arrays.asList(data[2]));
+					 
+				 }
+			}
+		} catch (IOException e) {
+					e.printStackTrace();
+		} finally {
+			try {
+				if (br != null)
+					br.close();
+				if (fr != null)
+					fr.close();
+			} catch (IOException ex) {
+						ex.printStackTrace();
+			}
+
+		}
+		return prefDto;
+	}
+	
+	
+	
+	public boolean setUserPreference(final String userName, String category , String price) throws Exception
+	{
+		boolean prefStatus =false;
+		BufferedWriter bw=null;
+		try {
+            
+			File inFile = new File("userPref.csv");
+            File tempFile = new File("userPrefTmp.csv");
+            BufferedReader br = new BufferedReader(new FileReader(inFile));
+            
+            bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempFile,true)));
+            
+            
+            String line = null;
+            if (!inFile.isFile()) {
+                System.out.println("Parameter is not an existing file");
+                return prefStatus;
+            }
+            // Read from the original file and write to the new
+            // unless content matches data to be removed.
+            while ((line = br.readLine()) != null) {
+
+            	String data[] = StringUtils.split(line, "|");
+            	
+            	if (!data[0].trim().equals(userName)) {
+
+            		bw.write(line);
+            		bw.newLine();
+                }
+            }
+            String strCat=StringUtils.remove(category, '[');
+    		String strCat1=StringUtils.remove(strCat, ']');
+    		String strCat2=StringUtils.remove(strCat1, '"');
+    		
+    		String strPrice=StringUtils.remove(price, '[');
+    		String strPrice1=StringUtils.remove(strPrice, ']');
+    		String strPrice2=StringUtils.remove(strPrice1, '"');
+    		
+    		
+    		
+    		bw.write(userName +"|" + strCat2 + "|"+ strPrice2);
+    		bw.newLine();
+    		bw.close();
+           
+            br.close();
+
+            // Delete the original file
+            if (!inFile.delete()) {
+                System.out.println("Could not delete file");
+                return prefStatus;
+            }
+            // Rename the new file to the filename the original file had.
+
+            if (!tempFile.renameTo(inFile))
+            {    	System.out.println("Could not rename file");
+            		return prefStatus;
+            }
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+            return prefStatus;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return prefStatus;
+        }
+		
+		prefStatus=true;
+		return prefStatus;
+	}
+	
 	
 	
 	

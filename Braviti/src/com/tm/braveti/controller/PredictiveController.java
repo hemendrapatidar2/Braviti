@@ -15,8 +15,12 @@ import com.tm.braveti.exception.UserNotFoundException;
 import com.tm.braveti.model.OfferCategory;
 import com.tm.braveti.model.OfferDTO;
 import com.tm.braveti.model.PieChartDTO;
+import com.tm.braveti.model.UserPrefResponse;
 import com.tm.braveti.predictivemodel.OfferPredictionEngine;
 import com.tm.braveti.predictivemodel.SparkRecommender;
+import com.tm.braveti.predictivemodel.UserPreferencesJson;
+
+import parquet.org.codehaus.jackson.map.ObjectMapper;
 
 @Path("/useroffers")
 public class PredictiveController {
@@ -83,9 +87,82 @@ public class PredictiveController {
 		return Response.status(200).entity(pieChartDataList).build();
 	}
 	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/setUserPreferences")
+	public Response setUserPreferences(
+			@QueryParam("category") String category ,
+			@QueryParam("price") String price,
+			@QueryParam("userName") String userName
+			) throws Exception
+		{
+		String jsonInString=null;
+		
+	try{			
+		System.out.println("inside setUserPreferences Method: " + userName
+				+ "category " + category +" price "+ price);
+		SparkRecommender recommender=new SparkRecommender();
+		boolean prefStatus= recommender.setUserPreference(userName, category ,price);
+		UserPrefResponse userPrefRes=new UserPrefResponse();
+		ObjectMapper mapper = new ObjectMapper();
+		
+			if(prefStatus)
+			{
+				userPrefRes.setStatus(true);
+				userPrefRes.setStatusMsg("Sucessfully Saved User Preferences");
+				jsonInString = mapper.writeValueAsString(userPrefRes);
+				
+			}
+			else
+			{
+				userPrefRes.setStatus(true);
+				userPrefRes.setStatusMsg("Error In Saving User Preferences Plesae Try Again");
+				jsonInString = mapper.writeValueAsString(userPrefRes);
+			}
+			System.out.println(jsonInString);
+			
+	}catch(Exception e)
+	{
+				e.printStackTrace();	
+	}
+	return Response.status(200).entity(jsonInString).build();
+	}
+	
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/getUserPreferences")
+	public Response getUserPreferences(
+			@QueryParam("userName") String userName
+			) throws Exception
+		{
+		String jsonInString=null;
+		System.out.println("inside gettUserPreferences Method: " + userName);
+		SparkRecommender recommender=new SparkRecommender();
+		UserPreferencesJson prefDto = recommender.getUserPreferences(userName);
+		ObjectMapper mapper = new ObjectMapper();
+		
+		
+			if(null != prefDto)
+			{
+				jsonInString = mapper.writeValueAsString(prefDto);
+				return Response.ok().status(200).entity(jsonInString).build();
+			}
+			else
+			{
+				jsonInString = mapper.writeValueAsString(prefDto);
+				return Response.ok().status(200).entity(jsonInString).build();
+		}
+			
+	}
 	public static void main(String[] args) {
 		PredictiveController p = new PredictiveController();
 		//p.getUserOffer("Raj", "ShivajiNagar");
 		p.getPieChartTransData("Raj", "Kothrud");
 	}
+	
+	
+	
+	
 }
