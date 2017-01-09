@@ -132,7 +132,7 @@ public class PredictiveController {
 	
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/getUserPreferences")
+	@Path("/getPreferencesPerUser")
 	public Response getUserPreferences(
 			@QueryParam("userName") String userName
 			) throws Exception

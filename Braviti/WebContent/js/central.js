@@ -91,20 +91,40 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 				});
 			}
 			
+			function getPreferencesPerUser(){
+				$http({
+					method : "GET",
+					url : "data/useroffers/getPreferencesPerUser",
+					params : {
+						userName : $scope.userName
+					},
+					headers : {
+						'Content-Type' : 'application/json'
+					}
+				}).then(function(response){
+					alert("Service Success:"+angular.toJson(response));
+					
+					//setData(response.data);
+					
+				});
+			}
+			
+			
+			
 			function setData(data){
 				 $scope.categoryList = data.categoryList;
 				 $scope.priceList = data.priceRangeList;
-					
+				 getPreferencesPerUser();
 			 }
 			
 			function sendPreferenceData(categoryJsonData,priceJsonData) {
 				$http({
 					method : "GET",
-					url : "userPreferences.jsp",
+					url : "data/useroffers/setUserPreferences",
 					params : {
-						userId : $scope.userName,
-						categories : categoryJsonData,
-						pricerange : priceJsonData						
+						userName : $scope.userName,
+						category : categoryJsonData,
+						price : priceJsonData						
 					},
 					headers : {
 						'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
