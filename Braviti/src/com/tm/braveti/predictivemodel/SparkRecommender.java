@@ -9,7 +9,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -331,11 +333,10 @@ public class SparkRecommender implements Serializable {
 		FileReader fr = null;
 		UserPreferencesJson prefDto = null ;
 		
-		
-/*		URL fileLocation = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
-		System.out.println("fileLocation: "+fileLocation);
-		String prefPath = fileLocation+"\\userPref.csv";
-*/		File fin = new File("userPref.csv");
+		URL url = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
+		String parentDirectory = new File(new URI(url.toString())).getAbsolutePath();
+		System.out.println("parentDirectory: "+parentDirectory);
+		File fin = new File(parentDirectory +"\\userPref.csv");
 
 		try {
 			
@@ -385,10 +386,16 @@ public class SparkRecommender implements Serializable {
 		BufferedWriter bw=null;
 		try {
             
+			URL url = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
+			String parentDirectory = new File(new URI(url.toString())).getAbsolutePath();
+			System.out.println("parentDirectory: "+parentDirectory);
 			
-			File inFile = new File("userPref.csv");
+			//File inFile = new File("userPref.csv");
+			File inFile = new File(parentDirectory +"\\userPref.csv");
+			
 			System.out.println("FileLocation Is :: "+ inFile.getAbsolutePath());
-            File tempFile = new File("userPrefTmp.csv");
+            //File tempFile = new File("userPrefTmp.csv");
+			File tempFile = new File(parentDirectory +"\\userPrefTemp.csv");
 
             if (!tempFile.createNewFile()){
     	        System.out.println(" setUserPreference :: Temp File already exists.");
