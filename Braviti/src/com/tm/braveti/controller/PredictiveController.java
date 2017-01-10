@@ -131,7 +131,7 @@ public class PredictiveController {
 	
 	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getPreferencesPerUser")
 	public Response getUserPreferences(
 			@QueryParam("userName") String userName

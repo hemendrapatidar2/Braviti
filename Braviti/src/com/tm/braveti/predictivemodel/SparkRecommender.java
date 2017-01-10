@@ -336,10 +336,14 @@ public class SparkRecommender implements Serializable {
 		System.out.println("fileLocation: "+fileLocation);
 		String prefPath = fileLocation+"\\userPref.csv";
 */		File fin = new File("userPref.csv");
+
 		try {
+			
+			if (!fin.createNewFile()){
+			    System.out.println("getUserPreferences :: File already exists.");
+			  }
+			
 			HashMap preferenceMap;
-			fr = new FileReader(fin);
-			br = new BufferedReader(fr);
 			String sCurrentLine;
 			br = new BufferedReader(new FileReader(fin));
 			
@@ -381,11 +385,22 @@ public class SparkRecommender implements Serializable {
 		BufferedWriter bw=null;
 		try {
             
+			
 			File inFile = new File("userPref.csv");
+			System.out.println("FileLocation Is :: "+ inFile.getAbsolutePath());
             File tempFile = new File("userPrefTmp.csv");
-            BufferedReader br = new BufferedReader(new FileReader(inFile));
+
+            if (!tempFile.createNewFile()){
+    	        System.out.println(" setUserPreference :: Temp File already exists.");
+    	      }
             
+            BufferedReader br = new BufferedReader(new FileReader(inFile));
             bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempFile,true)));
+
+            
+            if (!inFile.createNewFile()){
+    	        System.out.println(" setUserPreference:: File already exists.");
+    	      }
             
             
             String line = null;
@@ -393,17 +408,21 @@ public class SparkRecommender implements Serializable {
                 System.out.println("Parameter is not an existing file");
                 return prefStatus;
             }
+           
+            
             // Read from the original file and write to the new
             // unless content matches data to be removed.
             while ((line = br.readLine()) != null) {
 
+            	if(StringUtils.isNotEmpty(line) || null != line)
+            	{
             	String data[] = StringUtils.split(line, "|");
-            	
-            	if (!data[0].trim().equals(userName)) {
+            	if (!userName.equals(data[0].trim())) {
 
             		bw.write(line);
             		bw.newLine();
                 }
+            	}
             }
             String strCat=StringUtils.remove(category, '[');
     		String strCat1=StringUtils.remove(strCat, ']');
@@ -412,8 +431,6 @@ public class SparkRecommender implements Serializable {
     		String strPrice=StringUtils.remove(price, '[');
     		String strPrice1=StringUtils.remove(strPrice, ']');
     		String strPrice2=StringUtils.remove(strPrice1, '"');
-    		
-    		
     		
     		bw.write(userName +"|" + strCat2 + "|"+ strPrice2);
     		bw.newLine();
