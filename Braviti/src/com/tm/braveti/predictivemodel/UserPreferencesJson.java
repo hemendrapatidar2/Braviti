@@ -6,13 +6,21 @@ import java.util.List;
 public class UserPreferencesJson implements Serializable {
 	private String userId;
 	private List<String> categories;
-	private List<String> priceRage;
+	private List<String> priceRange;
+
+	public List<String> getPriceRange() {
+		return priceRange;
+	}
+
+	public void setPriceRange(List<String> priceRange) {
+		this.priceRange = priceRange;
+	}
 
 	public UserPreferencesJson(String userId, List<String> categories, List<String> priceRage) {
 		super();
 		this.userId = userId;
 		this.categories = categories;
-		this.priceRage = priceRage;
+		this.priceRange = priceRage;
 	}
 
 	public UserPreferencesJson() {
@@ -34,17 +42,11 @@ public class UserPreferencesJson implements Serializable {
 		this.categories = categories;
 	}
 
-	public List<String> getPriceRage() {
-		return priceRage;
-	}
-
-	public void setPriceRage(List<String> priceRage) {
-		this.priceRage = priceRage;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "UserPreferecesJson [userId=" + userId + ", categories=" + categories + ", priceRage=" + priceRage + "]";
+		return "UserPreferecesJson [userId=" + userId + ", categories=" + categories + ", priceRage=" + priceRange + "]";
 	}
 
 }

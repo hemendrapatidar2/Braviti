@@ -142,7 +142,7 @@ public class SparkRecommender implements Serializable {
 //		userPreferences.setCategories(categoryList);
 //		userPreferences.setPriceRage(priceRange);
 		if(userPreferences!=null && 
-				(userPreferences.getCategories()!=null || userPreferences.getPriceRage()!=null)){
+				(userPreferences.getCategories()!=null || userPreferences.getPriceRange()!=null)){
 			
 			List<OfferDTO> applyPreferences = applyPreferences(jsc,finalOfferSuggestion,userPreferences);
 			for (OfferDTO offerDTO : applyPreferences) {
@@ -185,7 +185,7 @@ public class SparkRecommender implements Serializable {
 		
 		List<OfferDTO> recommendedListClone=new ArrayList<>();
 		boolean isCategoryPreference = userPrefereces.getCategories()!=null && !userPrefereces.getCategories().isEmpty();
-		boolean isPricePreference = userPrefereces.getPriceRage()!=null && !userPrefereces.getPriceRage().isEmpty();
+		boolean isPricePreference = userPrefereces.getPriceRange()!=null && !userPrefereces.getPriceRange().isEmpty();
 		
 		for (OfferDTO offerDTO : recommendedList) {
 			List<OfferCategory> offerList = offerDTO.getOfferList();
@@ -200,7 +200,7 @@ public class SparkRecommender implements Serializable {
 
 				}
 				if(isPricePreference){
-					if(!userPrefereces.getPriceRage().contains(offerCategory.getPriceRange())){
+					if(!userPrefereces.getPriceRange().contains(offerCategory.getPriceRange())){
 						offerListClone.remove(offerCategory);
 					}
 				}
@@ -358,7 +358,7 @@ public class SparkRecommender implements Serializable {
 					 preferenceMap=new HashMap<String, List<String>>();
 					 prefDto.setUserId(data[0]);
 					 prefDto.setCategories( Arrays.asList(data[1]));
-					 prefDto.setPriceRage( Arrays.asList(data[2]));
+					 prefDto.setPriceRange( Arrays.asList(data[2]));
 					 
 				 }
 			}
@@ -486,7 +486,7 @@ public class SparkRecommender implements Serializable {
 			priceRange.add("low");
 			priceRange.add("mid");
 			preferences.setCategories(categoryList);
-			preferences.setPriceRage(priceRange);
+			preferences.setPriceRange(priceRange);
 			
 			try {
 				test.recommendOffers("Raj", "ShivajiNagar");
