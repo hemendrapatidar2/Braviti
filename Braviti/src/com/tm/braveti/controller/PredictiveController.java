@@ -53,7 +53,12 @@ public class PredictiveController {
 		
 
 		SparkRecommender recommender=new SparkRecommender();
-		offerListDTO=recommender.recommendOffers(location, location);
+		try {
+			offerListDTO=recommender.recommendOffers(location, location);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for (OfferDTO offerDTO : offerListDTO) {
 		System.out.println("outlet Name:: " + offerDTO.getStoreName());
 		for (OfferCategory offerCategory : offerDTO.getOfferList()) {

@@ -46,7 +46,7 @@ public class SparkRecommender implements Serializable {
 	private JavaRDD<Outlet> outletData;
 	private List<FilterCriteria> filterCriteriaList = new ArrayList<>();
 	
-	public List<OfferDTO> recommendOffers(final String userName,final String location) throws UserNotFoundException, IOException, NumberFormatException {
+	public List<OfferDTO> recommendOffers(final String userName,final String location) throws Exception {
 
 		 SparkConf conf;
 		 JavaSparkContext jsc;
@@ -127,7 +127,9 @@ public class SparkRecommender implements Serializable {
 	
 		/*check if user has any specific preferences*/
 		PreferencesUtility preferenceUtil=new PreferencesUtility();
-		UserPreferencesJson userPreferences = preferenceUtil.readUserPreferences(userName);
+		
+		UserPreferencesJson userPreferences = getUserPreferences(userName);
+		//UserPreferencesJson userPreferences = preferenceUtil.readUserPreferences(userName);
 		System.out.println(userPreferences);
 //		UserPreferecesJson userPreferences=new UserPreferecesJson();
 //		userPreferences.setUserId("Raj");
@@ -357,8 +359,8 @@ public class SparkRecommender implements Serializable {
 					 prefDto=new UserPreferencesJson();
 					 preferenceMap=new HashMap<String, List<String>>();
 					 prefDto.setUserId(data[0]);
-					 prefDto.setCategories( Arrays.asList(data[1]));
-					 prefDto.setPriceRange( Arrays.asList(data[2]));
+					 prefDto.setCategories( Arrays.asList(StringUtils.split(data[1], ',')));
+					 prefDto.setPriceRange( Arrays.asList(StringUtils.split(data[2], ',')));
 					 
 				 }
 			}
@@ -472,7 +474,7 @@ public class SparkRecommender implements Serializable {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SparkRecommender test = new SparkRecommender();
 		try {
 			UserPreferencesJson preferences=new UserPreferencesJson();

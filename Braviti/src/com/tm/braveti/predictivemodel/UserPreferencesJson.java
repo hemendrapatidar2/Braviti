@@ -16,11 +16,11 @@ public class UserPreferencesJson implements Serializable {
 		this.priceRange = priceRange;
 	}
 
-	public UserPreferencesJson(String userId, List<String> categories, List<String> priceRage) {
+	public UserPreferencesJson(String userId, List<String> categories, List<String> priceRange) {
 		super();
 		this.userId = userId;
 		this.categories = categories;
-		this.priceRange = priceRage;
+		this.priceRange = priceRange;
 	}
 
 	public UserPreferencesJson() {
@@ -46,7 +46,7 @@ public class UserPreferencesJson implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserPreferecesJson [userId=" + userId + ", categories=" + categories + ", priceRage=" + priceRange + "]";
+		return "UserPreferecesJson [userId=" + userId + ", categories=" + categories + ", priceRange=" + priceRange + "]";
 	}
 
 }
