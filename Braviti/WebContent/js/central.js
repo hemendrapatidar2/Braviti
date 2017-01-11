@@ -115,9 +115,9 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 						'Content-Type' : 'application/json'
 					}
 				}).then(function(response){
-					alert("Service Success:"+angular.toJson(response));
+					
 					if(response.data != null){
-						alert("get User Preference:"+angular.toJson(response.data));
+						
 						setUserPreferencesData(response.data);
 					} 
 					
@@ -188,7 +188,7 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 						gotoOffers();
 //						loadData();
 					} else {
-						alert("Error!!");
+						
 					}
 					
 				});
@@ -308,7 +308,8 @@ myApp
 							$scope.changeLocation = function() {
 								console.log('in change location '
 										+ $scope.location);
-								$scope.selectedLocation = true;
+//								$scope.selectedLocation = true;
+								$scope.loading = true;
 								$http({
 									method : "GET",
 									url : "controller.jsp",
@@ -323,6 +324,8 @@ myApp
 								})
 										.then(
 												function(reponse) {
+													$scope.loading = false;
+													$scope.selectedLocation = true;
 													$scope.data = reponse.data;
 													prepareMap();
 												});
