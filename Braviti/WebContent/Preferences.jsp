@@ -24,9 +24,9 @@
 					        <div class="form-group" ng-repeat="value in categoryList">					         
 					            <input
 					              type="checkbox"
-					              ng-model="value.selected"
-					             value={{value.id}}
-					            > <!-- ng-change="setOutput(typeKey, $index, value)" --> <label>{{value.name}}
+					              ng-model="value.selected"   					            				            
+					             ng-checked="value.selected == true"
+					            /> <!-- ng-change="setOutput(typeKey, $index, value)" --> <label>{{value.name}}
 					          </label>
 					        </div>
 					       </form> 
@@ -43,6 +43,8 @@
 					              type="checkbox"
 					              ng-model="x"
 					              ng-change="setOutput(value)"
+					              ng-class="{'checked':isExist(value)!=-1}"
+					               ng-checked="isExist(value)!=-1"
 					            > <label>{{value}}
 					          </label>
 					        </div>

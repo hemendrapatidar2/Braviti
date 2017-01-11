@@ -43,12 +43,15 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 			console.log("inside preferenceCtl controller");
 			//get the User Name Logged in
 			$scope.userName = $cookies.get('userName');
-			$scope.categoryList = [];
+			$scope.categoryList = {};
 			$scope.priceList = [];
-			$scope.priceSelectedOutputs = [];		
-			
+			$scope.priceSelectedOutputs = [];
+			$scope.result = {};
+			$scope.priceRange = [];
 			//Service call to get the preferences
-			getPreferences();			
+			checkPreferencesExists();
+			
+//			getPreferences();			
 			
 			//get the selected checkbox price value
 			$scope.setOutput = function(value) {						  
@@ -77,6 +80,16 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 				
 			}
 			
+			$scope.isExist = function(value){
+		        return $scope.priceRange.map(function(type){return type;}).indexOf(value);
+		    }
+			
+			
+			function checkPreferencesExists(){
+				getPreferences()
+				
+			}		
+			
 			function getPreferences(){
 				$http({
 					method : "GET",
@@ -87,11 +100,11 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 				}).then(function(response){
 					console.log("Service Success:"+angular.toJson(response));
 					setData(response.data);
-					
+					getPreferencePerUser();
 				});
 			}
 			
-			function getPreferencesPerUser(){
+			function getPreferencePerUser(){
 				$http({
 					method : "GET",
 					url : "data/useroffers/getPreferencesPerUser",
@@ -103,18 +116,59 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 					}
 				}).then(function(response){
 					alert("Service Success:"+angular.toJson(response));
+					if(response.data != null){
+						alert("get User Preference:"+angular.toJson(response.data));
+						setUserPreferencesData(response.data);
+					} 
 					
-					//setData(response.data);
 					
 				});
 			}
 			
-			
+			function setUserPreferencesData(data){
+				
+				console.log("2:"+angular.toJson(data));
+				$scope.result = data;
+				$scope.categories = data.categories[0].split(",");
+				 
+				 $scope.priceRange = data.priceRange[0].split(",");
+				 
+				 
+				 
+				 
+				 for(var index = 0;index<$scope.categoryList.length;index++) {
+						for(var i = 0;i<$scope.categories.length;i++) {
+							console.log($scope.categories[i] +"             "+$scope.categoryList[i].id);
+							if($scope.categories[i] == $scope.categoryList[index].id) {
+								$scope.categoryList[index].selected=true;
+								break;
+							} else {
+								$scope.categoryList[index].selected=false;
+								
+							}
+						}
+					}
+				 
+				 for(var index = 0;index<$scope.priceList.length;index++) {
+						for(var i = 0;i<$scope.priceRange.length;i++) {
+							console.log($scope.priceRange[i] +"             "+$scope.priceList[i]);
+							if($scope.priceRange[i] == $scope.priceList[index]) {
+								$scope.priceList[index].selected=true;
+								break;
+							} else {
+								$scope.priceList[index].selected=false;
+								
+							}
+						}
+					}
+				 console.log(angular.toJson($scope.priceList));
+				
+			}
 			
 			function setData(data){
 				 $scope.categoryList = data.categoryList;
 				 $scope.priceList = data.priceRangeList;
-				 getPreferencesPerUser();
+				 
 			 }
 			
 			function sendPreferenceData(categoryJsonData,priceJsonData) {
