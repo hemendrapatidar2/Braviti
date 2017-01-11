@@ -129,9 +129,9 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 				
 				console.log("2:"+angular.toJson(data));
 				$scope.result = data;
-				$scope.categories = data.categories[0].split(",");
+				$scope.categories = data.categories;
 				 
-				 $scope.priceRange = data.priceRange[0].split(",");
+				 $scope.priceRange = data.priceRange;
 				 
 				 
 				 
