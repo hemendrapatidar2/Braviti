@@ -303,7 +303,7 @@ myApp
 
 							var stylesheet = "position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
 
-							$scope.locations = [{location : 'ShivajiNagar',latitude:'18.5008',langitude:'73.8075'},{location : 'Kothrud',latitude:'18.5374',langitude:'73.8377'},{location : 'Pimpri',latitude:'18.6298',langitude:'73.7997'},{location : 'Wakad',latitude:'18.5989',langitude:'73.7653'},{location : 'Nigdi',latitude:'18.6471',langitude:'73.7559'}];									
+							$scope.locations = [{location : 'ShivajiNagar',latitude:'18.5318',langitude:'73.8499'},{location : 'Kothrud',latitude:'18.5102',langitude:'73.8173'},{location : 'Pimpri',latitude:'18.6256',langitude:'73.8060'},{location : 'Wakad',latitude:'18.6059',langitude:'73.7526'},{location : 'Nigdi',latitude:'18.6654',langitude:'73.7710'}];									
 							$scope.selectedImage = "images/map.png";
 							$scope.changeLocation = function() {
 								console.log('in change location '
@@ -363,7 +363,7 @@ myApp
 											document
 													.getElementById('map'),
 											{
-												zoom : 14,
+												zoom : 12,
 												center : firstArea
 											});
 
@@ -419,12 +419,6 @@ myApp
 									}
 							}
 							
-							function routeDirection(outlet){
-								alert($scope.userSelectedLocation.latitude+"----"+$scope.userSelectedLocation.langitude);
-								alert(outlet);
-								var myLocation = new google.maps.LatLng($scope.userSelectedLocation.latitude,$scope.userSelectedLocation.langitude);
-								
-							}
 							function getMarker(data, contentString, map) {
 								var marker = new google.maps.Marker({
 									position : {
