@@ -1,9 +1,7 @@
 package com.tm.braveti.predictivemodel;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,8 +16,6 @@ public class PreferencesUtility {
 	private static final String USERPREF_RESOURCES = "D:/userPreferences.json";
 	private static BufferedWriter bw = null;
 	private static FileWriter fw = null;
-	private static BufferedReader br = null;
-	private static FileReader fr = null;
 
 	public UserPreferencesJson readUserPreferences(String userName) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
@@ -58,7 +54,6 @@ public class PreferencesUtility {
 	public static void main(String args[]) {
 		try {
 			PreferencesUtility preferencesUtility = new PreferencesUtility();
-			preferencesUtility.setUserPreferences("latesh", "1,2,3", "High,Low");
 			preferencesUtility.readUserPreferences("latesh");
 		} catch (Exception ex) {
 			ex.printStackTrace();

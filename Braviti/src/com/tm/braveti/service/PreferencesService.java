@@ -11,13 +11,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import com.tm.braveti.model.Category;
 import com.tm.braveti.model.PreferencesDTO;
@@ -70,7 +65,6 @@ public class PreferencesService {
 	
 
 	public PreferencesDTO getPreferencesData() {
-		List<PreferencesDTO> preferencesDTOList = new ArrayList<PreferencesDTO>();
 		PreferencesDTO preferencesDTO = new PreferencesDTO();
 		List<String> priceRangeList = new ArrayList<String>();
 		priceRangeList.add(PredictiveEngineConstants.HIGH);
