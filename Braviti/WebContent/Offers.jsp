@@ -73,8 +73,8 @@ html, body {
 
 				<label class="labelHeading">Select Preferred Location</label>
 				<p>
-					<select class="shortenedSelect" ng-model="location"
-						ng-change="changeLocation()" ng-options="x for x in locations">
+					<select class="shortenedSelect" ng-model="userSelectedLocation"
+						ng-change="changeLocation()" ng-options="x.location for x in locations">
 						<option value="">--Select an option--</option>
 					</select>
 				</p>
@@ -94,7 +94,7 @@ html, body {
 						</tr>
 						<tr ng-repeat="item in data" class="tr1">
 							<td><center>
-									<b>{{item.storeName}}</b>
+									<b>{{item.storeName}} <button ng-click="loadRouteMap(item)">Route</button></b>
 								</center></td>
 
 							<td colspan="2">

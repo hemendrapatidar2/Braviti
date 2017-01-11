@@ -303,8 +303,7 @@ myApp
 
 							var stylesheet = "position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
 
-							$scope.locations = [ 'ShivajiNagar', 'Kothrud',
-									'Pimpri', 'Wakad', 'Nigdi', ]
+							$scope.locations = [{location : 'ShivajiNagar',latitude:'18.5008',langitude:'73.8075'},{location : 'Kothrud',latitude:'18.5374',langitude:'73.8377'},{location : 'Pimpri',latitude:'18.6298',langitude:'73.7997'},{location : 'Wakad',latitude:'18.5989',langitude:'73.7653'},{location : 'Nigdi',latitude:'18.6471',langitude:'73.7559'}];									
 							$scope.selectedImage = "images/map.png";
 							$scope.changeLocation = function() {
 								console.log('in change location '
@@ -314,7 +313,7 @@ myApp
 									method : "GET",
 									url : "controller.jsp",
 									params : {
-										location : $scope.location,
+										location : $scope.userSelectedLocation.location,
 										userName : $scope.userName
 
 									},
@@ -324,72 +323,107 @@ myApp
 								})
 										.then(
 												function(reponse) {
-													try {
 													$scope.data = reponse.data;
-													var res = $scope.data;
-													console.log("1:"+angular.toJson($scope.data));
-													
-													var firstArea = {
-														lat : res[0].latitude,
-														lng : res[0].langitude
-													};
-													var map = new google.maps.Map(
-															document
-																	.getElementById('map'),
-															{
-																zoom : 12,
-																center : firstArea
-															});
-
-													for (var index = 0; index < $scope.data.length; index++) {
-														var contentString = '<div id="content">';
-														for (var offerIndex = 0; offerIndex < $scope.data[index].offerList.length; offerIndex++) {
-															contentString = contentString
-																	+ '<h4>'
-																	+ $scope.data[index].offerList[offerIndex].categoryName
-																	+ '</h4>'
-																	+ '<div id="bodyContent">'
-																	+ '<p>'
-																	+ $scope.data[index].offerList[offerIndex].offerDescription
-																	+ ',</p></div>';
-
-														}
-														contentString = contentString
-																+ '</div>';
-														var infowindow=null;
-														var markerObj = getMarker(
-																res[index],
-																contentString,
-																map);
-														markerObj
-																.addListener(
-																		'click',
-																		function() {
-																			if(null != infowindow){
-																				infowindow.close();
-																			}
-																			infowindow = new google.maps.InfoWindow(
-																					{
-																						content : this.description
-																					});
-
-																			infowindow
-																					.open(
-																							map,
-																							this);
-																		});
-														map.center = {
-															lat : res[index].latitude,
-															lng : res[index].langitude
-														};
-													}
-													}catch(ex){
-														
-														console.log("Error in Maps:"+ex);
-													}
+													prepareMap();
 												});
 												
 
+							}
+							$scope.loadRouteMap =function(outlet){
+								var map = prepareMap();
+								var currentLocation = new google.maps.LatLng($scope.userSelectedLocation.latitude,$scope.userSelectedLocation.langitude);
+								var outletLocation = new google.maps.LatLng(outlet.latitude,outlet.langitude);
+								var request = {
+									        origin : currentLocation,
+									        destination : outletLocation,
+									        //avoidTolls: true,
+									       // avoidHighways: false,
+									        travelMode : google.maps.TravelMode.DRIVING
+									    };
+									var directionsService = new google.maps.DirectionsService();
+							        var directionsDisplay = new google.maps.DirectionsRenderer();
+								    directionsDisplay.setMap(map); 
+								    directionsService.route(request, function (response, status) {
+								    	
+								        if (status == google.maps.DirectionsStatus.OK) {
+								            directionsDisplay.setDirections(response);
+								        } else {
+								            window.alert('Directions request failed due to ' + status);
+								        }
+								    });
+							}
+							function prepareMap(){
+								try {
+									var res = $scope.data;
+									var firstArea = {
+										lat : res[0].latitude,
+										lng : res[0].langitude
+									};
+									var map = new google.maps.Map(
+											document
+													.getElementById('map'),
+											{
+												zoom : 14,
+												center : firstArea
+											});
+
+									for (var index = 0; index < $scope.data.length; index++) {
+										var contentString = '<div id="content">';
+										for (var offerIndex = 0; offerIndex < $scope.data[index].offerList.length; offerIndex++) {
+											contentString = contentString
+													+ '<h4>'
+													+ $scope.data[index].offerList[offerIndex].categoryName
+													+ '</h4>'
+													+ '<div id="bodyContent">'
+													+ '<p>'
+													+ $scope.data[index].offerList[offerIndex].offerDescription
+													+ ',</p></div>';
+
+										}
+										contentString = contentString
+												+ '</div>';
+										var infowindow=null;
+										var markerObj = getMarker(
+												$scope.data[index],
+												contentString,
+												map);
+										markerObj
+												.addListener(
+														'click',
+														function() {
+															if(null != infowindow){
+																infowindow.close();
+															}
+															infowindow = new google.maps.InfoWindow(
+																	{
+																		content : this.description
+																	});
+																
+															infowindow
+																	.open(
+																			map,
+																			this);
+															
+
+														});
+										map.center = {
+											lat : res[index].latitude,
+											lng : res[index].langitude
+										};
+										
+									}
+									return map;
+									}catch(ex){
+										
+										console.log("Error in Maps:"+ex);
+									}
+							}
+							
+							function routeDirection(outlet){
+								alert($scope.userSelectedLocation.latitude+"----"+$scope.userSelectedLocation.langitude);
+								alert(outlet);
+								var myLocation = new google.maps.LatLng($scope.userSelectedLocation.latitude,$scope.userSelectedLocation.langitude);
+								
 							}
 							function getMarker(data, contentString, map) {
 								var marker = new google.maps.Marker({
