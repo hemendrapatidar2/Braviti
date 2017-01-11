@@ -3,6 +3,10 @@ package com.tm.braveti.model;
 import java.io.Serializable;
 
 public class Outlet implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6892641500116100958L;
 	private String id;
 	private String name;
 	private String location;

@@ -7,20 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 import com.tm.braveti.model.User;
-import com.tm.braveti.service.LoadStaticData;
 
 public class CustomerInfoHelper {
 
-	public static User getUser(String username, LoadStaticData staticData){
-		List<User> users = staticData.getUsers();
-		for (User user : users) {
-			if (user.getFname().equalsIgnoreCase(username)){
-				return user;
-			}
-		}
-		return null;
-		
-	}
 	
 	public static boolean checkForBithdayWeek(User user){
 //		check month and date only  not year

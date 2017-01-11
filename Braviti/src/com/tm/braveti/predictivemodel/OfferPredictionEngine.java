@@ -6,7 +6,6 @@ import java.util.List;
 import com.tm.braveti.model.PieChartDTO;
 import com.tm.braveti.model.TransactionHistory;
 import com.tm.braveti.model.User;
-import com.tm.braveti.service.LoadStaticData;
 
 public class OfferPredictionEngine {
 

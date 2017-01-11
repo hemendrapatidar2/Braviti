@@ -3,6 +3,10 @@ package com.tm.braveti.model;
 import java.io.Serializable;
 
 public class TransactionHistory implements Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4907924537233179650L;
 	private String id;
 	private String userid;
 	private String date;
