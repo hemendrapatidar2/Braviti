@@ -354,6 +354,7 @@ myApp
 								            window.alert('Directions request failed due to ' + status);
 								        }
 								    });
+								    setTimeout(function () { map.setZoom(12); }, 1000);
 							}
 							function prepareMap(){
 								try {
