@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
@@ -359,7 +360,10 @@ public class SparkRecommender implements Serializable {
 					 prefDto=new UserPreferencesJson();
 					 preferenceMap=new HashMap<String, List<String>>();
 					 prefDto.setUserId(data[0]);
+					 
+					 if(null != data[1]  &&  StringUtils.isNotEmpty(data[1]))
 					 prefDto.setCategories( Arrays.asList(StringUtils.split(data[1], ',')));
+					 if(null != data[2] && StringUtils.isNotEmpty(data[2]))
 					 prefDto.setPriceRange( Arrays.asList(StringUtils.split(data[2], ',')));
 					 
 				 }
@@ -380,96 +384,57 @@ public class SparkRecommender implements Serializable {
 		return prefDto;
 	}
 	
-	
-	
 	public boolean setUserPreference(final String userName, String category , String price) throws Exception
 	{
 		boolean prefStatus =false;
-		BufferedWriter bw=null;
+		File file=null;
+		String strCat=StringUtils.remove(category, '[');
+		String strCat1=StringUtils.remove(strCat, ']');
+		String strCat2=StringUtils.remove(strCat1, '"');
+		
+		String strPrice=StringUtils.remove(price, '[');
+		String strPrice1=StringUtils.remove(strPrice, ']');
+		String strPrice2=StringUtils.remove(strPrice1, '"');
+		
+		String strTxt=userName +"|" + strCat2 + "|"+ strPrice2;
+		
 		try {
-            
 			URL url = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
 			String parentDirectory = new File(new URI(url.toString())).getAbsolutePath();
 			System.out.println("parentDirectory: "+parentDirectory);
+			file = new File(parentDirectory +"\\userPref.csv");
+			System.out.println("FileLocation Is :: "+ file.getAbsolutePath());
+			List<String> lines = FileUtils.readLines(file);
+			if(!lines.isEmpty())
+			{
+				int i=0;
+				for(String s: lines)
+				{
+					
+					String data[] = StringUtils.split(s, "|");
+	            	if (userName.equals(data[0].trim())) 
+					{
+						lines.set(i,strTxt);
+					}					
+					i++;
+				}
+			}
+			else
+			{
+				lines.add(strTxt);
+			}
+				FileUtils.writeLines(file, lines);
+				prefStatus=true;
+		}catch(Exception e){
+			e.printStackTrace();
+			prefStatus=false;
+		}
 			
-			//File inFile = new File("userPref.csv");
-			File inFile = new File(parentDirectory +"\\userPref.csv");
-			
-			System.out.println("FileLocation Is :: "+ inFile.getAbsolutePath());
-            //File tempFile = new File("userPrefTmp.csv");
-			File tempFile = new File(parentDirectory +"\\userPrefTemp.csv");
-
-            if (!tempFile.createNewFile()){
-    	        System.out.println(" setUserPreference :: Temp File already exists.");
-    	      }
-            
-            BufferedReader br = new BufferedReader(new FileReader(inFile));
-            bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempFile,true)));
-
-            
-            if (!inFile.createNewFile()){
-    	        System.out.println(" setUserPreference:: File already exists.");
-    	      }
-            
-            
-            String line = null;
-            if (!inFile.isFile()) {
-                System.out.println("Parameter is not an existing file");
-                return prefStatus;
-            }
-           
-            
-            // Read from the original file and write to the new
-            // unless content matches data to be removed.
-            while ((line = br.readLine()) != null) {
-
-            	if(StringUtils.isNotEmpty(line) || null != line)
-            	{
-            	String data[] = StringUtils.split(line, "|");
-            	if (!userName.equals(data[0].trim())) {
-
-            		bw.write(line);
-            		bw.newLine();
-                }
-            	}
-            }
-            String strCat=StringUtils.remove(category, '[');
-    		String strCat1=StringUtils.remove(strCat, ']');
-    		String strCat2=StringUtils.remove(strCat1, '"');
-    		
-    		String strPrice=StringUtils.remove(price, '[');
-    		String strPrice1=StringUtils.remove(strPrice, ']');
-    		String strPrice2=StringUtils.remove(strPrice1, '"');
-    		
-    		bw.write(userName +"|" + strCat2 + "|"+ strPrice2);
-    		bw.newLine();
-    		bw.close();
-           
-            br.close();
-
-            // Delete the original file
-            if (!inFile.delete()) {
-                System.out.println("Could not delete file");
-                return prefStatus;
-            }
-            // Rename the new file to the filename the original file had.
-
-            if (!tempFile.renameTo(inFile))
-            {    	System.out.println("Could not rename file");
-            		return prefStatus;
-            }
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-            return prefStatus;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return prefStatus;
-        }
-		
-		prefStatus=true;
 		return prefStatus;
 	}
+	
+	
+	
 	
 	
 	

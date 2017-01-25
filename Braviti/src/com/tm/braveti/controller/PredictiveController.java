@@ -143,13 +143,14 @@ public class PredictiveController {
 			) throws Exception
 		{
 		String jsonInString=null;
-		System.out.println("inside gettUserPreferences Method: " + userName);
+		System.out.println("getUserPreferences Method: " + userName);
 		SparkRecommender recommender=new SparkRecommender();
 		UserPreferencesJson prefDto = recommender.getUserPreferences(userName);
 		ObjectMapper mapper = new ObjectMapper();
+		jsonInString = mapper.writeValueAsString(prefDto);
+		return Response.ok().status(200).entity(jsonInString).build();
 		
-		
-			if(null != prefDto)
+			/*if(null != prefDto)
 			{
 				jsonInString = mapper.writeValueAsString(prefDto);
 				return Response.ok().status(200).entity(jsonInString).build();
@@ -158,7 +159,7 @@ public class PredictiveController {
 			{
 				jsonInString = mapper.writeValueAsString(prefDto);
 				return Response.ok().status(200).entity(jsonInString).build();
-		}
+		}*/
 			
 	}
 	public static void main(String[] args) {
