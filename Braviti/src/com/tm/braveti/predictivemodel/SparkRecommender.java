@@ -1,13 +1,9 @@
 package com.tm.braveti.predictivemodel;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,13 +27,13 @@ import com.tm.braveti.exception.UserNotFoundException;
 import com.tm.braveti.model.OfferCategory;
 import com.tm.braveti.model.OfferDTO;
 import com.tm.braveti.model.Outlet;
+import com.tm.braveti.model.PriceRange;
 import com.tm.braveti.model.TransactionHistory;
 import com.tm.braveti.model.User;
 
 
 public class SparkRecommender implements Serializable {
 	
-//	private static final String BRAVITI_RESOURCES = "com"+File.separator+"tm"+File.separator+"braveti"+File.separator+"resources";
 	private static final String BRAVITI_RESOURCES = "com/tm/braveti/resources";
 	private static final long serialVersionUID = -8760307916460712075L;
 	private static List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
@@ -350,6 +346,7 @@ public class SparkRecommender implements Serializable {
 			HashMap preferenceMap;
 			String sCurrentLine;
 			br = new BufferedReader(new FileReader(fin));
+			List<String> priceList=new ArrayList<String>();
 			
 			while ((sCurrentLine = br.readLine()) != null) {
 				System.out.println(sCurrentLine);
@@ -363,9 +360,19 @@ public class SparkRecommender implements Serializable {
 					 
 					 if(null != data[1]  &&  StringUtils.isNotEmpty(data[1]))
 					 prefDto.setCategories( Arrays.asList(StringUtils.split(data[1], ',')));
+					 // Below condition is to ensure exception not thrown in case none of the price range is selected
+					 if(data.length>2)
+					 {
 					 if(null != data[2] && StringUtils.isNotEmpty(data[2]))
-					 prefDto.setPriceRange( Arrays.asList(StringUtils.split(data[2], ',')));
-					 
+					 {
+					 priceList=Arrays.asList(StringUtils.split(data[2], ','));
+					 prefDto.setPriceRange(priceList);
+					 }
+					 }
+					 else
+					 {
+						 prefDto.setPriceRange(priceList);
+					 }
 				 }
 			}
 		} catch (IOException e) {
@@ -403,6 +410,7 @@ public class SparkRecommender implements Serializable {
 			String parentDirectory = new File(new URI(url.toString())).getAbsolutePath();
 			System.out.println("parentDirectory: "+parentDirectory);
 			file = new File(parentDirectory +"\\userPref.csv");
+			file.createNewFile();
 			System.out.println("FileLocation Is :: "+ file.getAbsolutePath());
 			List<String> lines = FileUtils.readLines(file);
 			if(!lines.isEmpty())

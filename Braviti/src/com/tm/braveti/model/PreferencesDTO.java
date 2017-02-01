@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PreferencesDTO {
 	private List<Category> categoryList;
-	private List<String> priceRangeList;
+	private List<PriceRange> priceRangeList;
 	
 	
 	public List<Category> getCategoryList() {
@@ -13,10 +13,10 @@ public class PreferencesDTO {
 	public void setCategoryList(List<Category> categoryList) {
 		this.categoryList = categoryList;
 	}
-	public List<String> getPriceRangeList() {
+	public List<PriceRange> getPriceRangeList() {
 		return priceRangeList;
 	}
-	public void setPriceRangeList(List<String> priceRangeList) {
+	public void setPriceRangeList(List<PriceRange> priceRangeList) {
 		this.priceRangeList = priceRangeList;
 	}
 	

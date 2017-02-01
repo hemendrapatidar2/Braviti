@@ -16,6 +16,7 @@ import java.util.List;
 
 import com.tm.braveti.model.Category;
 import com.tm.braveti.model.PreferencesDTO;
+import com.tm.braveti.model.PriceRange;
 import com.tm.braveti.predictivemodel.PredictiveEngineConstants;
 
 
@@ -66,10 +67,7 @@ public class PreferencesService {
 
 	public PreferencesDTO getPreferencesData() {
 		PreferencesDTO preferencesDTO = new PreferencesDTO();
-		List<String> priceRangeList = new ArrayList<String>();
-		priceRangeList.add(PredictiveEngineConstants.HIGH);
-		priceRangeList.add(PredictiveEngineConstants.MID);
-		priceRangeList.add(PredictiveEngineConstants.LOW);
+		List<PriceRange> priceRangeList =getPriceRange();
 		List<Category> categoryList = getCategoryListFromCSV(); 
 		for (Category user : categoryList) {
 			System.out.println(user.toString());
@@ -84,6 +82,22 @@ public class PreferencesService {
 		preferencesDTO.setPriceRangeList(priceRangeList);
 		
 		return preferencesDTO;
+	}
+	
+	private List<PriceRange> getPriceRange()
+	{
+		List<PriceRange> priceRangeList = new ArrayList<PriceRange>();
+		PriceRange priceRange=new PriceRange();
+		priceRange.setRange(PredictiveEngineConstants.HIGH);
+		priceRangeList.add(priceRange);
+		PriceRange priceRange1=new PriceRange();
+		priceRange1.setRange(PredictiveEngineConstants.MID);
+		priceRangeList.add(priceRange1);
+		PriceRange priceRange2=new PriceRange();
+		priceRange2.setRange(PredictiveEngineConstants.LOW);
+		priceRangeList.add(priceRange2);
+		return priceRangeList;
+
 	}
 	
 	

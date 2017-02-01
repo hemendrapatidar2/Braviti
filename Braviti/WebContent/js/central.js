@@ -54,18 +54,31 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 //			getPreferences();			
 			
 			//get the selected checkbox price value
-			$scope.setOutput = function(value) {						  
-			  $scope.priceSelectedOutputs.push(value);
-			 };
+			/*$scope.setOutput = function(value) {	
+				console.log("Value to be added in array->"+value);
+				console.log("Pushing data to array original array->[priceSelectedOutputs="+$scope.priceSelectedOutputs+"],["+angular.isDefined($scope.confirmed)+"],[confirmed="+$scope.confirmed+"]");
+				if($scope.priceSelectedOutputs.indexOf(value) == -1) {
+					 
+				$scope.priceSelectedOutputs.push(value); 
+				}
+				console.log("After pushing values->"+$scope.priceSelectedOutputs);
+			 };*/
 
 			 //Call the desired service to send preference data
 			$scope.applyFilter = function(){				
 					  $scope.categoryIdArray = [];
-					  $scope.priceArray = [];
+					  $scope.priceArray = []; 
 					  angular.forEach($scope.categoryList, function(category){						
 					    if (!!category.selected) $scope.categoryIdArray.push(category.id);
 					  });
-					  var categoryJsonData=angular.toJson($scope.categoryIdArray);
+					  angular.forEach($scope.priceList, function(price){						
+						    if (price.selected==true) 
+						    	{
+						    	$scope.priceSelectedOutputs.push(price.range);
+						    	console.log("Value to be pushed-> "+price+" "+price.range+":"+$scope.priceSelectedOutputs);
+						    	}
+						  });
+					  var categoryJsonData=angular.toJson($scope.categoryIdArray); 
 					  var priceJsonData=angular.toJson($scope.priceSelectedOutputs);
 					  categoryJsonData = categoryJsonData.replaceAll('[',"");
 					  categoryJsonData = categoryJsonData.replaceAll(']',"");
@@ -127,13 +140,11 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 			
 			function setUserPreferencesData(data){
 				
-				console.log("2:"+angular.toJson(data));
+				console.log("Preference data to set "+angular.toJson(data));
 				$scope.result = data;
 				$scope.categories = data.categories;
 				 
 				 $scope.priceRange = data.priceRange;
-				 
-				 
 				 
 				 
 				 for(var index = 0;index<$scope.categoryList.length;index++) {
@@ -151,13 +162,14 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 				 
 				 for(var index = 0;index<$scope.priceList.length;index++) {
 						for(var i = 0;i<$scope.priceRange.length;i++) {
-							console.log($scope.priceRange[i] +"             "+$scope.priceList[i]);
-							if($scope.priceRange[i] == $scope.priceList[index]) {
-								$scope.priceList[index].selected=true;
+							console.log($scope.priceRange[i]+" \"is equal to\" "+$scope.priceList[index].range);
+							if($scope.priceRange[i] == $scope.priceList[index].range) {
+								console.log("set price "+$scope.priceList[index].range+".selected=true");
+								$scope.priceList[index].selected=true; 
 								break;
 							} else {
-								$scope.priceList[index].selected=false;
-								
+								console.log("set price "+$scope.priceList[index].range+".selected=false");
+								$scope.priceList[index].selected=false; 
 							}
 						}
 					}
@@ -166,6 +178,7 @@ myApp.controller('preferenceCtl', [ '$scope', '$http', '$cookies','$window',
 			}
 			
 			function setData(data){
+				console.log("setData(data)");
 				 $scope.categoryList = data.categoryList;
 				 $scope.priceList = data.priceRangeList;
 				 
