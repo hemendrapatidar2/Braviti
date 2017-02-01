@@ -394,14 +394,12 @@ public class SparkRecommender implements Serializable {
 	public boolean setUserPreference(final String userName, String category , String price) throws Exception
 	{
 		boolean prefStatus =false;
+		boolean isUserExists= false;
 		File file=null;
-		String strCat=StringUtils.remove(category, '[');
-		String strCat1=StringUtils.remove(strCat, ']');
-		String strCat2=StringUtils.remove(strCat1, '"');
 		
-		String strPrice=StringUtils.remove(price, '[');
-		String strPrice1=StringUtils.remove(strPrice, ']');
-		String strPrice2=StringUtils.remove(strPrice1, '"');
+		String strCat2 = category.replaceAll("[\\[\\]]", "").replace("\"","");
+		
+		String strPrice2=price.replaceAll("[\\[\\]]", "").replace("\"","");
 		
 		String strTxt=userName +"|" + strCat2 + "|"+ strPrice2;
 		
@@ -423,8 +421,16 @@ public class SparkRecommender implements Serializable {
 	            	if (userName.equals(data[0].trim())) 
 					{
 						lines.set(i,strTxt);
+						isUserExists= true;
+						break;
 					}					
 					i++;
+				}
+				
+				
+				if(isUserExists!= true)
+				{
+					lines.add(strTxt);
 				}
 			}
 			else
