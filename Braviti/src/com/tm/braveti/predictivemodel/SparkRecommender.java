@@ -64,7 +64,10 @@ public class SparkRecommender implements Serializable {
 		}
 		
 		//Applying filters on data loaded in RDD objects
-		userId=getLoggedInUser(userName);
+		if(StringUtils.isEmpty(userId)){
+			userId=getLoggedInUser(userName);
+			}
+			
 		if(!StringUtils.isNoneBlank(userId)){
 			throw new UserNotFoundException("user not found");
 		}
@@ -165,6 +168,7 @@ public class SparkRecommender implements Serializable {
 		final List<String> processedCategory = new ArrayList<>();
 		JavaRDD<TransactionHistory> userSpecificRecords = transactionData.filter(new Function<TransactionHistory, Boolean>() {
 			public Boolean call(TransactionHistory th) {
+				System.out.println("transaction user id"+th.getUserid());
 				if (th.getUserid().trim().equalsIgnoreCase(userId)) {
 					String categoryId = th.getCategoryid();
 					if (!processedCategory.contains(categoryId)) {
@@ -239,7 +243,7 @@ public class SparkRecommender implements Serializable {
 	 */
 	private void loadDataInRDD(JavaSparkContext jsc) throws URISyntaxException {
 		 String fileLocation = this.getClass().getClassLoader().getResource(BRAVITI_RESOURCES).toString();
-		 String txhPath = fileLocation+File.separator+"txHistory.csv";
+		 String txhPath = fileLocation+File.separator+"txnHistory.csv";
 		 String outletPath = fileLocation+File.separator+"outlet.csv";
 		 String usersPath = fileLocation+File.separator+"users.csv";
 		// Step : Load the users data in Java Rdd object
