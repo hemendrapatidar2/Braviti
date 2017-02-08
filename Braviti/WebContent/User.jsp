@@ -88,9 +88,9 @@ legend {
 									<div class="btn-group" data-toggle="buttons">
 										<div class="pull-center">
 											<label class="btn btn-info btn-sm"> <input
-												type="radio" name="gender" id="gender" checked>Male
+												type="radio" name="gender" id="gender" ng-model="gender" checked>Male
 											</label> <label class="btn btn-info btn-sm"> <input
-												type="radio" name="gender" id="gender">Female
+												type="radio" name="gender" id="gender" ng-model="gender">Female
 											</label>
 										</div>
 
@@ -190,8 +190,8 @@ legend {
 					<div class="panel-footer">
 
 						<button type="button" data-dismiss="modal"
-							class="btn btn-success pull-center btn-sm">Submit</button>
-						<button type="button" data-dismiss="modal"
+							class="btn btn-success pull-center btn-sm" ng-click="addUser()">Submit</button>
+						<input type="button" data-dismiss="modal"
 							class="btn btn-success pull-center btn-sm">Clear</button>
 						<div class="clearfix"></div>
 					</div>

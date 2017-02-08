@@ -570,7 +570,8 @@ myApp.controller('userCtl',
 		[
 				'$scope',
 				'$http',
-				function($scope, $http) {
+				'$window',
+				function($scope, $http,$window) {
 					console.log("inside controller");
 
 					$scope.countries = [ "India", "USA", "UK" ];
@@ -627,6 +628,32 @@ myApp.controller('userCtl',
 								"Bhopal", "Chicago", "Houston", "San Antonio",
 								"Dallas", "Denver" ];
 					}
+					/**
+					 * function calls sendAddUserRequest function to add user in database.
+					 * Builds UserDTO object and converts it into JSON format to send it to REST web service
+					 */
+					$scope.addUser=function()
+					{
+						$scope.UserDTO = {
+							firstName : $scope.firstName,
+							lastName : $scope.lastName,
+							gender : $scope.gender,
+							userId : $scope.loginId,
+							password : $scope.password,
+							panNumber : $scope.panNumber,
+							fatherName : $scope.fatherName,
+							voterId : $scope.voterId,
+							emailId : $scope.email,
+							countryName : $scope.countryName,
+							localAddress : $scope.address,
+							stateName : $scope.stateName,
+							cityName : $scope.cityName,
+							districtName : $scope.districtName,
+							nationality : $scope.nationality
+						};
+						$scope.dto = angular.toJson($scope.UserDTO);
+						sendAddUserRequest();
+					}
 
 					$(function() {
 						$('#datetimepicker1').datetimepicker({
@@ -641,4 +668,35 @@ myApp.controller('userCtl',
 						});
 					});
 
-				} ]);
+				    /**
+				     * Sends addUser request to REST web service
+				     */
+					function sendAddUserRequest() {
+						$http({
+							method : "POST",
+							url : "data/user/addUser",
+							data : $scope.dto,
+							dataType : 'json',
+							headers : {
+								'Content-Type' : 'application/json'
+							}
+						}).then(
+								function(response) {
+									if (response.data.status == true) {
+										gotoHomePage();
+									}
+								});
+					}
+					/**
+					 * On receiving result status=true from REST web services shows success alert message to user.
+					 * Once user clicks on 'OK' shows home page. 
+					 */
+					function gotoHomePage() {
+						 
+						 var url ='./Central.jsp#/'
+					     alert("User "+$scope.UserDTO.userId+" added succesfully");
+						 $window.location.href = url;
+					}
+
+				}
+				]);
