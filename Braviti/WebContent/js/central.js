@@ -697,6 +697,26 @@ myApp.controller('userCtl',
 					     alert("User "+$scope.UserDTO.userId+" added succesfully");
 						 $window.location.href = url;
 					}
-
+				/**
+				 * Clears form data from User.jsp
+				 */
+				$scope.clearFormData = function() {
+					$scope.firstName = "";
+					$scope.lastName = "";
+					$scope.gender = "";
+					$scope.loginId = "";
+					$scope.password = "";
+					$scope.panNumber = "";
+					$scope.fatherName = "";
+					$scope.voterId = "";
+					$scope.email = "";
+					$scope.countryName = "";
+					$scope.address = "";
+					$scope.stateName = "";
+					$scope.cityName = "";
+					$scope.districtName = "";
+					$scope.nationality = "";
+					$scope.rePassword = "";
+				} 
 				}
 				]);

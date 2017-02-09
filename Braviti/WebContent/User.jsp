@@ -191,8 +191,8 @@ legend {
 
 						<button type="button" data-dismiss="modal"
 							class="btn btn-success pull-center btn-sm" ng-click="addUser()">Submit</button>
-						<input type="button" data-dismiss="modal"
-							class="btn btn-success pull-center btn-sm">Clear</button>
+						<button type="button" data-dismiss="modal"
+							class="btn btn-success pull-center btn-sm" ng-click="clearFormData()">Clear</button>
 						<div class="clearfix"></div>
 					</div>
 				</div>
