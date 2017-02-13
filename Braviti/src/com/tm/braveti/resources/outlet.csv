@@ -1,637 +1,652 @@
-1,Bata,Hadapsar,3,low,10% off,18.5185,73.9186,,
-2,Bata,Hadapsar,3,mid,0.15,18.5185,73.9186,,
-3,Bata,Hadapsar,3,high,Buy One and Get One free,18.5185,73.9186,,
-4,Bata,Baner,3,low,10% off,18.5573,73.7918,,
-5,Bata,Baner,3,mid,0.15,18.5573,73.7918,,
-6,Bata,Baner,3,high,Buy One and Get One free,18.5573,73.7918,,
-7,Bata,Pimpri,3,high,Buy One Get One,18.6198,73.7897,,
-8,Bata,Pimpri,8,mid,Buy One Get One for birthday  people,18.6198,73.7897,,
-9,Bata,Pimpri,3,low,10% off,18.6198,73.7897,,
-10,Bata,Shivajinagar,3,low,10% off,18.5245,73.8629,,
-11,Bata,Shivajinagar,3,mid,0.15,18.5245,73.8629,,
-12,Bata,Shivajinagar,3,high,Buy One and Get One free,18.5245,73.8629,,
-13,Bata,Wakad,3,low,10% off,18.5245,73.8629,,
-14,Bata,Wakad,3,mid,0.15,18.5245,73.8629,,
-15,Bata,Wakad,3,high,Buy One and Get One free,18.5245,73.8629,,
-16,BigBazar,Kothrud,1,high,20% Off,18.5087,73.8125,,
-17,BigBazar,Kothrud,2,low,Buy one & get 50% off on Second,18.5087,73.8125,,
-18,BigBazar,Kothrud,3,high,Buy One Get One,18.5087,73.8125,,
-19,BigBazar,Kothrud,4,high,Buy one & get 40% off on Second,18.5087,73.8125,,
-20,BigBazar,Kothrud,5,low,20% off,18.5087,73.8125,,
-21,BigBazar,Kothrud,6,mid,5% off,18.5087,73.8125,,
-22,BigBazar,Kothrud,7,mid,upto 25% off,18.5087,73.8125,,
-23,BigBazar,Kothrud,8,low,upto 25% off for birthday  people,18.5087,73.8125,,
-24,BigBazar,Kothrud,8,high,20% off,18.5087,73.8125,,
-25,BigBazar,Kothrud,9,low,10% off,18.5087,73.8125,,
-26,BigBazar,Kothrud,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5087,73.8125,,
-27,BigBazar,Kothrud,11,high,25% off,18.5087,73.8125,,
-28,BigBazar,Kothrud,12,low,10% cachback,18.5087,73.8125,,
-29,BigBazar,Kothrud,13,mid,5% off,18.5087,73.8125,,
-30,BigBazar,Kothrud,14,low,5% off,18.5087,73.8125,,
-31,BigBazar,Kothrud,15,high,10% off,18.5087,73.8125,,
-32,BigBazar,Kothrud,16,low,8% off,18.5087,73.8125,,
-33,BigBazar,Kothrud,17,mid,10% cachback on payment above 2000,18.5087,73.8125,,
-34,BigBazar,Kothrud,18,high,10% off,18.5087,73.8125,,
-35,BigBazar,Kothrud,19,high,Buy 2 Get One Free,18.5087,73.8125,,
-36,BigBazar,Kothrud,20,high,Rs 100 off,18.5087,73.8125,,
-37,BigBazar,Kothrud,21,low,Buy One Get One Free,18.5087,73.8125,,
-38,BigBazar,Kothrud,22,mid,5% off,18.5087,73.8125,,
-39,BigBazar,Kothrud,23,high,5% off,18.5087,73.8125,,
-40,BigBazar,Kothrud,24,low,12% off,18.5087,73.8125,,
-41,BigBazar,Kothrud,25,mid,12% off,18.5087,73.8125,,
-42,BigBazar,Hinjewadi,1,mid,25% off,18.5571,73.7239,,
-43,BigBazar,Hinjewadi,2,high,Flat 500 off on 2000 shopping,18.5571,73.7239,,
-44,BigBazar,Hinjewadi,3,low,35% off,18.5571,73.7239,,
-45,BigBazar,Hinjewadi,4,mid,Flat 200 off on 1000 shopping,18.5571,73.7239,,
-46,BigBazar,Hinjewadi,5,mid,Flat 1000 off,18.5571,73.7239,,
-47,BigBazar,Hinjewadi,6,low,Flat 100 off on 1000 shopping,18.5571,73.7239,,
-48,BigBazar,Hinjewadi,7,high,Flat 1000 off,18.5571,73.7239,,
-49,BigBazar,Hinjewadi,8,high,20% off,18.5571,73.7239,,
-50,BigBazar,Hinjewadi,9,low,10% off,18.5571,73.7239,,
-51,BigBazar,Hinjewadi,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5571,73.7239,,
-52,BigBazar,Hinjewadi,11,high,25% off,18.5571,73.7239,,
-53,BigBazar,Hinjewadi,12,low,10% cachback,18.5571,73.7239,,
-54,BigBazar,Hinjewadi,13,mid,5% off,18.5571,73.7239,,
-55,BigBazar,Hinjewadi,14,low,5% off,18.5571,73.7239,,
-56,BigBazar,Hinjewadi,15,high,10% off,18.5571,73.7239,,
-57,BigBazar,Hinjewadi,16,low,8% off,18.5571,73.7239,,
-58,BigBazar,Hinjewadi,17,mid,10% cachback on payment above 2000,18.5571,73.7239,,
-59,BigBazar,Hinjewadi,18,high,10% off,18.5571,73.7239,,
-60,BigBazar,Hinjewadi,19,high,Buy 2 Get One Free,18.5571,73.7239,,
-61,BigBazar,Hinjewadi,20,high,Rs 100 off,18.5571,73.7239,,
-62,BigBazar,Hinjewadi,21,low,Buy One Get One Free,18.5571,73.7239,,
-63,BigBazar,Hinjewadi,22,mid,5% off,18.5571,73.7239,,
-64,BigBazar,Hinjewadi,23,high,5% off,18.5571,73.7239,,
-65,BigBazar,Hinjewadi,24,low,12% off,18.5571,73.7239,,
-66,BigBazar,Hinjewadi,25,mid,12% off,18.5571,73.7239,,
-67,BigBazar,Pimpri,1,mid,25% off,18.6239,73.8125,,
-68,BigBazar,Pimpri,2,high,Flat 500 off on 2000 shopping,18.6239,73.8125,,
-69,BigBazar,Pimpri,3,low,35% off,18.6239,73.8125,,
-70,BigBazar,Pimpri,4,mid,Flat 200 off on 1000 shopping,18.6239,73.8125,,
-71,BigBazar,Pimpri,5,mid,Flat 1000 off,18.6239,73.8125,,
-72,BigBazar,Pimpri,6,low,Flat 100 off on 1000 shopping,18.6239,73.8125,,
-73,BigBazar,Pimpri,7,high,Flat 1000 off,18.6239,73.8125,,
-74,BigBazar,Pimpri,8,high,20% off,18.6239,73.8125,,
-75,BigBazar,Pimpri,9,low,10% off,18.6239,73.8125,,
-76,BigBazar,Pimpri,10,mid,FLAT 20% off on all purchases above Rs 1000,18.6239,73.8125,,
-77,BigBazar,Pimpri,11,high,25% off,18.6239,73.8125,,
-78,BigBazar,Pimpri,12,low,10% cachback,18.6239,73.8125,,
-79,BigBazar,Pimpri,13,mid,5% off,18.6239,73.8125,,
-80,BigBazar,Pimpri,14,low,5% off,18.6239,73.8125,,
-81,BigBazar,Pimpri,15,high,10% off,18.6239,73.8125,,
-82,BigBazar,Pimpri,16,low,8% off,18.6239,73.8125,,
-83,BigBazar,Pimpri,17,mid,10% cachback on payment above 2000,18.6239,73.8125,,
-84,BigBazar,Pimpri,18,high,10% off,18.6239,73.8125,,
-85,BigBazar,Pimpri,19,high,Buy 2 Get One Free,18.6239,73.8125,,
-86,BigBazar,Pimpri,20,high,Rs 100 off,18.6239,73.8125,,
-87,BigBazar,Pimpri,21,low,Buy One Get One Free,18.6239,73.8125,,
-88,BigBazar,Pimpri,22,mid,5% off,18.6239,73.8125,,
-89,BigBazar,Pimpri,23,high,5% off,18.6239,73.8125,,
-90,BigBazar,Pimpri,24,low,12% off,18.6239,73.8125,,
-91,BigBazar,Pimpri,25,mid,12% off,18.6239,73.8125,,
-92,BigBazar,Sinhagad road ,1,mid,25% off,18.5204,73.8567,,
-93,BigBazar,Sinhagad road ,2,high,Flat 500 off on 2000 shopping,18.5204,73.8567,,
-94,BigBazar,Sinhagad road ,3,low,35% off,18.5204,73.8567,,
-95,BigBazar,Sinhagad road ,4,mid,Flat 200 off on 1000 shopping,18.5204,73.8567,,
-96,BigBazar,Sinhagad road ,5,mid,Flat 1000 off,18.5204,73.8567,,
-97,BigBazar,Sinhagad road ,6,low,Flat 100 off on 1000 shopping,18.5204,73.8567,,
-98,BigBazar,Sinhagad road ,7,high,Flat 1000 off,18.5204,73.8567,,
-99,BigBazar,Sinhagad road ,8,high,20% off,18.5204,73.8567,,
-100,BigBazar,Sinhagad road ,9,low,10% off,18.5204,73.8567,,
-101,BigBazar,Sinhagad road ,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5204,73.8567,,
-102,BigBazar,Sinhagad road ,11,high,25% off,18.5204,73.8567,,
-103,BigBazar,Sinhagad road ,12,low,10% cachback,18.5204,73.8567,,
-104,BigBazar,Sinhagad road ,13,mid,5% off,18.5204,73.8567,,
-105,BigBazar,Sinhagad road ,14,low,5% off,18.5204,73.8567,,
-106,BigBazar,Sinhagad road ,15,high,10% off,18.5204,73.8567,,
-107,BigBazar,Sinhagad road ,16,low,8% off,18.5204,73.8567,,
-108,BigBazar,Sinhagad road ,17,mid,10% cachback on payment above 2000,18.5204,73.8567,,
-109,BigBazar,Sinhagad road ,18,high,10% off,18.5204,73.8567,,
-110,BigBazar,Sinhagad road ,19,high,Buy 2 Get One Free,18.5204,73.8567,,
-111,BigBazar,Sinhagad road ,20,high,Rs 100 off,18.5204,73.8567,,
-112,BigBazar,Sinhagad road ,21,low,Buy One Get One Free,18.5204,73.8567,,
-113,BigBazar,Sinhagad road ,22,mid,5% off,18.5204,73.8567,,
-114,BigBazar,Sinhagad road ,23,high,5% off,18.5204,73.8567,,
-115,BigBazar,Sinhagad road ,24,low,12% off,18.5204,73.8567,,
-116,BigBazar,Sinhagad road ,25,mid,12% off,18.5204,73.8567,,
-117,BigBazar,Wakad,1,mid,25% off,18.5204,73.8567,,
-118,BigBazar,Wakad,2,high,Flat 500 off on 2000 shopping,18.5204,73.8567,,
-119,BigBazar,Wakad,3,low,35% off,18.5204,73.8567,,
-120,BigBazar,Wakad,4,mid,Flat 200 off on 1000 shopping,18.5204,73.8567,,
-121,BigBazar,Wakad,5,mid,Flat 1000 off,18.5204,73.8567,,
-122,BigBazar,Wakad,6,low,Flat 100 off on 1000 shopping,18.5204,73.8567,,
-123,BigBazar,Wakad,7,high,Flat 1000 off,18.5204,73.8567,,
-124,BigBazar,Wakad,8,high,20% off,18.5204,73.8567,,
-125,BigBazar,Wakad,9,low,10% off,18.5204,73.8567,,
-126,BigBazar,Wakad,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5204,73.8567,,
-127,BigBazar,Wakad,11,high,25% off,18.5204,73.8567,,
-128,BigBazar,Wakad,12,low,10% cachback,18.5204,73.8567,,
-129,BigBazar,Wakad,13,mid,5% off,18.5204,73.8567,,
-130,BigBazar,Wakad,14,low,5% off,18.5204,73.8567,,
-131,BigBazar,Wakad,15,high,10% off,18.5204,73.8567,,
-132,BigBazar,Wakad,16,low,8% off,18.5204,73.8567,,
-133,BigBazar,Wakad,17,mid,10% cachback on payment above 2000,18.5204,73.8567,,
-134,BigBazar,Wakad,18,high,10% off,18.5204,73.8567,,
-135,BigBazar,Wakad,19,high,Buy 2 Get One Free,18.5204,73.8567,,
-136,BigBazar,Wakad,20,high,Rs 100 off,18.5204,73.8567,,
-137,BigBazar,Wakad,21,low,Buy One Get One Free,18.5204,73.8567,,
-138,BigBazar,Wakad,22,mid,5% off,18.5204,73.8567,,
-139,BigBazar,Wakad,23,high,5% off,18.5204,73.8567,,
-140,BigBazar,Wakad,24,low,12% off,18.5204,73.8567,,
-141,BigBazar,Wakad,25,mid,12% off,18.5204,73.8567,,
-142,Central Mall,Kothrud,1,mid,free 8 voucher,18.5344,73.8363,,
-143,Central Mall,Kothrud,2,mid,Buy One Get One,18.5344,73.8363,,
-144,Central Mall,Kothrud,3,low,Buy one & get 50% off on Second,18.5344,73.8363,,
-145,Central Mall,Kothrud,4,mid,25% off,18.5344,73.8363,,
-146,Central Mall,Kothrud,5,high,12% off,18.5344,73.8363,,
-147,Central Mall,Kothrud,6,mid,Buy One Get One,18.5344,73.8363,,
-148,Central Mall,Kothrud,7,high,upto 40% off,18.5344,73.8363,,
-149,Central Mall,Kothrud,8,high,20% off,18.5344,73.8363,,
-150,Central Mall,Kothrud,9,low,10% off,18.5344,73.8363,,
-151,Central Mall,Kothrud,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363,,
-152,Central Mall,Kothrud,11,high,25% off,18.5344,73.8363,,
-153,Central Mall,Kothrud,12,low,10% cachback,18.5344,73.8363,,
-154,Central Mall,Kothrud,13,mid,5% off,18.5344,73.8363,,
-155,Central Mall,Kothrud,14,low,5% off,18.5344,73.8363,,
-156,Central Mall,Kothrud,15,high,10% off,18.5344,73.8363,,
-157,Central Mall,Kothrud,16,low,8% off,18.5344,73.8363,,
-158,Central Mall,Kothrud,17,mid,10% cachback on payment above 2000,18.5344,73.8363,,
-159,Central Mall,Kothrud,18,high,10% off,18.5344,73.8363,,
-160,Central Mall,Kothrud,19,high,Buy 2 Get One Free,18.5344,73.8363,,
-161,Central Mall,Kothrud,20,high,Rs 100 off,18.5344,73.8363,,
-162,Central Mall,Kothrud,21,low,Buy One Get One Free,18.5344,73.8363,,
-163,Central Mall,Kothrud,22,mid,5% off,18.5344,73.8363,,
-164,Central Mall,Kothrud,23,high,5% off,18.5344,73.8363,,
-165,Central Mall,Kothrud,24,low,12% off,18.5344,73.8363,,
-166,Central Mall,Kothrud,25,mid,12% off,18.5344,73.8363,,
-167,Central Mall,Nigdi,1,mid,Flat 1000 off on 5000 shopping,18.5344,73.8363,,
-168,Central Mall,Nigdi,2,mid,15% off,18.5344,73.8363,,
-169,Central Mall,Nigdi,3,mid,10% off,18.5344,73.8363,,
-170,Central Mall,Nigdi,4,low,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-171,Central Mall,Nigdi,5,high,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-172,Central Mall,Nigdi,6,mid,5 % off,18.5344,73.8363,,
-173,Central Mall,Nigdi,7,low,15% off,18.5344,73.8363,,
-174,Central Mall,Nigdi,8,high,20% off,18.5344,73.8363,,
-175,Central Mall,Nigdi,9,low,10% off,18.5344,73.8363,,
-176,Central Mall,Nigdi,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363,,
-177,Central Mall,Nigdi,11,high,25% off,18.5344,73.8363,,
-178,Central Mall,Nigdi,12,low,10% cachback,18.5344,73.8363,,
-179,Central Mall,Nigdi,13,mid,5% off,18.5344,73.8363,,
-180,Central Mall,Nigdi,14,low,5% off,18.5344,73.8363,,
-181,Central Mall,Nigdi,15,high,10% off,18.5344,73.8363,,
-182,Central Mall,Nigdi,16,low,8% off,18.5344,73.8363,,
-183,Central Mall,Nigdi,17,mid,10% cachback on payment above 2000,18.5344,73.8363,,
-184,Central Mall,Nigdi,18,high,10% off,18.5344,73.8363,,
-185,Central Mall,Nigdi,19,high,Buy 2 Get One Free,18.5344,73.8363,,
-186,Central Mall,Nigdi,20,high,Rs 100 off,18.5344,73.8363,,
-187,Central Mall,Nigdi,21,low,Buy One Get One Free,18.5344,73.8363,,
-188,Central Mall,Nigdi,22,mid,5% off,18.5344,73.8363,,
-189,Central Mall,Nigdi,23,high,5% off,18.5344,73.8363,,
-190,Central Mall,Nigdi,24,low,25% off,18.5344,73.8363,,
-191,Central Mall,Nigdi,25,mid,12% off,18.5344,73.8363,,
-192,Central Mall,Pimpri,1,mid,Flat 1000 off on 5000 shopping,18.5344,73.8363,,
-193,Central Mall,Pimpri,2,mid,15% off,18.5344,73.8363,,
-194,Central Mall,Pimpri,3,mid,10% off,18.5344,73.8363,,
-195,Central Mall,Pimpri,4,low,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-196,Central Mall,Pimpri,5,high,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-197,Central Mall,Pimpri,6,mid,5 % off,18.5344,73.8363,,
-198,Central Mall,Pimpri,7,low,15% off,18.5344,73.8363,,
-199,Central Mall,Pimpri,8,high,20% off,18.5344,73.8363,,
-200,Central Mall,Pimpri,9,low,10% off,18.5344,73.8363,,
-201,Central Mall,Pimpri,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363,,
-202,Central Mall,Pimpri,11,high,25% off,18.5344,73.8363,,
-203,Central Mall,Pimpri,12,low,10% cachback,18.5344,73.8363,,
-204,Central Mall,Pimpri,13,mid,5% off,18.5344,73.8363,,
-205,Central Mall,Pimpri,14,low,5% off,18.5344,73.8363,,
-206,Central Mall,Pimpri,15,high,10% off,18.5344,73.8363,,
-207,Central Mall,Pimpri,16,low,8% off,18.5344,73.8363,,
-208,Central Mall,Pimpri,17,mid,10% cachback on payment above 2000,18.5344,73.8363,,
-209,Central Mall,Pimpri,18,high,10% off,18.5344,73.8363,,
-210,Central Mall,Pimpri,19,high,Buy 2 Get One Free,18.5344,73.8363,,
-211,Central Mall,Pimpri,20,high,Rs 100 off,18.5344,73.8363,,
-212,Central Mall,Pimpri,21,low,Buy One Get One Free,18.5344,73.8363,,
-213,Central Mall,Pimpri,22,mid,5% off,18.5344,73.8363,,
-214,Central Mall,Pimpri,23,high,5% off,18.5344,73.8363,,
-215,Central Mall,Pimpri,24,low,25% off,18.5344,73.8363,,
-216,Central Mall,Pimpri,25,mid,12% off,18.5344,73.8363,,
-217,Central Mall,ShivajiNagar,1,mid,Flat 1000 off on 5000 shopping,18.5344,73.8363,,
-218,Central Mall,ShivajiNagar,2,mid,15% off,18.5344,73.8363,,
-219,Central Mall,ShivajiNagar,3,mid,10% off,18.5344,73.8363,,
-220,Central Mall,ShivajiNagar,4,low,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-221,Central Mall,ShivajiNagar,5,high,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-222,Central Mall,ShivajiNagar,6,mid,5 % off,18.5344,73.8363,,
-223,Central Mall,ShivajiNagar,7,low,15% off,18.5344,73.8363,,
-224,Central Mall,ShivajiNagar,8,high,20% off,18.5344,73.8363,,
-225,Central Mall,ShivajiNagar,9,low,10% off,18.5344,73.8363,,
-226,Central Mall,ShivajiNagar,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363,,
-227,Central Mall,ShivajiNagar,11,high,25% off,18.5344,73.8363,,
-228,Central Mall,ShivajiNagar,12,low,10% cachback,18.5344,73.8363,,
-229,Central Mall,ShivajiNagar,13,mid,5% off,18.5344,73.8363,,
-230,Central Mall,ShivajiNagar,14,low,5% off,18.5344,73.8363,,
-231,Central Mall,ShivajiNagar,15,high,10% off,18.5344,73.8363,,
-232,Central Mall,ShivajiNagar,16,low,8% off,18.5344,73.8363,,
-233,Central Mall,ShivajiNagar,17,mid,10% cachback on payment above 2000,18.5344,73.8363,,
-234,Central Mall,ShivajiNagar,18,high,10% off,18.5344,73.8363,,
-235,Central Mall,ShivajiNagar,19,high,Buy 2 Get One Free,18.5344,73.8363,,
-236,Central Mall,ShivajiNagar,20,high,Rs 100 off,18.5344,73.8363,,
-237,Central Mall,ShivajiNagar,21,low,Buy One Get One Free,18.5344,73.8363,,
-238,Central Mall,ShivajiNagar,22,mid,5% off,18.5344,73.8363,,
-239,Central Mall,ShivajiNagar,23,high,5% off,18.5344,73.8363,,
-240,Central Mall,ShivajiNagar,24,low,12% off,18.5344,73.8363,,
-241,Central Mall,ShivajiNagar,25,mid,12% off,18.5344,73.8363,,
-242,Central Mall,Wakad,1,mid,Flat 1000 off on 5000 shopping,18.5344,73.8363,,
-243,Central Mall,Wakad,2,mid,15% off,18.5344,73.8363,,
-244,Central Mall,Wakad,3,mid,10% off,18.5344,73.8363,,
-245,Central Mall,Wakad,4,low,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-246,Central Mall,Wakad,5,high,Flat 500 off on 2000 shopping,18.5344,73.8363,,
-247,Central Mall,Wakad,6,mid,5 % off,18.5344,73.8363,,
-248,Central Mall,Wakad,7,low,15% off,18.5344,73.8363,,
-249,Central Mall,Wakad,8,high,20% off,18.5344,73.8363,,
-250,Central Mall,Wakad,9,low,10% off,18.5344,73.8363,,
-251,Central Mall,Wakad,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363,,
-252,Central Mall,Wakad,11,high,25% off,18.5344,73.8363,,
-253,Central Mall,Wakad,12,low,10% cachback,18.5344,73.8363,,
-254,Central Mall,Wakad,13,mid,5% off,18.5344,73.8363,,
-255,Central Mall,Wakad,14,low,5% off,18.5344,73.8363,,
-256,Central Mall,Wakad,15,high,10% off,18.5344,73.8363,,
-257,Central Mall,Wakad,16,low,8% off,18.5344,73.8363,,
-258,Central Mall,Wakad,17,mid,10% cachback on payment above 2000,18.5344,73.8363,,
-259,Central Mall,Wakad,18,high,10% off,18.5344,73.8363,,
-260,Central Mall,Wakad,19,high,Buy 2 Get One Free,18.5344,73.8363,,
-261,Central Mall,Wakad,20,high,Rs 100 off,18.5344,73.8363,,
-262,Central Mall,Wakad,21,low,Buy One Get One Free,18.5344,73.8363,,
-263,Central Mall,Wakad,22,mid,5% off,18.5344,73.8363,,
-264,Central Mall,Wakad,23,high,5% off,18.5344,73.8363,,
-265,Central Mall,Wakad,24,low,12% off,18.5344,73.8363,,
-266,Central Mall,Wakad,25,mid,12% off,18.5344,73.8363,,
-267,Dmart,Kothrud,1,mid,free 2 vouchers,18.5781,73.7261,,
-268,Dmart,Kothrud,2,mid,Buy One Get One,18.5781,73.7261,,
-269,Dmart,Kothrud,3,low,Buy one & get 10% off on Second,18.5781,73.7261,,
-270,Dmart,Kothrud,4,mid,25% off,18.5781,73.7261,,
-271,Dmart,Kothrud,5,high,12% off,18.5781,73.7261,,
-272,Dmart,Kothrud,6,mid,Buy One Get One,18.5781,73.7261,,
-273,Dmart,Kothrud,7,high,upto 40% off,18.5781,73.7261,,
-274,Dmart,Kothrud,8,high,20% off,18.5781,73.7261,,
-275,Dmart,Kothrud,9,low,10% off,18.5781,73.7261,,
-276,Dmart,Kothrud,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5781,73.7261,,
-277,Dmart,Kothrud,11,high,25% off,18.5781,73.7261,,
-278,Dmart,Kothrud,12,low,10% cachback,18.5781,73.7261,,
-279,Dmart,Kothrud,13,mid,5% off,18.5781,73.7261,,
-280,Dmart,Kothrud,14,low,5% off,18.5781,73.7261,,
-281,Dmart,Kothrud,15,high,10% off,18.5781,73.7261,,
-282,Dmart,Kothrud,16,low,8% off,18.5781,73.7261,,
-283,Dmart,Kothrud,17,mid,10% cachback on payment above 2000,18.5781,73.7261,,
-284,Dmart,Kothrud,18,high,10% off,18.5781,73.7261,,
-285,Dmart,Kothrud,19,high,Buy 2 Get One Free,18.5781,73.7261,,
-286,Dmart,Kothrud,20,high,Rs 100 off,18.5781,73.7261,,
-287,Dmart,Kothrud,21,low,Buy One Get One Free,18.5781,73.7261,,
-288,Dmart,Kothrud,22,mid,5% off,18.5781,73.7261,,
-289,Dmart,Kothrud,23,high,5% off,18.5781,73.7261,,
-290,Dmart,Kothrud,24,low,12% off,18.5781,73.7261,,
-291,Dmart,Kothrud,25,mid,12% off,18.5781,73.7261,,
-292,Dmart,Nigdi,1,low,Buy one & get 50% off on Second,18.6471,73.7559,,
-293,Dmart,Nigdi,2,high,upto 70% off,18.6471,73.7559,,
-294,Dmart,Nigdi,3,high,Buy two Get One,18.6471,73.7559,,
-295,Dmart,Nigdi,4,high,25% off,18.6471,73.7559,,
-296,Dmart,Nigdi,5,low,upto 25% off,18.6471,73.7559,,
-297,Dmart,Nigdi,6,high,10% off,18.6471,73.7559,,
-298,Dmart,Nigdi,7,low,upto 45%off,18.6471,73.7559,,
-299,Dmart,Nigdi,8,high,Buy two Get One for birthday  people,18.6471,73.7559,,
-300,Dmart,Nigdi,1,mid,free 2 vouchers,18.6471,73.7559,,
-301,Dmart,Nigdi,2,mid,Buy One Get One,18.6471,73.7559,,
-302,Dmart,Nigdi,3,low,Buy one & get 10% off on Second,18.6471,73.7559,,
-303,Dmart,Nigdi,4,mid,25% off,18.6471,73.7559,,
-304,Dmart,Nigdi,5,high,12% off,18.6471,73.7559,,
-305,Dmart,Nigdi,6,mid,Buy One Get One,18.6471,73.7559,,
-306,Dmart,Nigdi,7,high,upto 40% off,18.6471,73.7559,,
-307,Dmart,Nigdi,8,high,20% off,18.6471,73.7559,,
-308,Dmart,Nigdi,9,low,10% off,18.6471,73.7559,,
-309,Dmart,Nigdi,10,mid,FLAT 20% off on all purchases above Rs 1000,18.6471,73.7559,,
-310,Dmart,Nigdi,11,high,25% off,18.6471,73.7559,,
-311,Dmart,Nigdi,12,low,10% cachback,18.6471,73.7559,,
-312,Dmart,Nigdi,13,mid,5% off,18.6471,73.7559,,
-313,Dmart,Nigdi,14,low,5% off,18.6471,73.7559,,
-314,Dmart,Nigdi,15,high,10% off,18.6471,73.7559,,
-315,Dmart,Nigdi,16,low,8% off,18.6471,73.7559,,
-316,Dmart,Nigdi,17,mid,10% cachback on payment above 2000,18.6471,73.7559,,
-317,Dmart,Nigdi,18,high,10% off,18.6471,73.7559,,
-318,Dmart,Nigdi,19,high,Buy 2 Get One Free,18.6471,73.7559,,
-319,Dmart,Nigdi,20,high,Rs 100 off,18.6471,73.7559,,
-320,Dmart,Nigdi,21,low,Buy One Get One Free,18.6471,73.7559,,
-321,Dmart,Nigdi,22,mid,5% off,18.6471,73.7559,,
-322,Dmart,Nigdi,23,high,5% off,18.6471,73.7559,,
-323,Dmart,Nigdi,24,low,12% off,18.6471,73.7559,,
-324,Dmart,Nigdi,25,mid,15% off,18.6471,73.7559,,
-325,Dmart,Pimpri,1,mid,free 2 vouchers,18.6471,73.7559,,
-326,Dmart,Pimpri,2,mid,Buy One Get One,18.6471,73.7559,,
-327,Dmart,Pimpri,3,low,Buy one & get 10% off on Second,18.6471,73.7559,,
-328,Dmart,Pimpri,4,mid,25% off,18.6471,73.7559,,
-329,Dmart,Pimpri,5,high,12% off,18.6471,73.7559,,
-330,Dmart,Pimpri,6,mid,Buy One Get One,18.6471,73.7559,,
-331,Dmart,Pimpri,7,high,upto 40% off,18.6471,73.7559,,
-332,Dmart,Pimpri,8,high,20% off,18.6471,73.7559,,
-333,Dmart,Pimpri,9,low,10% off,18.6471,73.7559,,
-334,Dmart,Pimpri,10,mid,FLAT 20% off on all purchases above Rs 1000,18.6471,73.7559,,
-335,Dmart,Pimpri,11,high,25% off,18.6471,73.7559,,
-336,Dmart,Pimpri,12,low,10% cachback,18.6471,73.7559,,
-337,Dmart,Pimpri,13,mid,5% off,18.6471,73.7559,,
-338,Dmart,Pimpri,14,low,5% off,18.6471,73.7559,,
-339,Dmart,Pimpri,15,high,10% off,18.6471,73.7559,,
-340,Dmart,Pimpri,16,low,8% off,18.6471,73.7559,,
-341,Dmart,Pimpri,17,mid,10% cachback on payment above 2000,18.6471,73.7559,,
-342,Dmart,Pimpri,18,high,10% off,18.6471,73.7559,,
-343,Dmart,Pimpri,19,high,Buy 2 Get One Free,18.6471,73.7559,,
-344,Dmart,Pimpri,20,high,Rs 100 off,18.6471,73.7559,,
-345,Dmart,Pimpri,21,low,Buy One Get One Free,18.6471,73.7559,,
-346,Dmart,Pimpri,22,mid,5% off,18.6471,73.7559,,
-347,Dmart,Pimpri,23,high,5% off,18.6471,73.7559,,
-348,Dmart,Pimpri,24,low,12% off,18.6471,73.7559,,
-349,Dmart,Pimpri,25,mid,15% off,18.6471,73.7559,,
-350,Dmart,ShivajiNagar,1,high,10% off,18.5308,73.8475,,
-351,Dmart,ShivajiNagar,2,mid,40% off,18.5308,73.8475,,
-352,Dmart,ShivajiNagar,3,mid,Buy One Get One,18.5308,73.8475,,
-353,Dmart,ShivajiNagar,4,high,upto 60% off,18.5308,73.8475,,
-354,Dmart,ShivajiNagar,5,high,upto 20% off,18.5308,73.8475,,
-355,Dmart,ShivajiNagar,6,high,10% Off,18.5308,73.8475,,
-356,Dmart,ShivajiNagar,7,mid,free 8 voucher,18.5308,73.8475,,
-357,Dmart,ShivajiNagar,8,mid,10% off for birthday people,18.5308,73.8475,,
-358,Dmart,ShivajiNagar,8,high,20% off,18.5308,73.8475,,
-359,Dmart,ShivajiNagar,9,low,10% off,18.5308,73.8475,,
-360,Dmart,ShivajiNagar,10,mid,FLAT 20% off on all purchases above Rs 2500,18.5308,73.8475,,
-361,Dmart,ShivajiNagar,11,high,25% off,18.5308,73.8475,,
-362,Dmart,ShivajiNagar,12,low,10% cachback on CITI credit card,18.5308,73.8475,,
-363,Dmart,ShivajiNagar,13,mid,5% off,18.5308,73.8475,,
-364,Dmart,ShivajiNagar,14,low,5% off,18.5308,73.8475,,
-365,Dmart,ShivajiNagar,15,high,10% off,18.5308,73.8475,,
-366,Dmart,ShivajiNagar,16,low,8% off,18.5308,73.8475,,
-367,Dmart,ShivajiNagar,17,mid,10% cachback on payment above 5000,18.5308,73.8475,,
-368,Dmart,ShivajiNagar,18,high,10% off,18.5308,73.8475,,
-369,Dmart,ShivajiNagar,19,high,Buy 2 Get One Free,18.5308,73.8475,,
-370,Dmart,ShivajiNagar,20,high,Rs 100 off,18.5308,73.8475,,
-371,Dmart,ShivajiNagar,21,low,Buy One Get One Free,18.5308,73.8475,,
-372,Dmart,ShivajiNagar,22,mid,5% off,18.5308,73.8475,,
-373,Dmart,ShivajiNagar,23,high,5% off,18.5308,73.8475,,
-374,Dmart,ShivajiNagar,24,low,25% off,18.5308,73.8475,,
-375,Dmart,ShivajiNagar,25,mid,12% off,18.5308,73.8475,,
-376,Dmart,Wakad,1,mid,free 2 vouchers,18.5308,73.8475,,
-377,Dmart,Wakad,2,mid,Buy One Get One,18.5308,73.8475,,
-378,Dmart,Wakad,3,low,Buy one & get 10% off on Second,18.5308,73.8475,,
-379,Dmart,Wakad,4,mid,25% off,18.5308,73.8475,,
-380,Dmart,Wakad,5,high,12% off,18.5308,73.8475,,
-381,Dmart,Wakad,6,mid,Buy One Get One,18.5308,73.8475,,
-382,Dmart,Wakad,7,high,upto 40% off,18.5308,73.8475,,
-383,Dmart,Wakad,8,high,20% off,18.5308,73.8475,,
-384,Dmart,Wakad,9,low,10% off,18.5308,73.8475,,
-385,Dmart,Wakad,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5308,73.8475,,
-386,Dmart,Wakad,11,high,25% off,18.5308,73.8475,,
-387,Dmart,Wakad,12,low,10% cachback,18.5308,73.8475,,
-388,Dmart,Wakad,13,mid,5% off,18.5308,73.8475,,
-389,Dmart,Wakad,14,low,5% off,18.5308,73.8475,,
-390,Dmart,Wakad,15,high,10% off,18.5308,73.8475,,
-391,Dmart,Wakad,16,low,8% off,18.5308,73.8475,,
-392,Dmart,Wakad,17,mid,10% cachback on payment above 2000,18.5308,73.8475,,
-393,Dmart,Wakad,18,high,10% off,18.5308,73.8475,,
-394,Dmart,Wakad,19,high,Buy 2 Get One Free,18.5308,73.8475,,
-395,Dmart,Wakad,20,high,Rs 100 off,18.5308,73.8475,,
-396,Dmart,Wakad,21,low,Buy One Get One Free,18.5308,73.8475,,
-397,Dmart,Wakad,22,mid,5% off,18.5308,73.8475,,
-398,Dmart,Wakad,23,high,5% off,18.5308,73.8475,,
-399,Dmart,Wakad,24,low,12% off,18.5308,73.8475,,
-400,Dmart,Wakad,25,mid,15% off,18.5308,73.8475,,
-401,Home Decore,Pimpri,7,mid,Buy one & get 50% off on Second,18.6498,73.7997,,
-402,Jayhind,Kothrud,2,high,upto 60% off,18.5274,73.8477,,
-403,Jayhind,Kothrud,2,low,Buy one & get 25% off on Second,18.5274,73.8477,,
-404,Jayhind,Kothrud,2,mid,Buy one & get 35% off on Second,18.5274,73.8477,,
-405,Jayhind,Nigdi,2,low,Buy one & get 25% off on Second,18.5274,73.8477,,
-406,Jayhind,Nigdi,2,mid,Buy one & get 35% off on Second,18.5274,73.8477,,
-407,Jayhind,Nigdi,2,high,Buy two & get 25% off on Second,18.5274,73.8477,,
-408,Jayhind,Pimpri,2,low,Buy One Get One,18.6218,73.7917,,
-409,Jayhind,Pimpri,2,mid,Buy one & get 35% off on Second,18.6218,73.7917,,
-410,Jayhind,Pimpri,2,high,Buy two & get 25% off on Second,18.6218,73.7917,,
-411,Jayhind,ShivajiNagar,2,low,Buy one & get 50% off on Second,18.5299,73.8399,,
-412,Jayhind,Shivajinagar,2,mid,Buy one & get 35% off on Second,18.5299,73.8399,,
-413,Jayhind,Shivajinagar,2,high,Buy two & get 25% off on Second,18.5299,73.8399,,
-414,Jayhind,Wakad,2,low,Buy one & get 25% off on Second,18.5299,73.8399,,
-415,Jayhind,wakad,2,mid,Buy one & get 35% off on Second,18.5299,73.8399,,
-416,Jayhind,wakad,2,high,Buy two & get 25% off on Second,18.5299,73.8399,,
-417,KidGames,Kothrud,4,low,Buy One and 5% off on second,18.5299,73.8399,,
-418,KidGames,Kothrud,4,mid,Buy One and 10% off on second,18.5299,73.8399,,
-419,KidGames,Kothrud,4,high,Buy One and Get One free worth Rs 201,18.5299,73.8399,,
-420,KidGames,Nigdi,4,low,Buy One and 5% off on second,18.5299,73.8399,,
-421,KidGames,Nigdi,4,mid,Buy One and 10% off on second,18.5299,73.8399,,
-422,KidGames,Nigdi,4,high,Buy One and Get One free worth Rs 202,18.5299,73.8399,,
-423,KidGames,Pimpri,4,low,25% off,18.6598,73.7981,,
-424,KidGames,Pimpri,4,mid,Buy One and 10% off on second,18.6598,73.7981,,
-425,KidGames,Pimpri,4,high,Buy One and Get One free worth Rs 204,18.6598,73.7981,,
-426,KidGames,Shivajinagar,4,low,Buy One and 5% off on second,18.6598,73.7981,,
-427,KidGames,Shivajinagar,4,mid,Buy One and 10% off on second,18.6598,73.7981,,
-428,KidGames,Shivajinagar,4,high,Buy One and Get One free worth Rs 200,18.6598,73.7981,,
-429,KidGames,Wakad,4,low,Buy One and 5% off on second,18.6598,73.7981,,
-430,KidGames,Wakad,4,mid,Buy One and 10% off on second,18.6598,73.7981,,
-431,KidGames,Wakad,4,high,Buy One and Get One free worth Rs 203,18.6598,73.7981,,
-432,LG,Kothrud,1,low,15% off on Rs 20000 shopping,18.50264,73.7949,,
-433,LG,Kothrud,1,mid,20% off on Rs 20000 shopping,18.50264,73.7949,,
-434,LG,Kothrud,1,high,25% off on Rs 20000 shopping,18.50264,73.7949,,
-435,LG,Nigdi,1,low,15% off on Rs 20000 shopping,18.50264,73.7949,,
-436,LG,Nigdi,1,mid,20% off on Rs 20000 shopping,18.50264,73.7949,,
-437,LG,Nigdi,1,high,20% off on Rs 20000 shopping,18.50264,73.7949,,
-438,LG,Pimpri,1,low,15% off on Rs 20000 shopping,18.50264,73.7949,,
-439,LG,Pimpri,1,mid,20% off on Rs 20000 shopping,18.50264,73.7949,,
-440,LG,Pimpri,1,high,20% off on Rs 20000 shopping,18.50264,73.7949,,
-441,LG,ShivajiNagar,1,high,Flat 1000 off,18.50264,73.7949,,
-442,LG,Shivajinagar,1,low,15% off on Rs 20000 shopping,18.50264,73.7949,,
-443,LG,Shivajinagar,1,mid,20% off on Rs 20000 shopping,18.50264,73.7949,,
-444,LG,Shivajinagar,1,high,20% off on Rs 20000 shopping,18.50264,73.7949,,
-445,LG,Wakad,1,low,15% off on Rs 20000 shopping,18.50264,73.7949,,
-446,LG,Wakad,1,mid,20% off on Rs 20000 shopping,18.50264,73.7949,,
-447,LG,Wakad,1,high,20% off on Rs 20000 shopping,18.50264,73.7949,,
-448,Mega Mart,Kothrud,2,high,10% off,18.5556,73.78218,,
-449,Mega Mart,Nigdi,2,high,15% off,18.5555,73.78218,,
-450,Mega Mart,Pimpri,2,high,10% off,18.5555,73.78218,,
-451,Mega Mart,ShivajiNagar,1,high,10% off,18.5555,73.78218,,
-452,Mega Mart,Wakad,2,high,10% off,18.5555,73.78218,,
-453,Navneet,Pimpri,6,mid,10% off,18.6298,73.7997,,
-454,Radhika,Pimpri,1,mid,upto 50% off,18.6298,73.7597,,
-455,Reliacnce Mart,Kothrud,1,high,Up to 15% off,18.507162,73.82037,,
-456,Reliacnce Mart,Kothrud,2,mid,30% off,18.507162,73.82037,,
-457,Reliacnce Mart,Kothrud,3,mid,Buy Two Get One Cupon,18.507162,73.82037,,
-458,Reliacnce Mart,Kothrud,4,high,upto 50% off,18.507162,73.82037,,
-459,Reliacnce Mart,Kothrud,5,high,upto 10% off,18.507162,73.82037,,
-460,Reliacnce Mart,Kothrud,6,high,5% Off on 5 dozen quantity,18.507162,73.82037,,
-461,Reliacnce Mart,Kothrud,7,mid,free 1 voucher,18.507162,73.82037,,
-462,Reliacnce Mart,Kothrud,8,high,3% Discocount ,18.507162,73.82037,,
-463,Reliacnce Mart,Kothrud,9,mid,Flat 7 % off,18.507162,73.82037,,
-464,Reliacnce Mart,Kothrud,10,high,10% off,18.507162,73.82037,,
-465,Reliacnce Mart,Kothrud,11,low,Buy One Get Two,18.507162,73.82037,,
-466,Reliacnce Mart,Kothrud,12,mid,8 % off,18.507162,73.82037,,
-467,Reliacnce Mart,Kothrud,13,high,free 2 voucher,18.507162,73.82037,,
-468,Reliacnce Mart,Kothrud,14,low,5 % off,18.507162,73.82037,,
-469,Reliacnce Mart,Kothrud,15,mid,100 Rs CashBack,18.507162,73.82037,,
-470,Reliacnce Mart,Kothrud,16,high,Flat 700 off on 3000 shopping,18.507162,73.82037,,
-471,Reliacnce Mart,Kothrud,17,mid,500 Rs CashBack,18.507162,73.82037,,
-472,Reliacnce Mart,Kothrud,18,high,Flat 70 off on 500 shopping,18.507162,73.82037,,
-473,Reliacnce Mart,Kothrud,19,low,flat 200 Rs off,18.507162,73.82037,,
-474,Reliacnce Mart,Kothrud,20,high,Flat 75 off on 2000 shopping,18.507162,73.82037,,
-475,Reliacnce Mart,Kothrud,21,mid,10% Discount,18.507162,73.82037,,
-476,Reliacnce Mart,Kothrud,22,low,10 Rs Cashback,18.507162,73.82037,,
-477,Reliacnce Mart,Kothrud,23,high,50 off on 5 print,18.507162,73.82037,,
-478,Reliacnce Mart,Kothrud,24,low,Flat 100 off on 1000 shopping,18.507162,73.82037,,
-479,Reliacnce Mart,Kothrud,25,high,Buy One Get One,18.507162,73.82037,,
-480,Reliacnce Mart,Pimple Saudagar,1,high,upto 10% off,18.59688,73.7892,,
-481,Reliacnce Mart,Pimple Saudagar,2,mid,upto 40% off,18.59688,73.7892,,
-482,Reliacnce Mart,Pimple Saudagar,3,mid,Buy One Get One,18.59688,73.7892,,
-483,Reliacnce Mart,Pimple Saudagar,4,high,upto 30% off,18.59688,73.7892,,Pimple Saudagar
-484,Reliacnce Mart,Pimple Saudagar,5,high,upto 30% off,18.59688,73.7892,,
-485,Reliacnce Mart,Pimple Saudagar,6,high,5% Off,18.59688,73.7892,,
-486,Reliacnce Mart,Pimple Saudagar,7,mid,free 3 voucher,18.59688,73.7892,,
-487,Reliacnce Mart,Pimple Saudagar,8,high,10% Discocount ,18.59688,73.7892,,
-488,Reliacnce Mart,Pimple Saudagar,9,mid,Flat 7% off,18.59688,73.7892,,
-489,Reliacnce Mart,Pimple Saudagar,10,high,12% off,18.59688,73.7892,,
-490,Reliacnce Mart,Pimple Saudagar,11,low,Buy Three Get One,18.59688,73.7892,,
-491,Reliacnce Mart,Pimple Saudagar,12,mid,1% off on making charges,18.59688,73.7892,,
-492,Reliacnce Mart,Pimple Saudagar,13,high,free 2 voucher,18.59688,73.7892,,
-493,Reliacnce Mart,Pimple Saudagar,14,low,7 % off,18.59688,73.7892,,
-494,Reliacnce Mart,Pimple Saudagar,15,mid,200 Rs CashBack,18.59688,73.7892,,
-495,Reliacnce Mart,Pimple Saudagar,16,high,Flat 100 off on 1000 shopping,18.59688,73.7892,,
-496,Reliacnce Mart,Pimple Saudagar,17,mid,200 Rs CashBack,18.59688,73.7892,,
-497,Reliacnce Mart,Pimple Saudagar,18,high,Flat 75 off on 800 shopping,18.59688,73.7892,,
-498,Reliacnce Mart,Pimple Saudagar,19,low,Buy three and get penDrive free,18.59688,73.7892,,
-499,Reliacnce Mart,Pimple Saudagar,20,high,Flat 20 % off on 1000 shopping,18.59688,73.7892,,
-500,Reliacnce Mart,Pimple Saudagar,21,mid,upto 8% Discount,18.59688,73.7892,,
-501,Reliacnce Mart,Pimple Saudagar,22,low,2% Discount,18.59688,73.7892,,
-502,Reliacnce Mart,Pimple Saudagar,23,high,25 Rs off on 10 print,18.59688,73.7892,,
-503,Reliacnce Mart,Pimple Saudagar,24,low,Flat 100 off on 500 shopping,18.59688,73.7892,,
-504,Reliacnce Mart,Pimple Saudagar,25,high,one Music CD free,18.59688,73.7892,,
-505,Reliacnce Mart,Aundh,1,high,Flat 1000 off,18.5635,73.80497,,
-506,Reliacnce Mart,Aundh,2,mid,Buy one & get 50% off on Second,18.5635,73.80497,,Aundh
-507,Reliacnce Mart,Aundh,3,low,Flat 200 off,18.5635,73.80497,,
-508,Reliacnce Mart,Aundh,4,mid,Flat 300 off,18.5635,73.80497,,
-509,Reliacnce Mart,Aundh,5,mid,upto 35% off,18.5635,73.80497,,
-510,Reliacnce Mart,Aundh,6,low,Buy One Get One,18.5635,73.80497,,
-511,Reliacnce Mart,Aundh,7,high,Buy one & get 50% off on Second,18.5635,73.80497,,
-512,Reliacnce Mart,Aundh,1,high,up to 10 % off,18.5635,73.80497,,
-513,Reliacnce Mart,Aundh,2,mid,30 % off,18.5635,73.80497,,
-514,Reliacnce Mart,Aundh,3,mid,upto 30% off,18.5635,73.80497,,
-515,Reliacnce Mart,Aundh,4,high,upto 50% off,18.5635,73.80497,,
-516,Reliacnce Mart,Aundh,5,high,upto 8% off,18.5635,73.80497,,
-517,Reliacnce Mart,Aundh,6,high,5% Off,18.5635,73.80497,,
-518,Reliacnce Mart,Aundh,7,mid,free 5 voucher,18.5635,73.80497,,
-519,Reliacnce Mart,Aundh,8,high,5% Discocount ,18.5635,73.80497,,
-520,Reliacnce Mart,Aundh,9,mid,Flat 5 % off,18.5635,73.80497,,
-521,Reliacnce Mart,Aundh,10,high,up to 30 % off,18.5635,73.80497,,
-522,Reliacnce Mart,Aundh,11,low,Buy Two Get One,18.5635,73.80497,,
-523,Reliacnce Mart,Aundh,12,mid,making charges free,18.5635,73.80497,,
-524,Reliacnce Mart,Aundh,13,high,free 1 voucher,18.5635,73.80497,,
-525,Reliacnce Mart,Aundh,14,low,3 % off,18.5635,73.80497,,
-526,Reliacnce Mart,Aundh,15,mid,300 Rs CashBack,18.5635,73.80497,,
-527,Reliacnce Mart,Aundh,16,high,Flat 400 off on 3000 shopping,18.5635,73.80497,,
-528,Reliacnce Mart,Aundh,17,mid,100 Rs CashBack,18.5635,73.80497,,
-529,Reliacnce Mart,Aundh,18,high,Flat 25 %off on 1500 shopping,18.5635,73.80497,,
-530,Reliacnce Mart,Aundh,19,low,flat 100 Rs off,18.5635,73.80497,,
-531,Reliacnce Mart,Aundh,20,high,Flat 80 off on 2000 shopping,18.5635,73.80497,,
-532,Reliacnce Mart,Aundh,21,mid,12 % Discount,18.5635,73.80497,,
-533,Reliacnce Mart,Aundh,22,low,5 Rs Cashback,18.5635,73.80497,,
-534,Reliacnce Mart,Aundh,23,high,1 print free on 10 prints,18.5635,73.80497,,
-535,Reliacnce Mart,Aundh,24,low,Flat 10 % off on 1000 shopping,18.5635,73.80497,,
-536,Reliacnce Mart,Aundh,25,high,10% off upto 1000 shopping,18.5635,73.80497,,
-537,Reliacnce Mart,ShivajiNagar,1,high,10% off,18.5635,73.80497,,
-538,Reliacnce Mart,ShivajiNagar,2,mid,40% off,18.5635,73.80497,,
-539,Reliacnce Mart,ShivajiNagar,3,mid,Buy One Get One,18.5635,73.80497,,
-540,Reliacnce Mart,ShivajiNagar,4,high,upto 60% off,18.5635,73.80497,,
-541,Reliacnce Mart,ShivajiNagar,5,high,upto 20% off,18.5635,73.80497,,
-542,Reliacnce Mart,ShivajiNagar,6,high,10% Off,18.5635,73.80497,,
-543,Reliacnce Mart,ShivajiNagar,7,mid,free 8 voucher,18.5635,73.80497,,
-544,Reliacnce Mart,ShivajiNagar,8,high,10% Discocount ,18.5635,73.80497,,
-545,Reliacnce Mart,ShivajiNagar,9,mid,Flat 7 % off,18.5635,73.80497,,
-546,Reliacnce Mart,ShivajiNagar,10,high,10% off,18.5635,73.80497,,
-547,Reliacnce Mart,ShivajiNagar,11,low,Buy One Get Two,18.5635,73.80497,,
-548,Reliacnce Mart,ShivajiNagar,12,mid,8 % off,18.5635,73.80497,,
-549,Reliacnce Mart,ShivajiNagar,13,high,free 2 voucher,18.5635,73.80497,,
-550,Reliacnce Mart,ShivajiNagar,14,low,5 % off,18.5635,73.80497,,
-551,Reliacnce Mart,ShivajiNagar,15,mid,100 Rs CashBack,18.5635,73.80497,,
-552,Reliacnce Mart,ShivajiNagar,16,high,Flat 700 off on 3000 shopping,18.5635,73.80497,,
-553,Reliacnce Mart,ShivajiNagar,17,mid,500 Rs CashBack,18.5635,73.80497,,
-554,Reliacnce Mart,ShivajiNagar,18,high,Flat 70 off on 500 shopping,18.5635,73.80497,,
-555,Reliacnce Mart,ShivajiNagar,19,low,flat 200 Rs off,18.5635,73.80497,,
-556,Reliacnce Mart,ShivajiNagar,20,high,Flat 75 off on 2000 shopping,18.5635,73.80497,,
-557,Reliacnce Mart,ShivajiNagar,21,mid,10% Discount,18.5635,73.80497,,
-558,Reliacnce Mart,ShivajiNagar,22,low,10 Rs Cashback,18.5635,73.80497,,
-559,Reliacnce Mart,ShivajiNagar,23,high,50 off on 5 print,18.5635,73.80497,,
-560,Reliacnce Mart,ShivajiNagar,24,low,Flat 100 off on 1000 shopping,18.5635,73.80497,,
-561,Reliacnce Mart,ShivajiNagar,25,high,Buy One Get One,18.5635,73.80497,,
-562,Reliacnce Mart,Wakad,1,mid,Flat 1000 off on 5000 shopping,18.5989,73.7653,,
-563,Reliacnce Mart,Wakad,2,mid,15% off,18.5989,73.7653,,
-564,Reliacnce Mart,Wakad,3,mid,10% off,18.5989,73.7653,,
-565,Reliacnce Mart,Wakad,4,low,Flat 500 off on 2000 shopping,18.5989,73.7653,,
-566,Reliacnce Mart,Wakad,5,high,Flat 500 off on 2000 shopping,18.5989,73.7653,,
-567,Reliacnce Mart,Wakad,6,mid,5 % off,18.5989,73.7653,,
-568,Reliacnce Mart,Wakad,7,low,15% off,18.5989,73.7653,,
-569,Reliacnce Mart,Wakad,8,low,upto 35% off for birthday  people,18.5989,73.7653,,
-570,Reliacnce Mart,Wakad,1,high,10% off,18.5989,73.7653,,
-571,Reliacnce Mart,Wakad,2,mid,40% off,18.5989,73.7653,,
-572,Reliacnce Mart,Wakad,3,mid,Buy One Get One,18.5989,73.7653,,
-573,Reliacnce Mart,Wakad,4,high,upto 60% off,18.5989,73.7653,,
-574,Reliacnce Mart,Wakad,5,high,upto 20% off,18.5989,73.7653,,
-575,Reliacnce Mart,Wakad,6,high,10% Off,18.5989,73.7653,,
-576,Reliacnce Mart,Wakad,7,mid,free 3 voucher,18.5989,73.7653,,
-577,Reliacnce Mart,Wakad,8,high,10 % Discocount ,18.5989,73.7653,,
-578,Reliacnce Mart,Wakad,9,mid,Flat 4% off,18.5989,73.7653,,
-579,Reliacnce Mart,Wakad,10,high,10% off,18.5989,73.7653,,
-580,Reliacnce Mart,Wakad,11,low,Buy One Get One,18.5989,73.7653,,
-581,Reliacnce Mart,Wakad,12,mid,2% off,18.5989,73.7653,,
-582,Reliacnce Mart,Wakad,13,high,free 1 voucher,18.5989,73.7653,,
-583,Reliacnce Mart,Wakad,14,low,7% off,18.5989,73.7653,,
-584,Reliacnce Mart,Wakad,15,mid,100 Rs CashBack,18.5989,73.7653,,
-585,Reliacnce Mart,Wakad,16,high,Flat 400 off on 3000 shopping,18.5989,73.7653,,
-586,Reliacnce Mart,Wakad,17,mid,200 Rs CashBack,18.5989,73.7653,,
-587,Reliacnce Mart,Wakad,18,high,Flat 150 off on 1000 shopping,18.5989,73.7653,,
-588,Reliacnce Mart,Wakad,19,low,Get Two Music CD free ,18.5989,73.7653,,
-589,Reliacnce Mart,Wakad,20,high,Flat 20 off on 1000 shopping,18.5989,73.7653,,
-590,Reliacnce Mart,Wakad,21,mid,8% Discount,18.5989,73.7653,,
-591,Reliacnce Mart,Wakad,22,low,1.5 % Discount,18.5989,73.7653,,
-592,Reliacnce Mart,Wakad,23,high,20 Rs off on 10 print,18.5989,73.7653,,
-593,Reliacnce Mart,Wakad,24,low,Flat 200 off on 1000 shopping,18.5989,73.7653,,
-594,Reliacnce Mart,Wakad,25,high,Buy Two Get One,18.5989,73.7653,,
-595,Sakti Sports,Kothrud,5,low,10% off on Rs 2000 shopping,18.5088,73.8464,,
-596,Sakti Sports,Kothrud,5,low,15% off on Rs 2000 shopping,18.5088,73.8464,,
-597,Sakti Sports,Kothrud,5,high,20% off on Rs 2000 shopping,18.5088,73.8464,,
-598,Sakti Sports,Nigdi,5,low,10% off on Rs 2000 shopping,18.5088,73.8464,,
-599,Sakti Sports,Nigdi,5,low,15% off on Rs 2000 shopping,18.5088,73.8464,,
-600,Sakti Sports,Nigdi,5,high,20% off on Rs 2000 shopping,18.5088,73.8464,,
-601,Sakti Sports,Pimpri,5,mid,upto 70% off,18.5088,73.8464,,
-602,Sakti Sports,Pimpri,5,low,10% off on Rs 2000 shopping,18.5088,73.8464,,
-603,Sakti Sports,Pimpri,5,high,20% off on Rs 2000 shopping,18.5088,73.8464,,
-604,Sakti Sports,Shivajinagar,5,low,10% off on Rs 2000 shopping,18.5088,73.8464,,
-605,Sakti Sports,Shivajinagar,5,mid,15% off on Rs 2000 shopping,18.5088,73.8464,,
-606,Sakti Sports,Shivajinagar,5,high,20% off on Rs 2000 shopping,18.5088,73.8464,,
-607,Sakti Sports,Wakad,5,low,10% off on Rs 2000 shopping,18.5088,73.8464,,
-608,Sakti Sports,Wakad,5,low,15% off on Rs 2000 shopping,18.5088,73.8464,,
-609,Sakti Sports,Wakad,5,high,20% off on Rs 2000 shopping,18.5088,73.8464,,
-610,vijaySales,Kothrud,1,low,10% off,18.510233,73.81605,,
-611,vijaySales,Kothrud,1,mid,15% off,18.510233,73.81605,,
-612,vijaySales,Kothrud,1,high,20% off,18.510233,73.81605,,
-613,vijaySales,Kothrud,8,low,10% off,18.510233,73.81605,,
-614,vijaySales,Kothrud,8,mid,15% off,18.510233,73.81605,,
-615,vijaySales,Kothrud,8,high,20% off,18.510233,73.81605,,
-616,vijaySales,Kothrud,1,low,10% off,18.510233,73.81605,,
-617,vijaySales,Kothrud,1,mid,15% off,18.510233,73.81605,,
-618,vijaySales,Kothrud,1,high,20% off,18.510233,73.81605,,
-619,vijaySales,Kothrud,8,low,10% off,18.510233,73.81605,,Kothrud
-620,vijaySales,Kothrud,8,mid,15% off,18.510233,73.81605,,
-621,vijaySales,Kothrud,8,high,20% off,18.510233,73.81605,,
-622,vijaySales,Pimpri,1,low,10% off,18.59411,73.762,,
-623,vijaySales,Pimpri,1,mid,15% off,18.59411,73.762,,
-624,vijaySales,Pimpri,1,high,20% off,18.59411,73.762,,
-625,vijaySales,Pimpri,8,high,20% off,18.59411,73.762,,
-626,vijaySales,Baner,1,low,10% off,18.594101,73.762,,
-627,vijaySales,Baner,1,mid,15% off,18.594101,73.762,,
-628,vijaySales,Baner,1,high,20% off,18.594101,73.762,,
-629,vijaySales,Baner,8,low,10% off,18.594101,73.762,,Baner
-630,vijaySales,Baner,8,mid,15% off,18.594101,73.762,,
-631,vijaySales,Baner,8,high,20% off,18.594101,73.762,,
-632,vijaySales,wakad,1,low,10% off,18.59409,73.762,,
-633,vijaySales,wakad,1,mid,15% off,18.59409,73.762,,
-634,vijaySales,wakad,1,high,20% off,18.59409,73.762,,Wakad
-635,vijaySales,wakad,8,low,10% off,18.59409,73.762,,
-636,vijaySales,wakad,8,mid,15% off,18.59409,73.762,,
-637,vijaySales,wakad,8,high,20% off,18.59409,73.762,,
+1,Dmart,ShivajiNagar,1,high,10% off,18.5308,73.8475
+2,Dmart,ShivajiNagar,2,mid,40% off,18.5308,73.8475
+3,Dmart,ShivajiNagar,3,mid,Buy One Get One,18.5308,73.8475
+4,Dmart,ShivajiNagar,4,high,upto 60% off,18.5308,73.8475
+5,Dmart,ShivajiNagar,5,high,upto 20% off,18.5308,73.8475
+6,Dmart,ShivajiNagar,6,high,10% Off,18.5308,73.8475
+7,Dmart,ShivajiNagar,7,mid,free 8 voucher,18.5308,73.8475
+8,Central Mall,Shivajinagar,1,mid,free 8 voucher,18.5344,73.8363
+9,Central Mall,Shivajinagar,2,mid,Buy One Get One,18.5344,73.8363
+10,Central Mall,Shivajinagar,3,low,Buy one & get 50% off on Second,18.5344,73.8363
+11,Central Mall,Shivajinagar,4,mid,25% off,18.5344,73.8363
+12,Central Mall,Shivajinagar,5,high,12% off,18.5344,73.8363
+13,Central Mall,Shivajinagar,6,mid,Buy One Get One,18.5344,73.8363
+14,Central Mall,Shivajinagar,7,high,upto 40% off,18.5344,73.8363
+15,vijaySales,Baner,1,low,10% off,18.5551,73.7951
+16,Jayhind,ShivajiNagar,2,low,Buy one & get 50% off on Second,18.5299,73.8399
+17,Bata,Laxmi Road,3,high,Buy One Get One,18.5963,73.7037
+18,KidGames,Pimpri,4,low,25% off,18.6598,73.7981
+19,Sakti Sports,Pimpri,5,mid,upto 70% off,18.626,73.8031
+20,Navneet,Kothurd,6,mid,10% off,18.5103,73.7898
+21,Home Decore,Pimpri,7,mid,Buy one & get 50% off on Second,18.6498,73.7997
+22,LG,ShivajiNagar,1,high,Flat 1000 off,18.515,73.8275
+23,Radhika,Pimpri,1,mid,upto 50% off,18.6537,73.7013
+24,Jayhind,Kothrud,2,high,upto 60% off,18.5274,73.8477
+25,Jayhind,Pimpri,2,low,Buy One Get One,18.6218,73.7917
+26,BigBazar,Chinchwad,1,mid,25% off,18.2846,64.7796
+27,BigBazar,Chinchwad,2,high,Flat 500 off on 2000 shopping,18.2846,64.7796
+28,BigBazar,Chinchwad,3,low,35% off,18.2846,64.7796
+29,BigBazar,Chinchwad,4,mid,Flat 200 off on 1000 shopping,18.2846,64.7796
+30,BigBazar,Chinchwad,5,mid,Flat 1000 off,18.2846,64.7796
+31,BigBazar,Chinchwad,6,low,Flat 100 off on 1000 shopping,18.2846,64.7796
+32,BigBazar,Chinchwad,7,high,Flat 1000 off,18.2846,64.7796
+33,BigBazar,Kothrud,1,high,20% Off,18.5073,73.8076
+34,BigBazar,Kothrud,2,low,Buy one & get 50% off on Second,18.5073,73.8076
+35,BigBazar,Kothrud,3,high,Buy One Get One,18.5073,73.8076
+36,BigBazar,Kothrud,4,high,Buy one & get 40% off on Second,18.5073,73.8076
+37,BigBazar,Kothrud,5,low,20% off,18.5073,73.8076
+38,BigBazar,Kothrud,6,mid,5% off,18.5073,73.8076
+39,BigBazar,Kothrud,7,mid,upto 25% off,18.5073,73.8076
+40,Reliacnce Mart,Aundh,1,mid,Flat 1000 off on 5000 shopping,18.5644,73.8078
+41,Reliacnce Mart,Aundh,2,mid,15% off,18.5644,73.8078
+42,Reliacnce Mart,Aundh,3,mid,10% off,18.5644,73.8078
+43,Reliacnce Mart,Aundh,4,low,Flat 500 off on 2000 shopping,18.5644,73.8078
+44,Reliacnce Mart,Aundh,5,high,Flat 500 off on 2000 shopping,18.5644,73.8078
+45,Reliacnce Mart,Aundh,6,mid,5 % off,18.5644,73.8078
+46,Reliacnce Mart,Aundh,7,low,15% off,18.5644,73.8078
+47,Reliacnce Mart,Pimple Saudagar,1,high,Flat 1000 off,18.5972005,73.792
+48,Reliacnce Mart,Pimple Saudagar,2,mid,Buy one & get 50% off on Second,18.5972005,73.792
+49,Reliacnce Mart,Pimple Saudagar,3,low,Flat 200 off,18.5972005,73.792
+50,Reliacnce Mart,Pimple Saudagar,4,mid,Flat 300 off,18.5972005,73.792
+51,Reliacnce Mart,Pimple Saudagar,5,mid,upto 35% off,18.5972005,73.792
+52,Reliacnce Mart,Pimple Saudagar,6,low,Buy One Get One,18.5972005,73.792
+53,Reliacnce Mart,Pimple Saudagar,7,high,Buy one & get 50% off on Second,18.5972005,73.792
+54,Mega Mart,Kharadi,1,high,15% off,18.6029,73.777
+55,Mega Mart,Nigdi,2,high,upto 35% off,18.6295,73.8028
+56,Mega Mart,Nigdi,3,mid,Buy one Get One,18.6295,73.8028
+57,Mega Mart,Nigdi,4,high,15% off,18.6295,73.8028
+58,Mega Mart,Nigdi,5,high,upto 35% off,18.6295,73.8028
+59,Mega Mart,Nigdi,6,high,8% off,18.6295,73.8028
+60,Mega Mart,Nigdi,7,low,upto 60%off,18.6295,73.8028
+61,Dmart,Nigdi,1,low,Buy one & get 50% off on Second,18.6471,73.7559
+62,Dmart,Nigdi,2,high,upto 70% off,18.6471,73.7559
+63,Dmart,Nigdi,3,high,Buy two Get One,18.6471,73.7559
+64,Dmart,Nigdi,4,high,25% off,18.6471,73.7559
+65,Dmart,Nigdi,5,low,upto 25% off,18.6471,73.7559
+66,Dmart,Nigdi,6,high,10% off,18.6471,73.7559
+67,Dmart,Nigdi,7,low,upto 45%off,18.6471,73.7559
+68,Dmart,ShivajiNagar,8,mid,10% off for birthday people,18.5308,73.8475
+68,Mega Mart,Nigdi,8,mid,15% off for birthday  people,18.6295,73.8028
+69,Bata,Laxmi Road,8,mid,Buy One Get One for birthday  people,18.5963,73.7037
+70,Reliacnce Mart,Aundh,8,low,upto 35% off for birthday  people,18.5644,73.8078
+71,Dmart,Nigdi,8,high,Buy two Get One for birthday  people,18.6471,73.7559
+72,BigBazar,Kothrud,8,low,upto 25% off for birthday  people,18.5073,73.8076
+73,Dmart,ShivajiNagar,8,high,20% off,18.5308,73.8475
+74,Dmart,ShivajiNagar,9,low,10% off,18.5308,73.8475
+75,Dmart,ShivajiNagar,10,mid,FLAT 20% off on all purchases above Rs 2500,18.5308,73.8475
+76,Dmart,ShivajiNagar,11,high,25% off,18.5308,73.8475
+77,Dmart,ShivajiNagar,12,low,10% cachback on CITI credit card,18.5308,73.8475
+78,Dmart,ShivajiNagar,13,mid,5% off,18.5308,73.8475
+79,Dmart,ShivajiNagar,14,low,5% off,18.5308,73.8475
+80,Dmart,ShivajiNagar,15,high,10% off,18.5308,73.8475
+81,Dmart,ShivajiNagar,16,low,8% off,18.5308,73.8475
+82,Dmart,ShivajiNagar,17,mid,10% cachback on payment above 5000,18.5308,73.8475
+83,Dmart,ShivajiNagar,18,high,10% off,18.5308,73.8475
+84,Dmart,ShivajiNagar,19,high,Buy 2 Get One Free,18.5308,73.8475
+85,Dmart,ShivajiNagar,20,high,Rs 100 off,18.5308,73.8475
+86,Dmart,ShivajiNagar,21,low,Buy One Get One Free,18.5308,73.8475
+87,Dmart,ShivajiNagar,22,mid,5% off,18.5308,73.8475
+88,Dmart,ShivajiNagar,23,high,5% off,18.5308,73.8475
+89,Dmart,ShivajiNagar,24,low,25% off,18.5308,73.8475
+90,Dmart,ShivajiNagar,25,mid,12% off,18.5308,73.8475
+91,Dmart,Baner,1,mid,free 2 vouchers,18.5669,73.6995
+92,Dmart,Baner,2,mid,Buy One Get One,18.5669,73.6995
+93,Dmart,Baner,3,low,Buy one & get 10% off on Second,18.5669,73.6995
+94,Dmart,Baner,4,mid,25% off,18.5669,73.6995
+95,Dmart,Baner,5,high,12% off,18.5669,73.6995
+96,Dmart,Baner,6,mid,Buy One Get One,18.5669,73.6995
+97,Dmart,Baner,7,high,upto 40% off,18.5669,73.6995
+98,Dmart,Baner,8,high,20% off,18.5669,73.6995
+99,Dmart,Baner,9,low,10% off,18.5669,73.6995
+100,Dmart,Baner,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5669,73.6995
+101,Dmart,Baner,11,high,25% off,18.5669,73.6995
+102,Dmart,Baner,12,low,10% cachback,18.5669,73.6995
+103,Dmart,Baner,13,mid,5% off,18.5669,73.6995
+104,Dmart,Baner,14,low,5% off,18.5669,73.6995
+105,Dmart,Baner,15,high,10% off,18.5669,73.6995
+106,Dmart,Baner,16,low,8% off,18.5669,73.6995
+107,Dmart,Baner,17,mid,10% cachback on payment above 2000,18.5669,73.6995
+108,Dmart,Baner,18,high,10% off,18.5669,73.6995
+109,Dmart,Baner,19,high,Buy 2 Get One Free,18.5669,73.6995
+110,Dmart,Baner,20,high,Rs 100 off,18.5669,73.6995
+111,Dmart,Baner,21,low,Buy One Get One Free,18.5669,73.6995
+112,Dmart,Baner,22,mid,5% off,18.5669,73.6995
+113,Dmart,Baner,23,high,5% off,18.5669,73.6995
+114,Dmart,Baner,24,low,12% off,18.5669,73.6995
+115,Dmart,Baner,25,mid,12% off,18.5669,73.6995
+116,Dmart,Aundh,1,mid,free 2 vouchers,18.5667,73.7721
+117,Dmart,Aundh,2,mid,Buy One Get One,18.5667,73.7721
+118,Dmart,Aundh,3,low,Buy one & get 10% off on Second,18.5667,73.7721
+119,Dmart,Aundh,4,mid,25% off,18.5667,73.7721
+120,Dmart,Aundh,5,high,12% off,18.5667,73.7721
+121,Dmart,Aundh,6,mid,Buy One Get One,18.5667,73.7721
+122,Dmart,Aundh,7,high,upto 40% off,18.5667,73.7721
+123,Dmart,Aundh,8,high,20% off,18.5667,73.7721
+124,Dmart,Aundh,9,low,10% off,18.5667,73.7721
+125,Dmart,Aundh,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5667,73.7721
+126,Dmart,Aundh,11,high,25% off,18.5667,73.7721
+127,Dmart,Aundh,12,low,10% cachback,18.5667,73.7721
+128,Dmart,Aundh,13,mid,5% off,18.5667,73.7721
+129,Dmart,Aundh,14,low,5% off,18.5667,73.7721
+130,Dmart,Aundh,15,high,10% off,18.5667,73.7721
+131,Dmart,Aundh,16,low,8% off,18.5667,73.7721
+132,Dmart,Aundh,17,mid,10% cachback on payment above 2000,18.5667,73.7721
+133,Dmart,Aundh,18,high,10% off,18.5667,73.7721
+134,Dmart,Aundh,19,high,Buy 2 Get One Free,18.5667,73.7721
+135,Dmart,Aundh,20,high,Rs 100 off,18.5667,73.7721
+136,Dmart,Aundh,21,low,Buy One Get One Free,18.5667,73.7721
+137,Dmart,Aundh,22,mid,5% off,18.5667,73.7721
+138,Dmart,Aundh,23,high,5% off,18.5667,73.7721
+139,Dmart,Aundh,24,low,12% off,18.5667,73.7721
+140,Dmart,Aundh,25,mid,15% off,18.5667,73.7721
+141,Dmart,Nigdi,1,mid,free 2 vouchers,18.6471,73.7559
+142,Dmart,Nigdi,2,mid,Buy One Get One,18.6471,73.7559
+143,Dmart,Nigdi,3,low,Buy one & get 10% off on Second,18.6471,73.7559
+144,Dmart,Nigdi,4,mid,25% off,18.6471,73.7559
+145,Dmart,Nigdi,5,high,12% off,18.6471,73.7559
+146,Dmart,Nigdi,6,mid,Buy One Get One,18.6471,73.7559
+147,Dmart,Nigdi,7,high,upto 40% off,18.6471,73.7559
+148,Dmart,Nigdi,8,high,20% off,18.6471,73.7559
+149,Dmart,Nigdi,9,low,10% off,18.6471,73.7559
+150,Dmart,Nigdi,10,mid,FLAT 20% off on all purchases above Rs 1000,18.6471,73.7559
+151,Dmart,Nigdi,11,high,25% off,18.6471,73.7559
+152,Dmart,Nigdi,12,low,10% cachback,18.6471,73.7559
+153,Dmart,Nigdi,13,mid,5% off,18.6471,73.7559
+154,Dmart,Nigdi,14,low,5% off,18.6471,73.7559
+155,Dmart,Nigdi,15,high,10% off,18.6471,73.7559
+156,Dmart,Nigdi,16,low,8% off,18.6471,73.7559
+157,Dmart,Nigdi,17,mid,10% cachback on payment above 2000,18.6471,73.7559
+158,Dmart,Nigdi,18,high,10% off,18.6471,73.7559
+159,Dmart,Nigdi,19,high,Buy 2 Get One Free,18.6471,73.7559
+160,Dmart,Nigdi,20,high,Rs 100 off,18.6471,73.7559
+161,Dmart,Nigdi,21,low,Buy One Get One Free,18.6471,73.7559
+162,Dmart,Nigdi,22,mid,5% off,18.6471,73.7559
+163,Dmart,Nigdi,23,high,5% off,18.6471,73.7559
+164,Dmart,Nigdi,24,low,12% off,18.6471,73.7559
+165,Dmart,Nigdi,25,mid,15% off,18.6471,73.7559
+166,Dmart,KalyaniNagar,1,mid,free 2 vouchers,18.5452,73.9106
+167,Dmart,KalyaniNagar,2,mid,Buy One Get One,18.5452,73.9106
+168,Dmart,KalyaniNagar,3,low,Buy one & get 10% off on Second,18.5452,73.9106
+169,Dmart,KalyaniNagar,4,mid,25% off,18.5452,73.9106
+170,Dmart,KalyaniNagar,5,high,12% off,18.5452,73.9106
+171,Dmart,KalyaniNagar,6,mid,Buy One Get One,18.5452,73.9106
+172,Dmart,KalyaniNagar,7,high,upto 40% off,18.5452,73.9106
+173,Dmart,KalyaniNagar,8,high,20% off,18.5452,73.9106
+174,Dmart,KalyaniNagar,9,low,10% off,18.5452,73.9106
+175,Dmart,KalyaniNagar,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5452,73.9106
+176,Dmart,KalyaniNagar,11,high,25% off,18.5452,73.9106
+177,Dmart,KalyaniNagar,12,low,10% cachback,18.5452,73.9106
+178,Dmart,KalyaniNagar,13,mid,5% off,18.5452,73.9106
+179,Dmart,KalyaniNagar,14,low,5% off,18.5452,73.9106
+180,Dmart,KalyaniNagar,15,high,10% off,18.5452,73.9106
+181,Dmart,KalyaniNagar,16,low,8% off,18.5452,73.9106
+182,Dmart,KalyaniNagar,17,mid,10% cachback on payment above 2000,18.5452,73.9106
+183,Dmart,KalyaniNagar,18,high,10% off,18.5452,73.9106
+184,Dmart,KalyaniNagar,19,high,Buy 2 Get One Free,18.5452,73.9106
+185,Dmart,KalyaniNagar,20,high,Rs 100 off,18.5452,73.9106
+186,Dmart,KalyaniNagar,21,low,Buy One Get One Free,18.5452,73.9106
+187,Dmart,KalyaniNagar,22,mid,5% off,18.5452,73.9106
+188,Dmart,KalyaniNagar,23,high,5% off,18.5452,73.9106
+189,Dmart,KalyaniNagar,24,low,12% off,18.5452,73.9106
+190,Dmart,KalyaniNagar,25,mid,15% off,18.5452,73.9106
+191,Central Mall,Shivajinagar,8,high,20% off,18.5344,73.8363
+192,Central Mall,Shivajinagar,9,low,10% off,18.5344,73.8363
+193,Central Mall,Shivajinagar,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5344,73.8363
+194,Central Mall,Shivajinagar,11,high,25% off,18.5344,73.8363
+195,Central Mall,Shivajinagar,12,low,10% cachback,18.5344,73.8363
+196,Central Mall,Shivajinagar,13,mid,5% off,18.5344,73.8363
+197,Central Mall,Shivajinagar,14,low,5% off,18.5344,73.8363
+198,Central Mall,Shivajinagar,15,high,10% off,18.5344,73.8363
+199,Central Mall,Shivajinagar,16,low,8% off,18.5344,73.8363
+200,Central Mall,Shivajinagar,17,mid,10% cachback on payment above 2000,18.5344,73.8363
+201,Central Mall,Shivajinagar,18,high,10% off,18.5344,73.8363
+202,Central Mall,Shivajinagar,19,high,Buy 2 Get One Free,18.5344,73.8363
+203,Central Mall,Shivajinagar,20,high,Rs 100 off,18.5344,73.8363
+204,Central Mall,Shivajinagar,21,low,Buy One Get One Free,18.5344,73.8363
+205,Central Mall,Shivajinagar,22,mid,5% off,18.5344,73.8363
+206,Central Mall,Shivajinagar,23,high,5% off,18.5344,73.8363
+207,Central Mall,Shivajinagar,24,low,12% off,18.5344,73.8363
+208,Central Mall,Shivajinagar,25,mid,12% off,18.5344,73.8363
+209,Central Mall,Pimpri,1,mid,Flat 1000 off on 5000 shopping,18.6324,73.7987
+210,Central Mall,Pimpri,2,mid,15% off,18.6324,73.7987
+211,Central Mall,Pimpri,3,mid,10% off,18.6324,73.7987
+212,Central Mall,Pimpri,4,low,Flat 500 off on 2000 shopping,18.6324,73.7987
+213,Central Mall,Pimpri,5,high,Flat 500 off on 2000 shopping,18.6324,73.7987
+214,Central Mall,Pimpri,6,mid,5 % off,18.6324,73.7987
+215,Central Mall,Pimpri,7,low,15% off,18.6324,73.7987
+216,Central Mall,Pimpri,8,high,20% off,18.6324,73.7987
+217,Central Mall,Pimpri,9,low,10% off,18.6324,73.7987
+218,Central Mall,Pimpri,10,mid,FLAT 20% off on all purchases above Rs 1000,18.6324,73.7987
+219,Central Mall,Pimpri,11,high,25% off,18.6324,73.7987
+220,Central Mall,Pimpri,12,low,10% cachback,18.6324,73.7987
+221,Central Mall,Pimpri,13,mid,5% off,18.6324,73.7987
+222,Central Mall,Pimpri,14,low,5% off,18.6324,73.7987
+223,Central Mall,Pimpri,15,high,10% off,18.6324,73.7987
+224,Central Mall,Pimpri,16,low,8% off,18.6324,73.7987
+225,Central Mall,Pimpri,17,mid,10% cachback on payment above 2000,18.6324,73.7987
+226,Central Mall,Pimpri,18,high,10% off,18.6324,73.7987
+227,Central Mall,Pimpri,19,high,Buy 2 Get One Free,18.6324,73.7987
+228,Central Mall,Pimpri,20,high,Rs 100 off,18.6324,73.7987
+229,Central Mall,Pimpri,21,low,Buy One Get One Free,18.6324,73.7987
+230,Central Mall,Pimpri,22,mid,5% off,18.6324,73.7987
+231,Central Mall,Pimpri,23,high,5% off,18.6324,73.7987
+232,Central Mall,Pimpri,24,low,25% off,18.6324,73.7987
+233,Central Mall,Pimpri,25,mid,12% off,18.6324,73.7987
+234,BigBazar,Chinchwad,8,high,20% off,18.2846,64.7796
+235,BigBazar,Chinchwad,9,low,10% off,18.2846,64.7796
+236,BigBazar,Chinchwad,10,mid,FLAT 20% off on all purchases above Rs 1000,18.2846,64.7796
+237,BigBazar,Chinchwad,11,high,25% off,18.2846,64.7796
+238,BigBazar,Chinchwad,12,low,10% cachback,18.2846,64.7796
+239,BigBazar,Chinchwad,13,mid,5% off,18.2846,64.7796
+240,BigBazar,Chinchwad,14,low,5% off,18.2846,64.7796
+241,BigBazar,Chinchwad,15,high,10% off,18.2846,64.7796
+242,BigBazar,Chinchwad,16,low,8% off,18.2846,64.7796
+243,BigBazar,Chinchwad,17,mid,10% cachback on payment above 2000,18.2846,64.7796
+244,BigBazar,Chinchwad,18,high,10% off,18.2846,64.7796
+245,BigBazar,Chinchwad,19,high,Buy 2 Get One Free,18.2846,64.7796
+246,BigBazar,Chinchwad,20,high,Rs 100 off,18.2846,64.7796
+247,BigBazar,Chinchwad,21,low,Buy One Get One Free,18.2846,64.7796
+248,BigBazar,Chinchwad,22,mid,5% off,18.2846,64.7796
+249,BigBazar,Chinchwad,23,high,5% off,18.2846,64.7796
+250,BigBazar,Chinchwad,24,low,12% off,18.2846,64.7796
+251,BigBazar,Chinchwad,25,mid,12% off,18.2846,64.7796
+252,BigBazar,Kothrud,8,high,20% off,18.5073,73.8076
+253,BigBazar,Kothrud,9,low,10% off,18.5073,73.8076
+254,BigBazar,Kothrud,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5073,73.8076
+255,BigBazar,Kothrud,11,high,25% off,18.5073,73.8076
+256,BigBazar,Kothrud,12,low,10% cachback,18.5073,73.8076
+257,BigBazar,Kothrud,13,mid,5% off,18.5073,73.8076
+258,BigBazar,Kothrud,14,low,5% off,18.5073,73.8076
+259,BigBazar,Kothrud,15,high,10% off,18.5073,73.8076
+260,BigBazar,Kothrud,16,low,8% off,18.5073,73.8076
+261,BigBazar,Kothrud,17,mid,10% cachback on payment above 2000,18.5073,73.8076
+262,BigBazar,Kothrud,18,high,10% off,18.5073,73.8076
+263,BigBazar,Kothrud,19,high,Buy 2 Get One Free,18.5073,73.8076
+264,BigBazar,Kothrud,20,high,Rs 100 off,18.5073,73.8076
+265,BigBazar,Kothrud,21,low,Buy One Get One Free,18.5073,73.8076
+266,BigBazar,Kothrud,22,mid,5% off,18.5073,73.8076
+267,BigBazar,Kothrud,23,high,5% off,18.5073,73.8076
+268,BigBazar,Kothrud,24,low,12% off,18.5073,73.8076
+269,BigBazar,Kothrud,25,mid,12% off,18.5073,73.8076
+270,BigBazar,Hinjewadi,1,mid,25% off,17.8621,64.7761
+271,BigBazar,Hinjewadi,2,high,Flat 500 off on 2000 shopping,17.8621,64.7761
+272,BigBazar,Hinjewadi,3,low,35% off,17.8621,64.7761
+273,BigBazar,Hinjewadi,4,mid,Flat 200 off on 1000 shopping,17.8621,64.7761
+274,BigBazar,Hinjewadi,5,mid,Flat 1000 off,17.8621,64.7761
+275,BigBazar,Hinjewadi,6,low,Flat 100 off on 1000 shopping,17.8621,64.7761
+276,BigBazar,Hinjewadi,7,high,Flat 1000 off,17.8621,64.7761
+277,BigBazar,Hinjewadi,8,high,20% off,17.8621,64.7761
+278,BigBazar,Hinjewadi,9,low,10% off,17.8621,64.7761
+279,BigBazar,Hinjewadi,10,mid,FLAT 20% off on all purchases above Rs 1000,17.8621,64.7761
+280,BigBazar,Hinjewadi,11,high,25% off,17.8621,64.7761
+281,BigBazar,Hinjewadi,12,low,10% cachback,17.8621,64.7761
+282,BigBazar,Hinjewadi,13,mid,5% off,17.8621,64.7761
+283,BigBazar,Hinjewadi,14,low,5% off,17.8621,64.7761
+284,BigBazar,Hinjewadi,15,high,10% off,17.8621,64.7761
+285,BigBazar,Hinjewadi,16,low,8% off,17.8621,64.7761
+286,BigBazar,Hinjewadi,17,mid,10% cachback on payment above 2000,17.8621,64.7761
+287,BigBazar,Hinjewadi,18,high,10% off,17.8621,64.7761
+288,BigBazar,Hinjewadi,19,high,Buy 2 Get One Free,17.8621,64.7761
+289,BigBazar,Hinjewadi,20,high,Rs 100 off,17.8621,64.7761
+290,BigBazar,Hinjewadi,21,low,Buy One Get One Free,17.8621,64.7761
+291,BigBazar,Hinjewadi,22,mid,5% off,17.8621,64.7761
+292,BigBazar,Hinjewadi,23,high,5% off,17.8621,64.7761
+293,BigBazar,Hinjewadi,24,low,12% off,17.8621,64.7761
+294,BigBazar,Hinjewadi,25,mid,12% off,17.8621,64.7761
+295,BigBazar,Vishrantwadi,1,mid,25% off,18.5962,73.70374
+296,BigBazar,Vishrantwadi,2,high,Flat 500 off on 2000 shopping,18.5962,73.70374
+297,BigBazar,Vishrantwadi,3,low,35% off,18.5962,73.70374
+298,BigBazar,Vishrantwadi,4,mid,Flat 200 off on 1000 shopping,18.5962,73.70374
+299,BigBazar,Vishrantwadi,5,mid,Flat 1000 off,18.5962,73.70374
+300,BigBazar,Vishrantwadi,6,low,Flat 100 off on 1000 shopping,18.5962,73.70374
+301,BigBazar,Vishrantwadi,7,high,Flat 1000 off,18.5962,73.70374
+302,BigBazar,Vishrantwadi,8,high,20% off,18.5962,73.70374
+303,BigBazar,Vishrantwadi,9,low,10% off,18.5962,73.70374
+304,BigBazar,Vishrantwadi,10,mid,FLAT 20% off on all purchases above Rs 1000,18.5962,73.70374
+305,BigBazar,Vishrantwadi,11,high,25% off,18.5962,73.70374
+306,BigBazar,Vishrantwadi,12,low,10% cachback,18.5962,73.70374
+307,BigBazar,Vishrantwadi,13,mid,5% off,18.5962,73.70374
+308,BigBazar,Vishrantwadi,14,low,5% off,18.5962,73.70374
+309,BigBazar,Vishrantwadi,15,high,10% off,18.5962,73.70374
+310,BigBazar,Vishrantwadi,16,low,8% off,18.5962,73.70374
+311,BigBazar,Vishrantwadi,17,mid,10% cachback on payment above 2000,18.5962,73.70374
+312,BigBazar,Vishrantwadi,18,high,10% off,18.5962,73.70374
+313,BigBazar,Vishrantwadi,19,high,Buy 2 Get One Free,18.5962,73.70374
+314,BigBazar,Vishrantwadi,20,high,Rs 100 off,18.5962,73.70374
+315,BigBazar,Vishrantwadi,21,low,Buy One Get One Free,18.5962,73.70374
+316,BigBazar,Vishrantwadi,22,mid,5% off,18.5962,73.70374
+317,BigBazar,Vishrantwadi,23,high,5% off,18.5962,73.70374
+318,BigBazar,Vishrantwadi,24,low,12% off,18.5962,73.70374
+319,BigBazar,Vishrantwadi,25,mid,12% off,18.5962,73.70374
+320,BigBazar,Sinhagad Road,1,mid,25% off,17.8621,64.7761
+321,BigBazar,Sinhagad Road,2,high,Flat 500 off on 2000 shopping,17.8621,64.7761
+322,BigBazar,Sinhagad Road,3,low,35% off,17.8621,64.7761
+323,BigBazar,Sinhagad Road,4,mid,Flat 200 off on 1000 shopping,17.8621,64.7761
+324,BigBazar,Sinhagad Road,5,mid,Flat 1000 off,17.8621,64.7761
+325,BigBazar,Sinhagad Road,6,low,Flat 100 off on 1000 shopping,17.8621,64.7761
+326,BigBazar,Sinhagad Road,7,high,Flat 1000 off,17.8621,64.7761
+327,BigBazar,Sinhagad Road,8,high,20% off,17.8621,64.7761
+328,BigBazar,Sinhagad Road,9,low,10% off,17.8621,64.7761
+329,BigBazar,Sinhagad Road,10,mid,FLAT 20% off on all purchases above Rs 1000,17.8621,64.7761
+330,BigBazar,Sinhagad Road,11,high,25% off,17.8621,64.7761
+331,BigBazar,Sinhagad Road,12,low,10% cachback,17.8621,64.7761
+332,BigBazar,Sinhagad Road,13,mid,5% off,17.8621,64.7761
+333,BigBazar,Sinhagad Road,14,low,5% off,17.8621,64.7761
+334,BigBazar,Sinhagad Road,15,high,10% off,17.8621,64.7761
+335,BigBazar,Sinhagad Road,16,low,8% off,17.8621,64.7761
+336,BigBazar,Sinhagad Road,17,mid,10% cachback on payment above 2000,17.8621,64.7761
+337,BigBazar,Sinhagad Road,18,high,10% off,17.8621,64.7761
+338,BigBazar,Sinhagad Road,19,high,Buy 2 Get One Free,17.8621,64.7761
+339,BigBazar,Sinhagad Road,20,high,Rs 100 off,17.8621,64.7761
+340,BigBazar,Sinhagad Road,21,low,Buy One Get One Free,17.8621,64.7761
+341,BigBazar,Sinhagad Road,22,mid,5% off,17.8621,64.7761
+342,BigBazar,Sinhagad Road,23,high,5% off,17.8621,64.7761
+343,BigBazar,Sinhagad Road,24,low,12% off,17.8621,64.7761
+344,BigBazar,Sinhagad Road,25,mid,12% off,17.8621,64.7761
+345,vijaySales,Kothrud,1,low,10% off,18.5102,73.816
+346,vijaySales,Chinchwad,1,low,10% off,18.5941,73.762
+347,vijaySales,Pune Station,1,low,10% off,18.5268,73.8745
+348,vijaySales,wakad,1,low,10% off,18.5067,73.8499
+349,vijaySales,Kothrud,1,mid,15% off,18.5102,73.816
+350,vijaySales,Chinchwad,1,mid,15% off,18.5941,73.762
+351,vijaySales,Pune Station,1,mid,15% off,18.5268,73.8745
+352,vijaySales,wakad,1,mid,15% off,18.5067,73.8499
+353,vijaySales,Baner,1,mid,15% off,18.5551,73.7951
+354,vijaySales,Kothrud,1,high,20% off,18.5102,73.816
+355,vijaySales,Chinchwad,1,high,20% off,18.5941,73.762
+356,vijaySales,Pune Station,1,high,20% off,18.5268,73.8745
+357,vijaySales,wakad,1,high,20% off,18.5067,73.8499
+358,vijaySales,Baner,1,high,20% off,18.5551,73.7951
+359,vijaySales,Kothrud,8,low,10% off,18.5102,73.816
+360,vijaySales,Chinchwad,8,low,10% off,18.5941,73.762
+361,vijaySales,Pune Station,8,low,10% off,18.5268,73.8745
+362,vijaySales,wakad,8,low,10% off,18.5067,73.8499
+363,vijaySales,Kothrud,8,mid,15% off,18.5102,73.816
+364,vijaySales,Chinchwad,8,mid,15% off,18.5941,73.762
+365,vijaySales,Pune Station,8,mid,15% off,18.5268,73.8745
+366,vijaySales,wakad,8,mid,15% off,18.5067,73.8499
+367,vijaySales,Kothrud,8,high,20% off,18.5102,73.816
+368,vijaySales,Chinchwad,8,high,20% off,18.5941,73.762
+369,vijaySales,Pune Station,8,high,20% off,18.5268,73.8745
+370,vijaySales,wakad,8,high,20% off,18.5067,73.8499
+371,vijaySales,Baner,8,high,20% off,18.5551,73.7951
+372,Jayhind,Kothrud,2,low,Buy one & get 25% off on Second,18.5274,73.8477
+373,Jayhind,Wakad,2,low,Buy one & get 25% off on Second,18.5214,73.807
+374,Jayhind,Aundh,2,low,Buy one & get 25% off on Second,18.5608,73.8082
+375,Jayhind,Kothrud,2,mid,Buy one & get 35% off on Second,18.5274,73.8477
+376,Jayhind,Shivajinagar,2,mid,Buy one & get 35% off on Second,18.5299,73.8399
+377,Jayhind,Aundh,2,mid,Buy one & get 35% off on Second,18.5608,73.8082
+378,Jayhind,wakad,2,mid,Buy one & get 35% off on Second,18.5214,73.807
+379,Jayhind,Pimpri,2,mid,Buy one & get 35% off on Second,18.6218,73.7917
+380,Jayhind,Shivajinagar,2,high,Buy two & get 25% off on Second,18.5299,73.8399
+381,Jayhind,Aundh,2,high,Buy two & get 25% off on Second,18.5608,73.8082
+382,Jayhind,wakad,2,high,Buy two & get 25% off on Second,18.5214,73.807
+383,Jayhind,Pimpri,2,high,Buy two & get 25% off on Second,18.6218,73.7917
+384,Bata,Shivajinagar,3,low,10% off,18.517,73.8391
+385,Bata,Hadapsar,3,low,10% off,18.5102,73.9223
+386,Bata,Laxmi Road,3,low,10% off,18.5963,73.7037
+387,Bata,Wakad,3,low,10% off,18.5963,73.7716
+388,Bata,Nigdi,3,low,10% off,18.5618,73.9132
+389,Bata,Shivajinagar,3,mid,15%,18.517,73.8391
+390,Bata,Hadapsar,3,mid,15%,18.5102,73.9223
+391,Bata,Nigdi,3,mid,15%,18.5618,73.9132
+392,Bata,Wakad,3,mid,15%,18.5963,73.7716
+393,Bata,Shivajinagar,3,high,Buy One and Get One free,18.517,73.8391
+394,Bata,Hadapsar,3,high,Buy One and Get One free,18.5102,73.9223
+395,Bata,Nigdi,3,high,Buy One and Get One free,18.5618,73.9132
+396,Bata,Wakad,3,high,Buy One and Get One free,18.5963,73.7716
+397,KidGames,Swargate,4,low,Buy One and 5% off on second,18.5011,73.8718
+398,KidGames,Kothrud,4,low,Buy One and 5% off on second,18.5192,73.9307
+399,KidGames,Hadapsar,4,low,Buy One and 5% off on second,18.5192,73.935
+400,KidGames,Camp,4,low,Buy One and 5% off on second,18.5198,73.87702
+401,KidGames,Swargate,4,mid,Buy One and 10% off on second,18.5011,73.8718
+402,KidGames,Kothrud,4,mid,Buy One and 10% off on second,18.5192,73.9307
+403,KidGames,Hadapsar,4,mid,Buy One and 10% off on second,18.5192,73.935
+404,KidGames,Camp,4,mid,Buy One and 10% off on second,18.5198,73.87702
+405,KidGames,Pimpri,4,mid,Buy One and 10% off on second,18.6598,73.7981
+406,KidGames,Swargate,4,high,Buy One and Get One free worth Rs 200,18.5011,73.8718
+407,KidGames,Kothrud,4,high,Buy One and Get One free worth Rs 201,18.5192,73.9307
+408,KidGames,Hadapsar,4,high,Buy One and Get One free worth Rs 202,18.5192,73.935
+409,KidGames,Camp,4,high,Buy One and Get One free worth Rs 203,18.5198,73.87702
+410,KidGames,Pimpri,4,high,Buy One and Get One free worth Rs 204,18.6598,73.7981
+411,Sakti Sports,Kothrud,5,low,10% off on Rs 2000 shopping,18.5088,73.8464
+412,Sakti Sports,Akurdi,5,low,10% off on Rs 2000 shopping,18.6491,73.7844
+413,Sakti Sports,Pimpri,5,low,10% off on Rs 2000 shopping,18.626,73.8031
+414,Sakti Sports,Kothrud,5,low,15% off on Rs 2000 shopping,18.5088,73.8464
+415,Sakti Sports,Akurdi,5,low,15% off on Rs 2000 shopping,18.6491,73.7844
+416,Sakti Sports,Kothrud,5,high,20% off on Rs 2000 shopping,18.5088,73.8464
+417,Sakti Sports,Akurdi,5,high,20% off on Rs 2000 shopping,18.6491,73.7844
+418,Sakti Sports,Pimpri,5,high,20% off on Rs 2000 shopping,18.626,73.8031
+419,LG,Kothrud,1,low,15% off on Rs 20000 shopping,18.4956,73.74098
+420,LG,Bibwewadi,1,low,15% off on Rs 20000 shopping,18.4727,73.7937
+421,LG,Wakad,1,low,15% off on Rs 20000 shopping,18.6029,73.77702
+422,LG,Pimpri,1,low,15% off on Rs 20000 shopping,18.6365,73.7960677
+423,LG,Shivajinagar,1,low,15% off on Rs 20000 shopping,18.515,73.8275
+424,LG,Kothrud,1,mid,20% off on Rs 20000 shopping,18.4956,73.74098
+425,LG,Bibwewadi,1,mid,20% off on Rs 20000 shopping,18.4727,73.7937
+426,LG,Wakad,1,mid,20% off on Rs 20000 shopping,18.6029,73.77702
+427,LG,Pimpri,1,mid,20% off on Rs 20000 shopping,18.6365,73.7960677
+428,LG,Shivajinagar,1,mid,20% off on Rs 20000 shopping,18.515,73.8275
+429,LG,Kothrud,1,high,25% off on Rs 20000 shopping,18.4956,73.74098
+430,LG,Bibwewadi,1,high,20% off on Rs 20000 shopping,18.4727,73.7937
+431,LG,Wakad,1,high,20% off on Rs 20000 shopping,18.6029,73.77702
+432,LG,Pimpri,1,high,20% off on Rs 20000 shopping,18.6365,73.7960677
+433,LG,Shivajinagar,1,high,20% off on Rs 20000 shopping,18.515,73.8275
+434,Reliacnce Mart,Aundh,1,high,10% off,18.5644,73.8078
+435,Reliacnce Mart,Aundh,2,mid,40% off,18.5644,73.8078
+436,Reliacnce Mart,Aundh,3,mid,Buy One Get One,18.5644,73.8078
+437,Reliacnce Mart,Aundh,4,high,upto 60% off,18.5644,73.8078
+438,Reliacnce Mart,Aundh,5,high,upto 20% off,18.5644,73.8078
+439,Reliacnce Mart,Aundh,6,high,10% Off,18.5644,73.8078
+440,Reliacnce Mart,Aundh,7,mid,free 3 voucher,18.5644,73.8078
+441,Reliacnce Mart,Aundh,8,high,10 % Discocount ,18.5644,73.8078
+442,Reliacnce Mart,Aundh,9,mid,Flat 4% off,18.5644,73.8078
+443,Reliacnce Mart,Aundh,10,high,10% off,18.5644,73.8078
+444,Reliacnce Mart,Aundh,11,low,Buy One Get One,18.5644,73.8078
+445,Reliacnce Mart,Aundh,12,mid,2% off,18.5644,73.8078
+446,Reliacnce Mart,Aundh,13,high,free 1 voucher,18.5644,73.8078
+447,Reliacnce Mart,Aundh,14,low,7% off,18.5644,73.8078
+448,Reliacnce Mart,Aundh,15,mid,100 Rs CashBack,18.5644,73.8078
+449,Reliacnce Mart,Aundh,16,high,Flat 400 off on 3000 shopping,18.5644,73.8078
+450,Reliacnce Mart,Aundh,17,mid,200 Rs CashBack,18.5644,73.8078
+451,Reliacnce Mart,Aundh,18,high,Flat 150 off on 1000 shopping,18.5644,73.8078
+452,Reliacnce Mart,Aundh,19,low,Get Two Music CD free ,18.5644,73.8078
+453,Reliacnce Mart,Aundh,20,high,Flat 20 off on 1000 shopping,18.5644,73.8078
+454,Reliacnce Mart,Aundh,21,mid,8% Discount,18.5644,73.8078
+455,Reliacnce Mart,Aundh,22,low,1.5 % Discount,18.5644,73.8078
+456,Reliacnce Mart,Aundh,23,high,20 Rs off on 10 print,18.5644,73.8078
+457,Reliacnce Mart,Aundh,24,low,Flat 200 off on 1000 shopping,18.5644,73.8078
+458,Reliacnce Mart,Aundh,25,high,Buy Two Get One,18.5644,73.8078
+459,Reliacnce Mart,Pimple Saudagar,1,high,up to 10 % off,18.5972005,73.792
+460,Reliacnce Mart,Pimple Saudagar,2,mid,30 % off,18.5972005,73.792
+461,Reliacnce Mart,Pimple Saudagar,3,mid,upto 30% off,18.5972005,73.792
+462,Reliacnce Mart,Pimple Saudagar,4,high,upto 50% off,18.5972005,73.792
+463,Reliacnce Mart,Pimple Saudagar,5,high,upto 8% off,18.5972005,73.792
+464,Reliacnce Mart,Pimple Saudagar,6,high,5% Off,18.5972005,73.792
+465,Reliacnce Mart,Pimple Saudagar,7,mid,free 5 voucher,18.5972005,73.792
+466,Reliacnce Mart,Pimple Saudagar,8,high,5% Discocount ,18.5972005,73.792
+467,Reliacnce Mart,Pimple Saudagar,9,mid,Flat 5 % off,18.5972005,73.792
+468,Reliacnce Mart,Pimple Saudagar,10,high,up to 30 % off,18.5972005,73.792
+469,Reliacnce Mart,Pimple Saudagar,11,low,Buy Two Get One,18.5972005,73.792
+470,Reliacnce Mart,Pimple Saudagar,12,mid,making charges free,18.5972005,73.792
+471,Reliacnce Mart,Pimple Saudagar,13,high,free 1 voucher,18.5972005,73.792
+472,Reliacnce Mart,Pimple Saudagar,14,low,3 % off,18.5972005,73.792
+473,Reliacnce Mart,Pimple Saudagar,15,mid,300 Rs CashBack,18.5972005,73.792
+474,Reliacnce Mart,Pimple Saudagar,16,high,Flat 400 off on 3000 shopping,18.5972005,73.792
+475,Reliacnce Mart,Pimple Saudagar,17,mid,100 Rs CashBack,18.5972005,73.792
+476,Reliacnce Mart,Pimple Saudagar,18,high,Flat 25 %off on 1500 shopping,18.5972005,73.792
+477,Reliacnce Mart,Pimple Saudagar,19,low,flat 100 Rs off,18.5972005,73.792
+478,Reliacnce Mart,Pimple Saudagar,20,high,Flat 80 off on 2000 shopping,18.5972005,73.792
+479,Reliacnce Mart,Pimple Saudagar,21,mid,12 % Discount,18.5972005,73.792
+480,Reliacnce Mart,Pimple Saudagar,22,low,5 Rs Cashback,18.5972005,73.792
+481,Reliacnce Mart,Pimple Saudagar,23,high,1 print free on 10 prints,18.5972005,73.792
+482,Reliacnce Mart,Pimple Saudagar,24,low,Flat 10 % off on 1000 shopping,18.5972005,73.792
+483,Reliacnce Mart,Pimple Saudagar,25,high,10% off upto 1000 shopping,18.5972005,73.792
+484,Reliacnce Mart,Kharadi,1,high,upto 10% off,18.558,73.9265
+485,Reliacnce Mart,Kharadi,2,mid,upto 40% off,18.558,73.9265
+486,Reliacnce Mart,Kharadi,3,mid,Buy One Get One,18.558,73.9265
+487,Reliacnce Mart,Kharadi,4,high,upto 30% off,18.558,73.9265
+488,Reliacnce Mart,Kharadi,5,high,upto 30% off,18.558,73.9265
+489,Reliacnce Mart,Kharadi,6,high,5% Off,18.558,73.9265
+490,Reliacnce Mart,Kharadi,7,mid,free 3 voucher,18.558,73.9265
+491,Reliacnce Mart,Kharadi,8,high,10% Discocount ,18.558,73.9265
+492,Reliacnce Mart,Kharadi,9,mid,Flat 7% off,18.558,73.9265
+493,Reliacnce Mart,Kharadi,10,high,12% off,18.558,73.9265
+494,Reliacnce Mart,Kharadi,11,low,Buy Three Get One,18.558,73.9265
+495,Reliacnce Mart,Kharadi,12,mid,1% off on making charges,18.558,73.9265
+496,Reliacnce Mart,Kharadi,13,high,free 2 voucher,18.558,73.9265
+497,Reliacnce Mart,Kharadi,14,low,7 % off,18.558,73.9265
+498,Reliacnce Mart,Kharadi,15,mid,200 Rs CashBack,18.558,73.9265
+499,Reliacnce Mart,Kharadi,16,high,Flat 100 off on 1000 shopping,18.558,73.9265
+500,Reliacnce Mart,Kharadi,17,mid,200 Rs CashBack,18.558,73.9265
+501,Reliacnce Mart,Kharadi,18,high,Flat 75 off on 800 shopping,18.558,73.9265
+502,Reliacnce Mart,Kharadi,19,low,Buy three and get penDrive free,18.558,73.9265
+503,Reliacnce Mart,Kharadi,20,high,Flat 20 % off on 1000 shopping,18.558,73.9265
+504,Reliacnce Mart,Kharadi,21,mid,upto 8% Discount,18.558,73.9265
+505,Reliacnce Mart,Kharadi,22,low,2% Discount,18.558,73.9265
+506,Reliacnce Mart,Kharadi,23,high,25 Rs off on 10 print,18.558,73.9265
+507,Reliacnce Mart,Kharadi,24,low,Flat 100 off on 500 shopping,18.558,73.9265
+508,Reliacnce Mart,Kharadi,25,high,one Music CD free,18.558,73.9265
+509,Reliacnce Mart,Wanorie,1,high,Up to 15% off,18.5035,73.9
+510,Reliacnce Mart,Wanorie,2,mid,30% off,18.5035,73.9
+511,Reliacnce Mart,Wanorie,3,mid,Buy Two Get One Cupon,18.5035,73.9
+512,Reliacnce Mart,Wanorie,4,high,upto 50% off,18.5035,73.9
+513,Reliacnce Mart,Wanorie,5,high,upto 10% off,18.5035,73.9
+514,Reliacnce Mart,Wanorie,6,high,5% Off on 5 dozen quantity,18.5035,73.9
+515,Reliacnce Mart,Wanorie,7,mid,free 1 voucher,18.5035,73.9
+516,Reliacnce Mart,Wanorie,8,high,3% Discocount ,18.5035,73.9
+517,Reliacnce Mart,Wanorie,9,mid,Flat 7 % off,18.5035,73.9
+518,Reliacnce Mart,Wanorie,10,high,10% off,18.5035,73.9
+519,Reliacnce Mart,Wanorie,11,low,Buy One Get Two,18.5035,73.9
+520,Reliacnce Mart,Wanorie,12,mid,8 % off,18.5035,73.9
+521,Reliacnce Mart,Wanorie,13,high,free 2 voucher,18.5035,73.9
+522,Reliacnce Mart,Wanorie,14,low,5 % off,18.5035,73.9
+523,Reliacnce Mart,Wanorie,15,mid,100 Rs CashBack,18.5035,73.9
+524,Reliacnce Mart,Wanorie,16,high,Flat 700 off on 3000 shopping,18.5035,73.9
+525,Reliacnce Mart,Wanorie,17,mid,500 Rs CashBack,18.5035,73.9
+526,Reliacnce Mart,Wanorie,18,high,Flat 70 off on 500 shopping,18.5035,73.9
+527,Reliacnce Mart,Wanorie,19,low,flat 200 Rs off,18.5035,73.9
+528,Reliacnce Mart,Wanorie,20,high,Flat 75 off on 2000 shopping,18.5035,73.9
+529,Reliacnce Mart,Wanorie,21,mid,10% Discount,18.5035,73.9
+530,Reliacnce Mart,Wanorie,22,low,10 Rs Cashback,18.5035,73.9
+531,Reliacnce Mart,Wanorie,23,high,50 off on 5 print,18.5035,73.9
+532,Reliacnce Mart,Wanorie,24,low,Flat 100 off on 1000 shopping,18.5035,73.9
+533,Reliacnce Mart,Wanorie,25,high,Buy One Get One,18.5035,73.9
+534,Mega Mart,Wakad,1,high,10% off,18.6487,73.7873
+535,Mega Mart,Wakad,2,mid,40% off,18.6487,73.7873
+536,Mega Mart,Wakad,3,mid,Buy One Get One,18.6487,73.7873
+537,Mega Mart,Wakad,4,high,upto 60% off,18.6487,73.7873
+538,Mega Mart,Wakad,5,high,upto 20% off,18.6487,73.7873
+539,Mega Mart,Wakad,6,high,10% Off,18.6487,73.7873
+540,Mega Mart,Wakad,7,mid,free 8 voucher,18.6487,73.7873
+541,Mega Mart,Wakad,8,high,20% Discocount ,18.6487,73.7873
+542,Mega Mart,Wakad,9,mid,Flat 10% off,18.6487,73.7873
+543,Mega Mart,Wakad,10,high,20% off,18.6487,73.7873
+544,Mega Mart,Wakad,11,low,Buy One Get One,18.6487,73.7873
+545,Mega Mart,Wakad,12,mid,8% off,18.6487,73.7873
+546,Mega Mart,Wakad,13,high,free 8 voucher,18.6487,73.7873
+547,Mega Mart,Wakad,14,low,5% off,18.6487,73.7873
+548,Mega Mart,Wakad,15,mid,500 Rs CashBack,18.6487,73.7873
+549,Mega Mart,Wakad,16,high,Flat 500 off on 3000 shopping,18.6487,73.7873
+550,Mega Mart,Wakad,17,mid,500 Rs CashBack,18.6487,73.7873
+551,Mega Mart,Wakad,18,high,Flat 100 off on 1000 shopping,18.6487,73.7873
+552,Mega Mart,Wakad,19,low,Get one Music CD free,18.6487,73.7873
+553,Mega Mart,Wakad,20,high,Flat 50 off on 1000 shopping,18.6487,73.7873
+554,Mega Mart,Wakad,21,mid,10% Discount,18.6487,73.7873
+555,Mega Mart,Wakad,22,low,1% Discount,18.6487,73.7873
+556,Mega Mart,Wakad,23,high,50 off on 10 print,18.6487,73.7873
+557,Mega Mart,Wakad,24,low,Flat 500 off on 1000 shopping,18.6487,73.7873
+558,Mega Mart,Wakad,25,high,Buy One Get One,18.6487,73.7873
+559,Mega Mart,Pimpri,1,high,10% off,18.6275,73.8052
+560,Mega Mart,Pimpri,2,mid,40% off,18.6275,73.8052
+561,Mega Mart,Pimpri,3,mid,Buy One Get One,18.6275,73.8052
+562,Mega Mart,Pimpri,4,high,upto 60% off,18.6275,73.8052
+563,Mega Mart,Pimpri,5,high,upto 20% off,18.6275,73.8052
+564,Mega Mart,Pimpri,6,high,10% Off,18.6275,73.8052
+565,Mega Mart,Pimpri,7,mid,free 8 voucher,18.6275,73.8052
+566,Mega Mart,Pimpri,8,high,10% Discocount ,18.6275,73.8052
+567,Mega Mart,Pimpri,9,mid,Flat 7 % off,18.6275,73.8052
+568,Mega Mart,Pimpri,10,high,10% off,18.6275,73.8052
+569,Mega Mart,Pimpri,11,low,Buy One Get Two,18.6275,73.8052
+570,Mega Mart,Pimpri,12,mid,8 % off,18.6275,73.8052
+571,Mega Mart,Pimpri,13,high,free 2 voucher,18.6275,73.8052
+572,Mega Mart,Pimpri,14,low,5 % off,18.6275,73.8052
+573,Mega Mart,Pimpri,15,mid,100 Rs CashBack,18.6275,73.8052
+574,Mega Mart,Pimpri,16,high,Flat 700 off on 3000 shopping,18.6275,73.8052
+575,Mega Mart,Pimpri,17,mid,500 Rs CashBack,18.6275,73.8052
+576,Mega Mart,Pimpri,18,high,Flat 70 off on 500 shopping,18.6275,73.8052
+577,Mega Mart,Pimpri,19,low,flat 200 Rs off,18.6275,73.8052
+578,Mega Mart,Pimpri,20,high,Flat 75 off on 2000 shopping,18.6275,73.8052
+579,Mega Mart,Pimpri,21,mid,10% Discount,18.6275,73.8052
+580,Mega Mart,Pimpri,22,low,10 Rs Cashback,18.6275,73.8052
+581,Mega Mart,Pimpri,23,high,50 off on 5 print,18.6275,73.8052
+582,Mega Mart,Pimpri,24,low,Flat 100 off on 1000 shopping,18.6275,73.8052
+583,Mega Mart,Pimpri,25,high,Buy One Get One,18.6275,73.8052
+584,Mega Mart,Nigdi,8,high,20% Discocount ,18.6295,73.8028
+585,Mega Mart,Nigdi,9,mid,Flat 10% off,18.6295,73.8028
+586,Mega Mart,Nigdi,10,high,20% off,18.6295,73.8028
+587,Mega Mart,Nigdi,11,low,Buy One Get One,18.6295,73.8028
+588,Mega Mart,Nigdi,12,mid,8% off,18.6295,73.8028
+589,Mega Mart,Nigdi,13,high,free 8 voucher,18.6295,73.8028
+590,Mega Mart,Nigdi,14,low,5% off,18.6295,73.8028
+591,Mega Mart,Nigdi,15,mid,500 Rs CashBack,18.6295,73.8028
+592,Mega Mart,Nigdi,16,high,Flat 500 off on 3000 shopping,18.6295,73.8028
+593,Mega Mart,Nigdi,17,mid,500 Rs CashBack,18.6295,73.8028
+594,Mega Mart,Nigdi,18,high,Flat 100 off on 1000 shopping,18.6295,73.8028
+595,Mega Mart,Nigdi,19,low,Get one Music CD free,18.6295,73.8028
+596,Mega Mart,Nigdi,20,high,Flat 50 off on 1000 shopping,18.6295,73.8028
+597,Mega Mart,Nigdi,21,mid,10% Discount,18.6295,73.8028
+598,Mega Mart,Nigdi,22,low,1% Discount,18.6295,73.8028
+599,Mega Mart,Nigdi,23,high,50 off on 10 print,18.6295,73.8028
+600,Mega Mart,Nigdi,24,low,Flat 500 off on 1000 shopping,18.6295,73.8028
+601,Mega Mart,Nigdi,25,high,Buy One Get One,18.6295,73.8028
+602,Mega Mart,Kothrud,1,high,10% off,18.5103,73.8054
+603,Mega Mart,Kothrud,2,mid,40% off,18.5103,73.8054
+604,Mega Mart,Kothrud,3,mid,Buy One Get One,18.5103,73.8054
+605,Mega Mart,Kothrud,4,high,upto 60% off,18.5103,73.8054
+606,Mega Mart,Kothrud,5,high,upto 20% off,18.5103,73.8054
+607,Mega Mart,Kothrud,6,high,10% Off,18.5103,73.8054
+608,Mega Mart,Kothrud,7,mid,free 8 voucher,18.5103,73.8054
+609,Mega Mart,Kothrud,8,high,10% Discocount ,18.5103,73.8054
+610,Mega Mart,Kothrud,9,mid,Flat 7 % off,18.5103,73.8054
+611,Mega Mart,Kothrud,10,high,10% off,18.5103,73.8054
+612,Mega Mart,Kothrud,11,low,Buy One Get Two,18.5103,73.8054
+613,Mega Mart,Kothrud,12,mid,8 % off,18.5103,73.8054
+614,Mega Mart,Kothrud,13,high,free 2 voucher,18.5103,73.8054
+615,Mega Mart,Kothrud,14,low,5 % off,18.5103,73.8054
+616,Mega Mart,Kothrud,15,mid,100 Rs CashBack,18.5103,73.8054
+617,Mega Mart,Kothrud,16,high,Flat 700 off on 3000 shopping,18.5103,73.8054
+618,Mega Mart,Kothrud,17,mid,500 Rs CashBack,18.5103,73.8054
+619,Mega Mart,Kothrud,18,high,Flat 70 off on 500 shopping,18.5103,73.8054
+620,Mega Mart,Kothrud,19,low,flat 200 Rs off,18.5103,73.8054
+621,Mega Mart,Kothrud,20,high,Flat 75 off on 2000 shopping,18.5103,73.8054
+622,Mega Mart,Kothrud,21,mid,10% Discount,18.5103,73.8054
+623,Mega Mart,Kothrud,22,low,10 Rs Cashback,18.5103,73.8054
+624,Mega Mart,Kothrud,23,high,50 off on 5 print,18.5103,73.8054
+625,Mega Mart,Kothrud,24,low,Flat 100 off on 1000 shopping,18.5103,73.8054
+626,Mega Mart,Kothrud,25,high,Buy One Get One,18.5103,73.8054
+627,Mega Mart,VimanNagar,1,high,10% off,18.5628,73.9167
+628,Mega Mart,VimanNagar,2,mid,40% off,18.5628,73.9167
+629,Mega Mart,VimanNagar,3,mid,Buy One Get One,18.5628,73.9167
+630,Mega Mart,VimanNagar,4,high,upto 60% off,18.5628,73.9167
+631,Mega Mart,VimanNagar,5,high,upto 20% off,18.5628,73.9167
+632,Mega Mart,VimanNagar,6,high,10% Off,18.5628,73.9167
+633,Mega Mart,VimanNagar,7,mid,free 8 voucher,18.5628,73.9167
+634,Mega Mart,VimanNagar,8,high,10% Discocount ,18.5628,73.9167
+635,Mega Mart,VimanNagar,9,mid,Flat 7 % off,18.5628,73.9167
+636,Mega Mart,VimanNagar,10,high,10% off,18.5628,73.9167
+637,Mega Mart,VimanNagar,11,low,Buy One Get Two,18.5628,73.9167
+638,Mega Mart,VimanNagar,12,mid,8 % off,18.5628,73.9167
+639,Mega Mart,VimanNagar,13,high,free 2 voucher,18.5628,73.9167
+640,Mega Mart,VimanNagar,14,low,5 % off,18.5628,73.9167
+641,Mega Mart,VimanNagar,15,mid,100 Rs CashBack,18.5628,73.9167
+642,Mega Mart,VimanNagar,16,high,Flat 700 off on 3000 shopping,18.5628,73.9167
+643,Mega Mart,VimanNagar,17,mid,500 Rs CashBack,18.5628,73.9167
+644,Mega Mart,VimanNagar,18,high,Flat 70 off on 500 shopping,18.5628,73.9167
+645,Mega Mart,VimanNagar,19,low,flat 200 Rs off,18.5628,73.9167
+646,Mega Mart,VimanNagar,20,high,Flat 75 off on 2000 shopping,18.5628,73.9167
+647,Mega Mart,VimanNagar,21,mid,10% Discount,18.5628,73.9167
+648,Mega Mart,VimanNagar,22,low,10 Rs Cashback,18.5628,73.9167
+649,Mega Mart,VimanNagar,23,high,50 off on 5 print,18.5628,73.9167
+650,Mega Mart,VimanNagar,24,low,Flat 100 off on 1000 shopping,18.5628,73.9167
+651,Mega Mart,VimanNagar,25,high,Buy One Get One,18.5628,73.9167
