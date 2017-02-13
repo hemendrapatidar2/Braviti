@@ -38,7 +38,8 @@ public class SparkRecommender implements Serializable {
 	private static final String BRAVITI_RESOURCES = "com/tm/braveti/resources";
 	private static final long serialVersionUID = -8760307916460712075L;
 	private static List<OfferDTO> finalOfferSuggestion = new ArrayList<OfferDTO>();
-	private String userId;
+	private  static String userId;
+	private  static String loggedInUserName;
 	private JavaRDD<User> userData;
 	private JavaRDD<TransactionHistory> transactionData;
 	private JavaRDD<Outlet> outletData;
@@ -50,7 +51,9 @@ public class SparkRecommender implements Serializable {
 		 JavaSparkContext jsc;
 		//configuring the logger
 		configLogger();
-
+if(loggedInUserName==null){
+	loggedInUserName=userName;
+}
 		//Initializing spark context
 		conf = new SparkConf().setMaster("local").setAppName("Java Collaborative Filtering Example");
 		conf.set("spark.driver.allowMultipleContexts", "true");
@@ -65,9 +68,16 @@ public class SparkRecommender implements Serializable {
 		}
 		
 		//Applying filters on data loaded in RDD objects
-		if(StringUtils.isEmpty(userId)){
+//		if(StringUtils.isEmpty(userId)){
+//			
+//			userId=getLoggedInUser(userName);
+//		}
+		
+		if(!loggedInUserName.equals(userName)||StringUtils.isEmpty(userId)){
 			userId=getLoggedInUser(userName);
-			}
+			loggedInUserName=userName;
+			
+		}
 			
 		if(!StringUtils.isNoneBlank(userId)){
 			throw new UserNotFoundException("user not found");
@@ -169,7 +179,6 @@ public class SparkRecommender implements Serializable {
 		final List<String> processedCategory = new ArrayList<>();
 		JavaRDD<TransactionHistory> userSpecificRecords = transactionData.filter(new Function<TransactionHistory, Boolean>() {
 			public Boolean call(TransactionHistory th) {
-				System.out.println("transaction user id"+th.getUserid());
 				if (th.getUserid().trim().equalsIgnoreCase(userId)) {
 					String categoryId = th.getCategoryid();
 					if (!processedCategory.contains(categoryId)) {
@@ -507,42 +516,6 @@ public class SparkRecommender implements Serializable {
 		return prefStatus;
 	}
 	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) throws Exception {
-		SparkRecommender test = new SparkRecommender();
-		try {
-			UserPreferencesJson preferences=new UserPreferencesJson();
-			preferences.setUserId("Raj");
-			HashMap<String, List<String>> preferenceMap=new HashMap<>();
-			List<String> categoryList=new ArrayList<>();
-			categoryList.add("1");
-			categoryList.add("2");
-//			categoryList.add("3");
-			List<String> priceRange=new ArrayList<>();
-			priceRange.add("low");
-			priceRange.add("mid");
-			preferences.setCategories(categoryList);
-			preferences.setPriceRange(priceRange);
-			
-			try {
-				test.recommendOffers("Raj", "ShivajiNagar");
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (UserNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 
 }
