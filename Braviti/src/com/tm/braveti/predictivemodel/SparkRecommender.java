@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
@@ -329,7 +330,7 @@ public class SparkRecommender implements Serializable {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public UserPreferencesJson getUserPreferences(final String userName) throws Exception
+	public UserPreferencesJson getUserPreferences_old(final String userName) throws Exception
 	{
 		
 		BufferedReader br = null;
@@ -351,6 +352,8 @@ public class SparkRecommender implements Serializable {
 			String sCurrentLine;
 			br = new BufferedReader(new FileReader(fin));
 			List<String> priceList=new ArrayList<String>();
+			
+			
 			
 			while ((sCurrentLine = br.readLine()) != null) {
 				System.out.println(sCurrentLine);
@@ -391,6 +394,59 @@ public class SparkRecommender implements Serializable {
 						ex.printStackTrace();
 			}
 
+		}
+		return prefDto;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public UserPreferencesJson getUserPreferences(final String userName) throws Exception
+	{
+		UserPreferencesJson prefDto = null ;
+		LineIterator lineIterator=null;
+		URL url = this.getClass().getClassLoader().getResource("com\\tm\\braveti\\resources\\");
+		String parentDirectory = new File(new URI(url.toString())).getAbsolutePath();
+		System.out.println("parentDirectory: "+parentDirectory);
+		File fin = new File(parentDirectory +"\\userPref.csv");
+
+		try {
+			
+			if (!fin.createNewFile()){
+			    System.out.println("getUserPreferences :: File already exists.");
+			  }
+			String sCurrentLine;
+			List<String> priceList=new ArrayList<String>();
+			 lineIterator = FileUtils.lineIterator(fin, "UTF-8");
+			
+				while (lineIterator.hasNext()) {
+				 sCurrentLine = lineIterator.nextLine();
+				 System.out.println(sCurrentLine);
+				 String data[] = StringUtils.split(sCurrentLine, "|");
+				 
+				 if(userName.equalsIgnoreCase(data[0]))
+				 {
+					 prefDto=new UserPreferencesJson();
+					 prefDto.setUserId(data[0]);
+					 if(null != data[1]  &&  StringUtils.isNotEmpty(data[1]))
+					 prefDto.setCategories( Arrays.asList(StringUtils.split(data[1], ',')));
+					 // Below condition is to ensure exception not thrown in case none of the price range is selected
+					 if(data.length>2)
+					 {
+					 if(null != data[2] && StringUtils.isNotEmpty(data[2]))
+					 {
+					 priceList=Arrays.asList(StringUtils.split(data[2], ','));
+					 prefDto.setPriceRange(priceList);
+					 }
+					 }
+					 else
+					 {
+						 prefDto.setPriceRange(priceList);
+					 }
+				 }
+			}
+		} catch (IOException e) {
+					e.printStackTrace();
+		} finally {
+			LineIterator.closeQuietly(lineIterator);
 		}
 		return prefDto;
 	}
