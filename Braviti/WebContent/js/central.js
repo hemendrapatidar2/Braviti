@@ -316,7 +316,77 @@ myApp
 
 							var stylesheet = "position: absolute;top: 100px;left: 80px;z-index: 2;height:50px;width:50px;";
 
-							$scope.locations = [{location : 'ShivajiNagar',latitude:'18.5318',langitude:'73.8499'},{location : 'Kothrud',latitude:'18.5102',langitude:'73.8173'},{location : 'Pimpri',latitude:'18.6256',langitude:'73.8060'},{location : 'Wakad',latitude:'18.6059',langitude:'73.7526'},{location : 'Nigdi',latitude:'18.6654',langitude:'73.7710'}];									
+							$scope.locations = [ {
+								location : 'ShivajiNagar',
+								latitude : '18.5318',
+								langitude : '73.8499'
+							}, {
+								location : 'Kothrud',
+								latitude : '18.5102',
+								langitude : '73.8173'
+							}, {
+								location : 'Pimpri',
+								latitude : '18.6256',
+								langitude : '73.8060'
+							}, {
+								location : 'Wakad',
+								latitude : '18.5989',
+								langitude : '73.7653'
+							}, {
+								location : 'Nigdi',
+								latitude : '18.6654',
+								langitude : '73.7710'
+							},
+							{
+								location : 'Vishrantwadi',
+								latitude : '18.5726',
+								langitude : '73.8782'								
+							},
+							{
+								location : 'VimanNagar',
+								latitude : '18.5679',
+								langitude : '73.9143'																
+							},
+							{
+								location : 'Aundh',
+								latitude : '18.5580',
+								langitude : '73.8075'																
+							},
+							{
+								location : 'Wanowrie',
+								latitude : '18.4829',
+								langitude : '73.9017'																
+							},
+							{
+								location : 'Kharadi',
+								latitude : '18.5515',
+								langitude : '73.9348'																
+							},
+							{
+								location : 'Baner',
+								latitude : '18.5597',
+								langitude : '73.7799'																
+							},
+							{
+								location : 'KalyaniNagar',
+								latitude : '18.5463',
+								langitude : '73.9033'																
+							},
+							{
+								location : 'Hinjewadi',
+								latitude : '18.5971',
+								langitude : '73.7188'																
+							},
+							{
+								location : 'Hadapsar',
+								latitude : '18.5089',
+								langitude : '73.9260'																
+							},
+							{
+								location : 'Pune Camp',
+								latitude : '18.5122',
+								langitude : '73.8860'																
+							}];									
 							$scope.selectedImage = "images/map.png";
 							$scope.changeLocation = function() {
 								console.log('in change location '
@@ -348,7 +418,10 @@ myApp
 							$scope.loadRouteMap =function(outlet){
 								var map = prepareMap();
 								var currentLocation = new google.maps.LatLng($scope.userSelectedLocation.latitude,$scope.userSelectedLocation.langitude);
-								var outletLocation = new google.maps.LatLng(outlet.latitude,outlet.langitude);
+								console.log("[ Prefered location "+$scope.userSelectedLocation.latitude+","+$scope.userSelectedLocation.langitude+"]");
+								var outletLocation = new google.maps.LatLng(outlet.latitude.toFixed (4),outlet.langitude.toFixed (4));
+								console.log("[ Outlet location"+outlet.latitude+","+outlet.langitude+"]");
+
 								var request = {
 									        origin : currentLocation,
 									        destination : outletLocation,
@@ -367,11 +440,13 @@ myApp
 								            window.alert('Directions request failed due to ' + status);
 								        }
 								    });
-								    setTimeout(function () { map.setZoom(12); }, 1000);
+								    setTimeout(function () { map.setZoom(11); }, 1000);
 							}
 							function prepareMap(){
 								try {
 									var res = $scope.data;
+									console.log("["+res[0].latitude+","+res[0].langitude+"],"+res.length);
+									//console.log(res[1].latitude+","+res[1].langitude);
 									var firstArea = {
 										lat : res[0].latitude,
 										lng : res[0].langitude
@@ -380,7 +455,7 @@ myApp
 											document
 													.getElementById('map'),
 											{
-												zoom : 12,
+												zoom : 11,
 												center : firstArea
 											});
 
@@ -456,8 +531,9 @@ myApp
 							$scope.piechart = function() {
 								$window.location.href = './HistoryPieChart.jsp#/';
 							}
-
-						} ]);
+						} 
+						
+						]);
 
 myApp
 		.controller(

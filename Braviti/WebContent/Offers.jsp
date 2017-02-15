@@ -74,7 +74,7 @@ html, body {
 				<label class="labelHeading">Select Preferred Location</label>
 				<p>
 					<select class="shortenedSelect" ng-model="userSelectedLocation"
-						ng-change="changeLocation()" ng-options="x.location for x in locations">
+						ng-change="changeLocation()" ng-options="x.location for x in locations | orderBy:'location'">
 						<option value="">--Select an option--</option>
 					</select>
 				</p>

@@ -21,6 +21,7 @@ public static void writeRecord() {
 	  File file=new File("transactionHistory.csv");
 	  try {
 		fileWriter = new FileWriter(file);
+		System.out.println("Path "+file.getAbsolutePath());
 	
 	for (int i = 1; i <=10000; i++) {
 		StringBuilder finalRecord = new StringBuilder("");
@@ -74,31 +75,67 @@ private static String getRandomPurchaseAmount(String getRandomCategoryNameGenera
 	int amount = 0;
 	
 	switch (getRandomCategoryNameGenerated) {
-	case PredictiveEngineConstants.ELECTRONICS:
-		amount = randBetween(15000, 35000);
+		case PredictiveEngineConstants.ELECTRONICS:
+			amount = randBetween(15000, 35000);
+			break;
+		case PredictiveEngineConstants.CLOTHING:
+			amount = randBetween(1000, 3000);
+			break;
+		case PredictiveEngineConstants.FOOTWEAR:
+			amount = randBetween(1000, 3000);
+			break;
+		case PredictiveEngineConstants.GIFTS:
+			amount = randBetween(1000, 5000);
+			break;
+		case PredictiveEngineConstants.STATIONARY:
+			amount = randBetween(100, 500);
+			break;
+		case PredictiveEngineConstants.HOME_AND_KITCHEN:
+			amount = randBetween(15000, 30000);
+			break;
+		case PredictiveEngineConstants.TOYS_AND_GAMES:
+			amount = randBetween(500, 3000);
+			break;
+		case PredictiveEngineConstants.SPORTS_AND_FITNESS:
+			amount = randBetween(1000, 4000);
+			break;
+		case PredictiveEngineConstants.Kindle_E_Readers_And_Books:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Grocery:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Beauty_Products:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Jewelry:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Handmade_Craft:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Crokery:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Home_Services:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Automotive:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Credit_And_Payment_Products:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Garden_Tools:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Movies_Music:
+			amount = randBetween(1000, 1000);
+			break;
+		case PredictiveEngineConstants.Mobile_Accessories:
+			amount = randBetween(1000, 1000);
 		break;
-	case PredictiveEngineConstants.CLOTHING:
-		amount = randBetween(1000, 3000);
-		break;
-	case PredictiveEngineConstants.FOOTWEAR:
-		amount = randBetween(1000, 3000);
-		break;
-	case PredictiveEngineConstants.GIFTS:
-		amount = randBetween(1000, 5000);
-		break;
-	case PredictiveEngineConstants.STATIONARY:
-		amount = randBetween(100, 500);
-		break;
-	case PredictiveEngineConstants.HOME_AND_KITCHEN:
-		amount = randBetween(15000, 30000);
-		break;
-	case PredictiveEngineConstants.TOYS_AND_GAMES:
-		amount = randBetween(500, 3000);
-		break;
-	case PredictiveEngineConstants.SPORTS_AND_FITNESS:
-		amount = randBetween(1000, 4000);
-		break;
-	default:
+		default:
 
 	}
 	
@@ -112,7 +149,7 @@ private static String getRandomOutletId() {
 }
 
 private static String getRandomPurchaseCategory() {
-	 int categoryId = randBetween(1, 8);
+	 int categoryId = randBetween(1, 25);
 	 return String.valueOf(categoryId);
 	
 }
