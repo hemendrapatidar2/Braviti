@@ -44,6 +44,7 @@ public class SparkRecommender implements Serializable {
 	private JavaRDD<TransactionHistory> transactionData;
 	private JavaRDD<Outlet> outletData;
 	private List<FilterCriteria> filterCriteriaList = new ArrayList<>();
+	private static List<TransactionHistory> userSpecificRecords;
 	
 	public List<OfferDTO> recommendOffers(final String userName,final String location) throws Exception {
 
@@ -63,19 +64,14 @@ if(loggedInUserName==null){
 		try {
 			loadDataInRDD(jsc);
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		//Applying filters on data loaded in RDD objects
-//		if(StringUtils.isEmpty(userId)){
-//			
-//			userId=getLoggedInUser(userName);
-//		}
 		
 		if(!loggedInUserName.equals(userName)||StringUtils.isEmpty(userId)){
 			userId=getLoggedInUser(userName);
 			loggedInUserName=userName;
+			userSpecificRecords=null;
 			
 		}
 			
@@ -86,7 +82,10 @@ if(loggedInUserName==null){
 		
 		
 		// Step 3 : Filter User Specific Data in Java Rdd Object
-	List<TransactionHistory> userSpecificRecords =  getTransactionHistoryForUser(userId);
+	if(userSpecificRecords==null){
+		
+		userSpecificRecords = getTransactionHistoryForUser(userId);
+	}
 		
 		for (TransactionHistory txr : userSpecificRecords) {
 			FilterCriteria filterCriteria = new FilterCriteria();
